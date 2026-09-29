@@ -22,12 +22,29 @@ _EXCLUDED_DIRS = frozenset({"__pycache__", ".pytest_cache", ".mypy_cache"})
 
 
 def sha256_file(path: PathLike) -> str:
-    """Return the SHA-256 digest of one file."""
+    """Return the SHA-256 digest of one file's raw bytes."""
     digest = hashlib.sha256()
     with open(path, "rb") as handle:
         for chunk in iter(lambda: handle.read(65536), b""):
             digest.update(chunk)
     return digest.hexdigest()
+
+
+def sha256_text_normalized(path: PathLike) -> str:
+    """Return the SHA-256 digest of a text file with line endings normalized to LF.
+
+    Content pins must be reproducible across platforms. The same source file
+    checked out on Windows (CRLF) and on Linux (LF) has different raw bytes but
+    identical content, and a default ``core.autocrlf`` checkout rewrites one
+    into the other without ever showing up as a working-tree change. Hashing the
+    LF-normalized text makes a pin mean *"this content"* instead of *"this
+    platform's line endings"*.
+
+    Use :func:`sha256_file` for genuinely binary payloads (archives, images),
+    where byte-exactness is the point.
+    """
+    data = Path(path).read_bytes().replace(b"\r\n", b"\n")
+    return hashlib.sha256(data).hexdigest()
 
 
 def hash_package(package_dir: PathLike) -> Dict[str, str]:

@@ -20,7 +20,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence, Tuple, Union
 
-from .parity import compare_csm_env_copies, sha256_file
+from .parity import compare_csm_env_copies, sha256_file, sha256_text_normalized
 from .task_registry import EvalSetManifest, build_requirements_manifest, save_json, resolve_task_config_path, with_anchor
 from .verify_pinning import validate_eval_set_verifiers
 
@@ -250,7 +250,9 @@ def write_pinned_revisions(
     benchmark_hashes: Dict[str, str] = {}
     for relative in PINNED_BENCHMARK_FILES:
         path = root / relative
-        benchmark_hashes[relative] = sha256_file(path) if path.is_file() else "missing"
+        benchmark_hashes[relative] = (
+            sha256_text_normalized(path) if path.is_file() else "missing"
+        )
 
     ablation_hashes: Dict[str, str] = {}
     ablation_root = root / "ablation"
@@ -258,10 +260,10 @@ def write_pinned_revisions(
         if "__pycache__" in path.parts:
             continue
         relative = path.relative_to(root).as_posix()
-        ablation_hashes[relative] = sha256_file(path)
+        ablation_hashes[relative] = sha256_text_normalized(path)
 
     task_hashes = {
-        record.task_id: sha256_file(resolve_task_config_path(record.task_config_path))
+        record.task_id: sha256_text_normalized(resolve_task_config_path(record.task_config_path))
         for record in eval_set
     }
     try:

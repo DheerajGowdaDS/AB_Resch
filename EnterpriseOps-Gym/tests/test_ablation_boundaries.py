@@ -11,7 +11,7 @@ from pathlib import Path
 
 import pytest
 
-from ablation.parity import compare_csm_env_copies, require_parity, sha256_file
+from ablation.parity import compare_csm_env_copies, require_parity, sha256_text_normalized
 from ablation.task_registry import build_eval_set
 from ablation.verify_pinning import validate_eval_set_verifiers, validate_verifier_set
 from csm_env import SchemaRegistry
@@ -31,6 +31,10 @@ def test_pinned_revisions_match_the_working_tree():
     ``pinned_revisions.json`` silently drifted twice while the suite stayed
     green. A reported experiment is only auditable if the pin matches the code
     that produced it.
+
+    Hashing is line-ending normalized (see
+    :func:`ablation.parity.sha256_text_normalized`), so the same content passes
+    on a Windows CRLF checkout and a Linux LF checkout.
     """
     payload = json.loads(PINS_PATH.read_text(encoding="utf-8"))
     pins = payload["ablation_files_sha256"]
@@ -39,7 +43,8 @@ def test_pinned_revisions_match_the_working_tree():
     stale = sorted(
         name
         for name, digest in pins.items()
-        if not (GYM_ROOT / name).is_file() or sha256_file(GYM_ROOT / name) != digest
+        if not (GYM_ROOT / name).is_file()
+        or sha256_text_normalized(GYM_ROOT / name) != digest
     )
     assert not stale, (
         "pinned_revisions.json is stale for: "
