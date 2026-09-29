@@ -1,0 +1,283 @@
+{
+  "agent_error": false,
+  "complexity_category": "TYPE_5_MULTI_STEP",
+  "condition": "B_state_model",
+  "error_message": null,
+  "experiment": "experiment_1",
+  "experiment_version": "V1.2-STATE-MODEL-REFINED",
+  "fingerprint_match": null,
+  "fingerprint_mismatch_reason": null,
+  "finished_at": "2026-09-28T16:30:05.066708+00:00",
+  "goal_states": [
+    "AGENT_RUNNING",
+    "VERIFIED",
+    "RECORDED"
+  ],
+  "initial_state_fingerprint": "63bccb645c6158cf23310d6fd633ad3966ebde05112baf78f8141a81b11ca689",
+  "input_tokens": 85436,
+  "invalid_action_count": 0,
+  "latency_ms": 79334,
+  "manifest_hash": null,
+  "max_steps": 15,
+  "model_name": "space-bunny-alpha",
+  "model_provider": "openrouter",
+  "orchestrator": "react",
+  "output_tokens": 1548,
+  "overall_success": false,
+  "read_query_count": 9,
+  "run_index": 3,
+  "run_uid": "02239788df514d5e830cb868f798e248",
+  "runtime_database_id": "db_1790612923322_wak1wtfzq",
+  "seed_database_file": "Domain Wise DBs and Task-DB Mappings/csm/dbs/db_1762254390925_u5icw4thh.sql",
+  "started_at": "2026-09-28T16:28:43.322758+00:00",
+  "state_retrieval": {
+    "anchor_row_id": "44",
+    "anchor_status": "RESOLVED",
+    "anchor_table": "user_group",
+    "context_tokens_injected": 1000,
+    "retrieval_latency_ms": 1598.2787000248209,
+    "retrieved_records": 26,
+    "retrieved_rows": [
+      [
+        "case_knowledge",
+        "376"
+      ],
+      [
+        "case_knowledge",
+        "493"
+      ],
+      [
+        "case_knowledge",
+        "494"
+      ],
+      [
+        "customer_case",
+        "1044"
+      ],
+      [
+        "customer_case",
+        "1140"
+      ],
+      [
+        "customer_case",
+        "1157"
+      ],
+      [
+        "customer_case",
+        "1197"
+      ],
+      [
+        "customer_case",
+        "1202"
+      ],
+      [
+        "customer_case",
+        "3"
+      ],
+      [
+        "customer_case",
+        "321"
+      ],
+      [
+        "customer_case",
+        "362"
+      ],
+      [
+        "customer_case",
+        "443"
+      ],
+      [
+        "customer_case",
+        "780"
+      ],
+      [
+        "customer_case",
+        "827"
+      ],
+      [
+        "customer_case",
+        "887"
+      ],
+      [
+        "knowledge",
+        "178"
+      ],
+      [
+        "knowledge",
+        "179"
+      ],
+      [
+        "knowledge",
+        "243"
+      ],
+      [
+        "product",
+        "10"
+      ],
+      [
+        "product",
+        "117"
+      ],
+      [
+        "product",
+        "119"
+      ],
+      [
+        "product",
+        "163"
+      ],
+      [
+        "product",
+        "198"
+      ],
+      [
+        "product",
+        "204"
+      ],
+      [
+        "product",
+        "39"
+      ],
+      [
+        "user_group",
+        "44"
+      ]
+    ],
+    "retrieved_table_names": [
+      "case_knowledge",
+      "customer_case",
+      "knowledge",
+      "product",
+      "user_group"
+    ],
+    "retrieved_tables": 5,
+    "retrieved_tokens": 1000,
+    "state_error": null,
+    "state_model_available": true,
+    "state_model_delivered": true,
+    "state_retrieval_count": 1,
+    "state_route_status": "COMPLETE"
+  },
+  "steps_taken": 10,
+  "task_id": "task_20260104_202644_765_00364ece_a86667c0",
+  "temperature": 0.0,
+  "timings_ms": {
+    "agent": 82944.23589995131,
+    "lost_to_collision": 0.0,
+    "verify": 79334.0
+  },
+  "tool_call_count": 14,
+  "tool_mode": "oracle",
+  "verifier_results_collapsed": {
+    "Validate Notification": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) AS count\nFROM notification n\nJOIN user u ON n.email = u.email\nWHERE u.first_name = 'Michael'\n  AND u.last_name = 'Ward'\n  AND n.type = 'report'\n  AND n.status = 'success'\n  AND n.case_id = 1233;"
+    },
+    "Validating whether assigned user is present in the assigned group. ": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) AS count\nFROM user u\nJOIN user_group_member ugm ON u.user_id = ugm.user_id\nJOIN user_group g ON g.group_id = ugm.group_id\nWHERE u.first_name = 'Robin'\n  AND u.last_name = 'Monroe'\n  AND g.name = 'Case Assignment_3';"
+    },
+    "Validating whether new case has been created. ": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) AS count\nFROM customer_case c\nJOIN product p ON c.product_id = p.product_id\nJOIN contact ct ON c.contact_id = ct.contact_id\nJOIN user u ON ct.portal_user_id = u.user_id\nJOIN user assigned ON c.assigned_to = assigned.user_id\nJOIN user_group g ON c.assignment_group_id = g.group_id\nWHERE u.first_name = 'Michael'\n  AND u.last_name = 'Ward'\n  AND p.name = 'MySQL Enterprise 8.0 Variant 28'\n  AND c.channel = 'chat'\n  AND c.priority = 'high'\n  AND c.state = 'in_progress'\n  AND assigned.first_name = 'Robin'\n  AND assigned.last_name = 'Monroe'\n  AND g.name = 'Case Assignment_3';"
+    },
+    "Verify knowledge is attached": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) AS count FROM case_knowledge WHERE case_id = 1233 AND knowledge_id = 70;"
+    },
+    "Verify that Resolution SLA is attached": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) AS count FROM case_sla WHERE case_id = 1233 AND sla_def_id = 7;"
+    },
+    "Verify that Response SLA is attached": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) AS count FROM case_sla WHERE case_id = 1233 AND sla_def_id = 2;"
+    }
+  },
+  "verifier_results_indexed": {
+    "0:Verify knowledge is attached": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) AS count FROM case_knowledge WHERE case_id = 1233 AND knowledge_id = 70;"
+    },
+    "1:Validating whether assigned user is present in the assigned group. ": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) AS count\nFROM user u\nJOIN user_group_member ugm ON u.user_id = ugm.user_id\nJOIN user_group g ON g.group_id = ugm.group_id\nWHERE u.first_name = 'Robin'\n  AND u.last_name = 'Monroe'\n  AND g.name = 'Case Assignment_3';"
+    },
+    "2:Validating whether new case has been created. ": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) AS count\nFROM customer_case c\nJOIN product p ON c.product_id = p.product_id\nJOIN contact ct ON c.contact_id = ct.contact_id\nJOIN user u ON ct.portal_user_id = u.user_id\nJOIN user assigned ON c.assigned_to = assigned.user_id\nJOIN user_group g ON c.assignment_group_id = g.group_id\nWHERE u.first_name = 'Michael'\n  AND u.last_name = 'Ward'\n  AND p.name = 'MySQL Enterprise 8.0 Variant 28'\n  AND c.channel = 'chat'\n  AND c.priority = 'high'\n  AND c.state = 'in_progress'\n  AND assigned.first_name = 'Robin'\n  AND assigned.last_name = 'Monroe'\n  AND g.name = 'Case Assignment_3';"
+    },
+    "3:Validate Notification": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) AS count\nFROM notification n\nJOIN user u ON n.email = u.email\nWHERE u.first_name = 'Michael'\n  AND u.last_name = 'Ward'\n  AND n.type = 'report'\n  AND n.status = 'success'\n  AND n.case_id = 1233;"
+    },
+    "4:Verify that Response SLA is attached": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) AS count FROM case_sla WHERE case_id = 1233 AND sla_def_id = 2;"
+    },
+    "5:Verify that Resolution SLA is attached": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) AS count FROM case_sla WHERE case_id = 1233 AND sla_def_id = 7;"
+    }
+  },
+  "verifier_summary_collapsed": {
+    "failed": 1,
+    "pass_rate": 0.8333333333333334,
+    "passed": 5,
+    "total": 6
+  },
+  "verifier_summary_indexed": {
+    "failed": 1,
+    "pass_rate": 0.8333333333333334,
+    "passed": 5,
+    "total": 6
+  }
+}

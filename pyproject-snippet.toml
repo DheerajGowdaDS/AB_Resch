@@ -1,0 +1,3 @@
+# Add this package beside the existing EnterpriseOps-Gym pyproject.toml.
+# No additional third-party dependencies are required beyond EnterpriseOps-Gym's
+# existing httpx dependency.

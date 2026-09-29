@@ -1,0 +1,37 @@
+Traceback (most recent call last):
+  File "D:\Visual code projects\csm_ggqr_work\EnterpriseOps-Gym\rep_dbg.py", line 7, in <module>
+    runpy.run_path("run_ablation.py", run_name="__main__")
+  File "<frozen runpy>", line 291, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "run_ablation.py", line 340, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "run_ablation.py", line 336, in main
+    return asyncio.run(_async_main(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gowda\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\gowda\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gowda\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "run_ablation.py", line 233, in _async_main
+    paths = report_from_directory(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Visual code projects\csm_ggqr_work\EnterpriseOps-Gym\ablation\report.py", line 494, in report_from_directory
+    report = build_report(
+             ^^^^^^^^^^^^^
+  File "D:\Visual code projects\csm_ggqr_work\EnterpriseOps-Gym\ablation\report.py", line 245, in build_report
+    treatment.name: retrieval_summary(
+                    ^^^^^^^^^^^^^^^^^^
+  File "D:\Visual code projects\csm_ggqr_work\EnterpriseOps-Gym\ablation\stats.py", line 501, in retrieval_summary
+    quality = retrieval_quality(record, relevance)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Visual code projects\csm_ggqr_work\EnterpriseOps-Gym\ablation\stats.py", line 458, in retrieval_quality
+    retrieved_tables = {str(table) for table in record.state_retrieval.get("retrieved_tables") or []}
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'int' object is not iterable

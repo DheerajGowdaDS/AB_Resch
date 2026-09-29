@@ -1,0 +1,379 @@
+{
+  "evaluator_unambiguous": true,
+  "latent_risk_task_ids": [],
+  "observed_divergent_task_ids": [],
+  "per_task": [
+    {
+      "duplicate_name_count": 3,
+      "duplicate_names": [
+        "create_new_case",
+        "link_new_case_sla",
+        "update_entitlement"
+      ],
+      "is_ambiguous": false,
+      "lost_to_collision": 8,
+      "observed": true,
+      "original_keys": [
+        "create_new_case",
+        "link_new_case_sla",
+        "update_entitlement"
+      ],
+      "reconciled_keys": [
+        "0:update_entitlement",
+        "1:update_entitlement",
+        "2:update_entitlement",
+        "3:create_new_case",
+        "4:create_new_case",
+        "5:create_new_case",
+        "6:create_new_case",
+        "7:create_new_case",
+        "8:link_new_case_sla",
+        "9:link_new_case_sla",
+        "10:update_entitlement"
+      ],
+      "task_id": "task_20251205_153330_906_a8eea1c0_8c7a6205",
+      "task_success_differs": false,
+      "task_success_original": false,
+      "task_success_reconciled": false,
+      "verifier_count": 11
+    },
+    {
+      "duplicate_name_count": 1,
+      "duplicate_names": [
+        "Verify Notification Sent "
+      ],
+      "is_ambiguous": false,
+      "lost_to_collision": 1,
+      "observed": true,
+      "original_keys": [
+        "Verify Create New Case",
+        "Verify Notification Sent ",
+        "Verify Updated Installed Product"
+      ],
+      "reconciled_keys": [
+        "0:Verify Updated Installed Product",
+        "1:Verify Create New Case",
+        "2:Verify Notification Sent ",
+        "3:Verify Notification Sent "
+      ],
+      "task_id": "task_20251205_154853_044_d4a463c3_fce76046",
+      "task_success_differs": false,
+      "task_success_original": false,
+      "task_success_reconciled": false,
+      "verifier_count": 4
+    },
+    {
+      "duplicate_name_count": 0,
+      "duplicate_names": [],
+      "is_ambiguous": false,
+      "lost_to_collision": 0,
+      "observed": true,
+      "original_keys": [
+        "Case assigned to Installed Base Support group",
+        "Case created with correct attributes",
+        "Case linked to primary contact",
+        "Case state updated to in_progress",
+        "Case sys_updated_on changed after state transition",
+        "Correct installed product linked (serial ends with 9300)",
+        "No duplicate cases created",
+        "Response SLA linked for moderate priority",
+        "SLA timer started (stage in_progress)"
+      ],
+      "reconciled_keys": [
+        "0:Case created with correct attributes",
+        "1:Case linked to primary contact",
+        "2:Case state updated to in_progress",
+        "3:Correct installed product linked (serial ends with 9300)",
+        "4:Case assigned to Installed Base Support group",
+        "5:Response SLA linked for moderate priority",
+        "6:SLA timer started (stage in_progress)",
+        "7:No duplicate cases created",
+        "8:Case sys_updated_on changed after state transition"
+      ],
+      "task_id": "task_20251210_002938_761_897c3e0b_f075229a",
+      "task_success_differs": false,
+      "task_success_original": false,
+      "task_success_reconciled": false,
+      "verifier_count": 9
+    },
+    {
+      "duplicate_name_count": 0,
+      "duplicate_names": [],
+      "is_ambiguous": false,
+      "lost_to_collision": 0,
+      "observed": true,
+      "original_keys": [
+        "Verify Knowledge Created",
+        "Verify New Case",
+        "Verify New Case Knowledge Link",
+        "Verify New Case SLA",
+        "Verify New Product",
+        "Verify Update Case"
+      ],
+      "reconciled_keys": [
+        "0:Verify New Product",
+        "1:Verify Update Case",
+        "2:Verify Knowledge Created",
+        "3:Verify New Case",
+        "4:Verify New Case Knowledge Link",
+        "5:Verify New Case SLA"
+      ],
+      "task_id": "task_20251210_113549_827_d4a463c3_47b48a98",
+      "task_success_differs": false,
+      "task_success_original": false,
+      "task_success_reconciled": false,
+      "verifier_count": 6
+    },
+    {
+      "duplicate_name_count": 5,
+      "duplicate_names": [
+        "add_new_entitlement",
+        "create_new_case",
+        "enlist_new_contract",
+        "link_case_knowledge",
+        "set_case_assignment_group"
+      ],
+      "is_ambiguous": false,
+      "lost_to_collision": 5,
+      "observed": true,
+      "original_keys": [
+        "add_new_entitlement",
+        "create_new_case",
+        "enlist_new_contract",
+        "link_case_knowledge",
+        "link_new_case_sla",
+        "set_case_assignment_group",
+        "update_case"
+      ],
+      "reconciled_keys": [
+        "0:enlist_new_contract",
+        "1:enlist_new_contract",
+        "2:add_new_entitlement",
+        "3:add_new_entitlement",
+        "4:create_new_case",
+        "5:create_new_case",
+        "6:set_case_assignment_group",
+        "7:set_case_assignment_group",
+        "8:update_case",
+        "9:link_new_case_sla",
+        "10:link_case_knowledge",
+        "11:link_case_knowledge"
+      ],
+      "task_id": "task_20251231_162628_797_a8eea1c0_0a53db6c",
+      "task_success_differs": false,
+      "task_success_original": false,
+      "task_success_reconciled": false,
+      "verifier_count": 12
+    },
+    {
+      "duplicate_name_count": 9,
+      "duplicate_names": [
+        "add_location",
+        "add_new_entitlement",
+        "assign_case_to_user",
+        "create_new_case",
+        "enlist_new_contract",
+        "link_case_knowledge",
+        "link_new_case_sla",
+        "register_new_installed_product",
+        "send_notification"
+      ],
+      "is_ambiguous": false,
+      "lost_to_collision": 9,
+      "observed": true,
+      "original_keys": [
+        "add_location",
+        "add_new_entitlement",
+        "assign_case_to_user",
+        "create_new_case",
+        "enlist_new_contract",
+        "link_case_knowledge",
+        "link_new_case_sla",
+        "register_new_installed_product",
+        "send_notification",
+        "update_case"
+      ],
+      "reconciled_keys": [
+        "0:add_location",
+        "1:link_case_knowledge",
+        "2:register_new_installed_product",
+        "3:add_location",
+        "4:register_new_installed_product",
+        "5:enlist_new_contract",
+        "6:enlist_new_contract",
+        "7:add_new_entitlement",
+        "8:add_new_entitlement",
+        "9:create_new_case",
+        "10:create_new_case",
+        "11:assign_case_to_user",
+        "12:assign_case_to_user",
+        "13:update_case",
+        "14:link_new_case_sla",
+        "15:link_new_case_sla",
+        "16:link_case_knowledge",
+        "17:send_notification",
+        "18:send_notification"
+      ],
+      "task_id": "task_20260101_043715_660_a8eea1c0_7304e48e",
+      "task_success_differs": false,
+      "task_success_original": false,
+      "task_success_reconciled": false,
+      "verifier_count": 19
+    },
+    {
+      "duplicate_name_count": 0,
+      "duplicate_names": [],
+      "is_ambiguous": false,
+      "lost_to_collision": 0,
+      "observed": true,
+      "original_keys": [
+        "Confirm the case is linked to 'SLA Response - High' (RESPONSE metric) and is in_progress",
+        "Confirm the entitlement is properly linked to the new 2026 support contract",
+        "Confirm the high-priority phone case was created as NEW then moved to IN_PROGRESS under an active primary contact",
+        "Confirm the premium 24\u00d77 entitlement exists under Wayne Enterprises with product linkage",
+        "Confirm the support contract for Wayne Enterprises is created with correct attributes"
+      ],
+      "reconciled_keys": [
+        "0:Confirm the support contract for Wayne Enterprises is created with correct attributes",
+        "1:Confirm the premium 24\u00d77 entitlement exists under Wayne Enterprises with product linkage",
+        "2:Confirm the high-priority phone case was created as NEW then moved to IN_PROGRESS under an active primary contact",
+        "3:Confirm the case is linked to 'SLA Response - High' (RESPONSE metric) and is in_progress",
+        "4:Confirm the entitlement is properly linked to the new 2026 support contract"
+      ],
+      "task_id": "task_20260101_122222_300_ad5a67e3_3757206c",
+      "task_success_differs": false,
+      "task_success_original": false,
+      "task_success_reconciled": false,
+      "verifier_count": 5
+    },
+    {
+      "duplicate_name_count": 0,
+      "duplicate_names": [],
+      "is_ambiguous": false,
+      "lost_to_collision": 0,
+      "observed": true,
+      "original_keys": [
+        "High priority case created for Perry Watts",
+        "Verify KB article is linked to the case",
+        "Verify SLA Definition (Resolution - High) Exists",
+        "Verify SLA Definition (Response - High) Exists"
+      ],
+      "reconciled_keys": [
+        "0:High priority case created for Perry Watts",
+        "1:Verify KB article is linked to the case",
+        "2:Verify SLA Definition (Response - High) Exists",
+        "3:Verify SLA Definition (Resolution - High) Exists"
+      ],
+      "task_id": "task_20260102_155148_014_accab84d_910b176a",
+      "task_success_differs": false,
+      "task_success_original": false,
+      "task_success_reconciled": false,
+      "verifier_count": 4
+    },
+    {
+      "duplicate_name_count": 0,
+      "duplicate_names": [],
+      "is_ambiguous": false,
+      "lost_to_collision": 0,
+      "observed": true,
+      "original_keys": [
+        "Verify Elsa Larson is a member of Larson Operations Desk",
+        "Verify KB owner selection rule (min +44 agent/manager)",
+        "Verify the Elsa Larson contact",
+        "Verify the Larson Operations Desk group exists",
+        "Verify the Larson PLC account exists",
+        "Verify the London location for Larson PLC exists",
+        "Verify the SUSE installed product record",
+        "Verify the SUSE product exists",
+        "Verify the case and its SLA linkage",
+        "Verify the knowledge article exists",
+        "Verify the knowledge article was correctly linked to the case as a resolution",
+        "Verify the portal user for Elsa Larson",
+        "Verify the premium 24x7 entitlement",
+        "Verify the solution proposal notification was sent",
+        "Verify the support contract for 2026"
+      ],
+      "reconciled_keys": [
+        "0:Verify the SUSE product exists",
+        "1:Verify the Larson PLC account exists",
+        "2:Verify the London location for Larson PLC exists",
+        "3:Verify the portal user for Elsa Larson",
+        "4:Verify the Elsa Larson contact",
+        "5:Verify the SUSE installed product record",
+        "6:Verify the support contract for 2026",
+        "7:Verify the premium 24x7 entitlement",
+        "8:Verify the case and its SLA linkage",
+        "9:Verify the knowledge article exists",
+        "10:Verify the knowledge article was correctly linked to the case as a resolution",
+        "11:Verify the Larson Operations Desk group exists",
+        "12:Verify Elsa Larson is a member of Larson Operations Desk",
+        "13:Verify the solution proposal notification was sent",
+        "14:Verify KB owner selection rule (min +44 agent/manager)"
+      ],
+      "task_id": "task_20260102_161510_799_ad5a67e3_7221f3c8",
+      "task_success_differs": false,
+      "task_success_original": false,
+      "task_success_reconciled": false,
+      "verifier_count": 15
+    },
+    {
+      "duplicate_name_count": 0,
+      "duplicate_names": [],
+      "is_ambiguous": false,
+      "lost_to_collision": 0,
+      "observed": true,
+      "original_keys": [
+        "Verifier 1 - Verify installed product registration at Umbrella's Tokyo site",
+        "Verifier 2 - Verify Travis Wood group membership",
+        "Verifier 3 - Verify case with active primary contact",
+        "Verifier 4 - Verify SLA linkage and tracking",
+        "Verifier 5 - Verify case state transition to in_progress"
+      ],
+      "reconciled_keys": [
+        "0:Verifier 1 - Verify installed product registration at Umbrella's Tokyo site",
+        "1:Verifier 2 - Verify Travis Wood group membership",
+        "2:Verifier 3 - Verify case with active primary contact",
+        "3:Verifier 4 - Verify SLA linkage and tracking",
+        "4:Verifier 5 - Verify case state transition to in_progress"
+      ],
+      "task_id": "task_20260102_172945_725_ad5a67e3_5480e26f",
+      "task_success_differs": false,
+      "task_success_original": false,
+      "task_success_reconciled": false,
+      "verifier_count": 5
+    },
+    {
+      "duplicate_name_count": 0,
+      "duplicate_names": [],
+      "is_ambiguous": false,
+      "lost_to_collision": 0,
+      "observed": true,
+      "original_keys": [
+        "Validate Notification",
+        "Validating whether assigned user is present in the assigned group. ",
+        "Validating whether new case has been created. ",
+        "Verify knowledge is attached",
+        "Verify that Resolution SLA is attached",
+        "Verify that Response SLA is attached"
+      ],
+      "reconciled_keys": [
+        "0:Verify knowledge is attached",
+        "1:Validating whether assigned user is present in the assigned group. ",
+        "2:Validating whether new case has been created. ",
+        "3:Validate Notification",
+        "4:Verify that Response SLA is attached",
+        "5:Verify that Resolution SLA is attached"
+      ],
+      "task_id": "task_20260104_202644_765_00364ece_a86667c0",
+      "task_success_differs": false,
+      "task_success_original": true,
+      "task_success_reconciled": true,
+      "verifier_count": 6
+    }
+  ],
+  "tasks": 11,
+  "tasks_losing_results_to_collision": 23,
+  "tasks_observed": 11,
+  "tasks_with_duplicate_names": 4,
+  "total_verifiers": 96
+}

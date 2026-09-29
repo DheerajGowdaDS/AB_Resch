@@ -1,0 +1,183 @@
+{
+  "agent_error": false,
+  "complexity_category": "TYPE_1_SINGLE_ENTITY",
+  "condition": "B_state_model",
+  "error_message": null,
+  "experiment": "experiment_1",
+  "experiment_version": "V1.2-STATE-MODEL-REFINED",
+  "fingerprint_match": null,
+  "fingerprint_mismatch_reason": null,
+  "finished_at": "2026-09-28T15:52:10.608175+00:00",
+  "goal_states": [
+    "AGENT_RUNNING",
+    "VERIFIED",
+    "RECORDED"
+  ],
+  "initial_state_fingerprint": "63bccb645c6158cf23310d6fd633ad3966ebde05112baf78f8141a81b11ca689",
+  "input_tokens": 48388,
+  "invalid_action_count": 0,
+  "latency_ms": 60082,
+  "manifest_hash": null,
+  "max_steps": 15,
+  "model_name": "space-bunny-alpha",
+  "model_provider": "openrouter",
+  "orchestrator": "react",
+  "output_tokens": 1112,
+  "overall_success": true,
+  "read_query_count": 5,
+  "run_index": 3,
+  "run_uid": "84642a5816754e22a521bd9c09c54f0e",
+  "runtime_database_id": "db_1790610669231_yf9ownbqf",
+  "seed_database_file": "Domain Wise DBs and Task-DB Mappings/csm/dbs/db_1762254390925_u5icw4thh.sql",
+  "started_at": "2026-09-28T15:51:09.231839+00:00",
+  "state_retrieval": {
+    "anchor_row_id": "17",
+    "anchor_status": "RESOLVED",
+    "anchor_table": "product",
+    "context_tokens_injected": 619,
+    "retrieval_latency_ms": 1330.4337000008672,
+    "retrieved_records": 9,
+    "retrieved_rows": [
+      [
+        "account",
+        "30"
+      ],
+      [
+        "case_sla",
+        "1337"
+      ],
+      [
+        "case_sla",
+        "1338"
+      ],
+      [
+        "case_sla",
+        "1367"
+      ],
+      [
+        "case_sla",
+        "1368"
+      ],
+      [
+        "customer_case",
+        "669"
+      ],
+      [
+        "customer_case",
+        "684"
+      ],
+      [
+        "entitlement",
+        "278"
+      ],
+      [
+        "product",
+        "17"
+      ]
+    ],
+    "retrieved_table_names": [
+      "account",
+      "case_sla",
+      "customer_case",
+      "entitlement",
+      "product"
+    ],
+    "retrieved_tables": 5,
+    "retrieved_tokens": 619,
+    "state_error": null,
+    "state_model_available": true,
+    "state_model_delivered": true,
+    "state_retrieval_count": 1,
+    "state_route_status": "COMPLETE"
+  },
+  "steps_taken": 7,
+  "task_id": "task_20260102_155148_014_accab84d_910b176a",
+  "temperature": 0.0,
+  "timings_ms": {
+    "agent": 62391.11229998525,
+    "lost_to_collision": 0.0,
+    "verify": 60082.0
+  },
+  "tool_call_count": 7,
+  "tool_mode": "oracle",
+  "verifier_results_collapsed": {
+    "High priority case created for Perry Watts": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) AS case_created\nFROM customer_case\nWHERE case_id = 1233\n  AND account_id = 30\n  AND contact_id = 64\n  AND product_id = 17\n  AND channel = 'email'\n  AND priority = 'high';"
+    },
+    "Verify KB article is linked to the case": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) AS case_kb_link_exists\nFROM case_knowledge\nWHERE case_id = 1233\n  AND knowledge_id = 27\n  AND used_as = 'suggested';"
+    },
+    "Verify SLA Definition (Resolution - High) Exists": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) AS sla_def_resolution_exists\nFROM sla_definition\nWHERE sla_def_id = 7\n  AND name = 'SLA Resolution - High'\n  AND metric = 'resolution';"
+    },
+    "Verify SLA Definition (Response - High) Exists": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) AS sla_def_response_exists\nFROM sla_definition\nWHERE sla_def_id = 2\n  AND name = 'SLA Response - High'\n  AND metric = 'response'"
+    }
+  },
+  "verifier_results_indexed": {
+    "0:High priority case created for Perry Watts": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) AS case_created\nFROM customer_case\nWHERE case_id = 1233\n  AND account_id = 30\n  AND contact_id = 64\n  AND product_id = 17\n  AND channel = 'email'\n  AND priority = 'high';"
+    },
+    "1:Verify KB article is linked to the case": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) AS case_kb_link_exists\nFROM case_knowledge\nWHERE case_id = 1233\n  AND knowledge_id = 27\n  AND used_as = 'suggested';"
+    },
+    "2:Verify SLA Definition (Response - High) Exists": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) AS sla_def_response_exists\nFROM sla_definition\nWHERE sla_def_id = 2\n  AND name = 'SLA Response - High'\n  AND metric = 'response'"
+    },
+    "3:Verify SLA Definition (Resolution - High) Exists": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) AS sla_def_resolution_exists\nFROM sla_definition\nWHERE sla_def_id = 7\n  AND name = 'SLA Resolution - High'\n  AND metric = 'resolution';"
+    }
+  },
+  "verifier_summary_collapsed": {
+    "failed": 0,
+    "pass_rate": 1.0,
+    "passed": 4,
+    "total": 4
+  },
+  "verifier_summary_indexed": {
+    "failed": 0,
+    "pass_rate": 1.0,
+    "passed": 4,
+    "total": 4
+  }
+}

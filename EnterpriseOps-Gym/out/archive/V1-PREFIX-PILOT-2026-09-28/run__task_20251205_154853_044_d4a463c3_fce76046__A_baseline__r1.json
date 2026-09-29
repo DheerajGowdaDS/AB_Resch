@@ -1,0 +1,114 @@
+{
+  "agent_error": false,
+  "complexity_category": "TYPE_5_MULTI_STEP",
+  "condition": "A_baseline",
+  "error_message": null,
+  "experiment": "experiment_1",
+  "fingerprint_match": null,
+  "fingerprint_mismatch_reason": null,
+  "finished_at": "2026-09-28T06:19:40.884020+00:00",
+  "goal_states": [
+    "AGENT_RUNNING",
+    "VERIFIED",
+    "RECORDED"
+  ],
+  "initial_state_fingerprint": "63bccb645c6158cf23310d6fd633ad3966ebde05112baf78f8141a81b11ca689",
+  "input_tokens": 128988,
+  "invalid_action_count": 0,
+  "latency_ms": 59117,
+  "max_steps": 5,
+  "model_name": "space-bunny-alpha",
+  "model_provider": "openrouter",
+  "orchestrator": "react",
+  "output_tokens": 1940,
+  "overall_success": false,
+  "read_query_count": 7,
+  "run_index": 1,
+  "run_uid": "13e8eff5a92e4a4485628ff3e7702fcf",
+  "runtime_database_id": "db_1790576320120_36l06yqdp",
+  "seed_database_file": "Domain Wise DBs and Task-DB Mappings/csm/dbs/db_1762254390925_u5icw4thh.sql",
+  "started_at": "2026-09-28T06:18:40.120004+00:00",
+  "state_retrieval": null,
+  "steps_taken": 5,
+  "task_id": "task_20251205_154853_044_d4a463c3_fce76046",
+  "temperature": 0.0,
+  "timings_ms": {
+    "agent": 61657.64059999492,
+    "lost_to_collision": 1.0,
+    "verify": 59117.0
+  },
+  "tool_call_count": 8,
+  "tool_mode": "oracle",
+  "verifier_results_collapsed": {
+    "Verify Create New Case": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*)\nFROM customer_case AS c\nWHERE c.account_id = 8\n  AND c.contact_id = 10\n  AND c.channel = 'alert'\n  AND c.priority = 'low'\n  AND c.state = 'closed';\n "
+    },
+    "Verify Notification Sent ": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'tonya.stevens@stark-industries.com'\n  AND n.type = 'update';\n"
+    },
+    "Verify Updated Installed Product": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) \nFROM installed_product AS ip\nWHERE ip.installed_product_id = 40\n  AND ip.location_id = 692\n  AND ip.status = 'in_use';\n"
+    }
+  },
+  "verifier_results_indexed": {
+    "0:Verify Updated Installed Product": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) \nFROM installed_product AS ip\nWHERE ip.installed_product_id = 40\n  AND ip.location_id = 692\n  AND ip.status = 'in_use';\n"
+    },
+    "1:Verify Create New Case": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*)\nFROM customer_case AS c\nWHERE c.account_id = 8\n  AND c.contact_id = 10\n  AND c.channel = 'alert'\n  AND c.priority = 'low'\n  AND c.state = 'closed';\n "
+    },
+    "2:Verify Notification Sent ": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'marc.henry@stark-industries.com'\n  AND n.type = 'update';\n"
+    },
+    "3:Verify Notification Sent ": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'tonya.stevens@stark-industries.com'\n  AND n.type = 'update';\n"
+    }
+  },
+  "verifier_summary_collapsed": {
+    "failed": 2,
+    "pass_rate": 0.3333333333333333,
+    "passed": 1,
+    "total": 3
+  },
+  "verifier_summary_indexed": {
+    "failed": 3,
+    "pass_rate": 0.25,
+    "passed": 1,
+    "total": 4
+  }
+}

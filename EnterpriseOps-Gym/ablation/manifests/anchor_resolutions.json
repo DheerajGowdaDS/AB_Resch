@@ -1,0 +1,145 @@
+{
+  "task_20251205_153330_906_a8eea1c0_8c7a6205": {
+    "anchor": {
+      "evidence": "product~Palo Alto Networks PA-3220",
+      "lookups": 4,
+      "row_id": "128",
+      "status": "RESOLVED",
+      "strategy": "name_match",
+      "table": "product",
+      "task_id": "task_20251205_153330_906_a8eea1c0_8c7a6205"
+    },
+    "initial_state_fingerprint": "63bccb645c6158cf23310d6fd633ad3966ebde05112baf78f8141a81b11ca689",
+    "status": "RESOLVED"
+  },
+  "task_20251205_154853_044_d4a463c3_fce76046": {
+    "anchor": {
+      "evidence": "location~Pratt Curve",
+      "lookups": 7,
+      "row_id": "692",
+      "status": "RESOLVED",
+      "strategy": "name_match",
+      "table": "location",
+      "task_id": "task_20251205_154853_044_d4a463c3_fce76046"
+    },
+    "initial_state_fingerprint": "63bccb645c6158cf23310d6fd633ad3966ebde05112baf78f8141a81b11ca689",
+    "status": "RESOLVED"
+  },
+  "task_20251210_002938_761_897c3e0b_f075229a": {
+    "anchor": {
+      "evidence": "product~Dell PowerEdge R740",
+      "lookups": 4,
+      "row_id": "121",
+      "status": "RESOLVED",
+      "strategy": "name_match",
+      "table": "product",
+      "task_id": "task_20251210_002938_761_897c3e0b_f075229a"
+    },
+    "initial_state_fingerprint": "63bccb645c6158cf23310d6fd633ad3966ebde05112baf78f8141a81b11ca689",
+    "status": "RESOLVED"
+  },
+  "task_20251210_113549_827_d4a463c3_47b48a98": {
+    "anchor": {
+      "evidence": "customer_case~CS-0000888",
+      "lookups": 1,
+      "row_id": "888",
+      "status": "RESOLVED",
+      "strategy": "name_match",
+      "table": "customer_case",
+      "task_id": "task_20251210_113549_827_d4a463c3_47b48a98"
+    },
+    "initial_state_fingerprint": "63bccb645c6158cf23310d6fd633ad3966ebde05112baf78f8141a81b11ca689",
+    "status": "RESOLVED"
+  },
+  "task_20251231_162628_797_a8eea1c0_0a53db6c": {
+    "anchor": {
+      "evidence": "user_group~Escalation Management",
+      "lookups": 30,
+      "row_id": "18",
+      "status": "RESOLVED",
+      "strategy": "semantic_lookup",
+      "table": "user_group",
+      "task_id": "task_20251231_162628_797_a8eea1c0_0a53db6c"
+    },
+    "initial_state_fingerprint": "63bccb645c6158cf23310d6fd633ad3966ebde05112baf78f8141a81b11ca689",
+    "status": "RESOLVED"
+  },
+  "task_20260101_043715_660_a8eea1c0_7304e48e": {
+    "anchor": {
+      "evidence": "account~Stark Industries",
+      "lookups": 13,
+      "row_id": "8",
+      "status": "RESOLVED",
+      "strategy": "name_match",
+      "table": "account",
+      "task_id": "task_20260101_043715_660_a8eea1c0_7304e48e"
+    },
+    "initial_state_fingerprint": "63bccb645c6158cf23310d6fd633ad3966ebde05112baf78f8141a81b11ca689",
+    "status": "RESOLVED"
+  },
+  "task_20260101_122222_300_ad5a67e3_3757206c": {
+    "anchor": {
+      "evidence": "account~Wayne Enterprises",
+      "lookups": 13,
+      "row_id": "7",
+      "status": "RESOLVED",
+      "strategy": "name_match",
+      "table": "account",
+      "task_id": "task_20260101_122222_300_ad5a67e3_3757206c"
+    },
+    "initial_state_fingerprint": "63bccb645c6158cf23310d6fd633ad3966ebde05112baf78f8141a81b11ca689",
+    "status": "RESOLVED"
+  },
+  "task_20260102_155148_014_accab84d_910b176a": {
+    "anchor": {
+      "evidence": "product~Atlassian Jira Data Center",
+      "lookups": 4,
+      "row_id": "17",
+      "status": "RESOLVED",
+      "strategy": "name_match",
+      "table": "product",
+      "task_id": "task_20260102_155148_014_accab84d_910b176a"
+    },
+    "initial_state_fingerprint": "63bccb645c6158cf23310d6fd633ad3966ebde05112baf78f8141a81b11ca689",
+    "status": "RESOLVED"
+  },
+  "task_20260102_161510_799_ad5a67e3_7221f3c8": {
+    "anchor": {
+      "evidence": "customer_case~SUSE Linux Enterprise Server",
+      "lookups": 15,
+      "row_id": "57",
+      "status": "RESOLVED",
+      "strategy": "semantic_lookup",
+      "table": "customer_case",
+      "task_id": "task_20260102_161510_799_ad5a67e3_7221f3c8"
+    },
+    "initial_state_fingerprint": "63bccb645c6158cf23310d6fd633ad3966ebde05112baf78f8141a81b11ca689",
+    "status": "RESOLVED"
+  },
+  "task_20260102_172945_725_ad5a67e3_5480e26f": {
+    "anchor": {
+      "evidence": "user_group~Proactive Case Monitoring",
+      "lookups": 6,
+      "row_id": "11",
+      "status": "RESOLVED",
+      "strategy": "name_match",
+      "table": "user_group",
+      "task_id": "task_20260102_172945_725_ad5a67e3_5480e26f"
+    },
+    "initial_state_fingerprint": "63bccb645c6158cf23310d6fd633ad3966ebde05112baf78f8141a81b11ca689",
+    "status": "RESOLVED"
+  },
+  "task_20260104_202644_765_00364ece_a86667c0": {
+    "anchor": {
+      "evidence": "user_group~Case Assignment_3",
+      "lookups": 6,
+      "row_id": "44",
+      "status": "RESOLVED",
+      "strategy": "name_match",
+      "table": "user_group",
+      "task_id": "task_20260104_202644_765_00364ece_a86667c0"
+    },
+    "initial_state_fingerprint": "63bccb645c6158cf23310d6fd633ad3966ebde05112baf78f8141a81b11ca689",
+    "status": "RESOLVED"
+  }
+}

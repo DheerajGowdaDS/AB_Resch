@@ -1,0 +1,212 @@
+{
+  "agent_error": false,
+  "complexity_category": "TYPE_3_MULTI_HOP",
+  "condition": "A_baseline",
+  "error_message": null,
+  "experiment": "experiment_1",
+  "experiment_version": "V1.2-STATE-MODEL-REFINED",
+  "fingerprint_match": null,
+  "fingerprint_mismatch_reason": null,
+  "finished_at": "2026-09-28T15:23:57.196365+00:00",
+  "goal_states": [
+    "AGENT_RUNNING",
+    "VERIFIED",
+    "RECORDED"
+  ],
+  "initial_state_fingerprint": "63bccb645c6158cf23310d6fd633ad3966ebde05112baf78f8141a81b11ca689",
+  "input_tokens": 93398,
+  "invalid_action_count": 0,
+  "latency_ms": 110445,
+  "manifest_hash": null,
+  "max_steps": 15,
+  "model_name": "space-bunny-alpha",
+  "model_provider": "openrouter",
+  "orchestrator": "react",
+  "output_tokens": 3752,
+  "overall_success": true,
+  "read_query_count": 8,
+  "run_index": 3,
+  "run_uid": "ebb09ebbe7174d2d9ed863475d91d525",
+  "runtime_database_id": "db_1790608923384_d4ocjq25e",
+  "seed_database_file": "Domain Wise DBs and Task-DB Mappings/csm/dbs/db_1762254390925_u5icw4thh.sql",
+  "started_at": "2026-09-28T15:22:03.384905+00:00",
+  "state_retrieval": null,
+  "steps_taken": 10,
+  "task_id": "task_20251231_162628_797_a8eea1c0_0a53db6c",
+  "temperature": 0.0,
+  "timings_ms": {
+    "agent": 114581.38540002983,
+    "lost_to_collision": 5.0,
+    "verify": 110445.0
+  },
+  "tool_call_count": 14,
+  "tool_mode": "oracle",
+  "verifier_results_collapsed": {
+    "add_new_entitlement": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM contract WHERE contract_id = 154 AND sys_updated_on > '2025-11-18';"
+    },
+    "create_new_case": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM contact WHERE contact_id = 10 AND sys_updated_on IS NOT NULL;"
+    },
+    "enlist_new_contract": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM contract WHERE contract_id = 154 AND sys_updated_on IS NOT NULL;"
+    },
+    "link_case_knowledge": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM customer_case WHERE case_id = 1233 AND sys_updated_on IS NOT NULL;"
+    },
+    "link_new_case_sla": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM case_sla WHERE case_id = 1233 AND sla_def_id = 6 AND stage = 'in_progress';"
+    },
+    "set_case_assignment_group": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM user_group WHERE group_id = 18 AND sys_updated_on IS NOT NULL;"
+    },
+    "update_case": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM customer_case WHERE case_id = 1233 AND state = 'in_progress';"
+    }
+  },
+  "verifier_results_indexed": {
+    "0:enlist_new_contract": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM contract WHERE account_id = 8 AND contract_type = 'support' AND status = 'active' AND contract_id = 154 AND end_date = '2026-11-18';"
+    },
+    "10:link_case_knowledge": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM case_knowledge WHERE case_id = 1233 AND knowledge_id = 210 AND used_as = 'suggested';"
+    },
+    "11:link_case_knowledge": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM customer_case WHERE case_id = 1233 AND sys_updated_on IS NOT NULL;"
+    },
+    "1:enlist_new_contract": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM contract WHERE contract_id = 154 AND sys_updated_on IS NOT NULL;"
+    },
+    "2:add_new_entitlement": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM entitlement WHERE account_id = 8 AND product_id = 140 AND contract_id = 154 AND support_level = 'enterprise' AND coverage_hours = 'h24x7' AND active = 1;"
+    },
+    "3:add_new_entitlement": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM contract WHERE contract_id = 154 AND sys_updated_on > '2025-11-18';"
+    },
+    "4:create_new_case": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM customer_case WHERE case_id = 1233 AND account_id = 8 AND product_id = 140 AND installed_product_id = 42 AND priority = 'critical';"
+    },
+    "5:create_new_case": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM contact WHERE contact_id = 10 AND sys_updated_on IS NOT NULL;"
+    },
+    "6:set_case_assignment_group": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM customer_case WHERE case_id = 1233 AND assignment_group_id = 18;"
+    },
+    "7:set_case_assignment_group": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM user_group WHERE group_id = 18 AND sys_updated_on IS NOT NULL;"
+    },
+    "8:update_case": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM customer_case WHERE case_id = 1233 AND state = 'in_progress';"
+    },
+    "9:link_new_case_sla": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM case_sla WHERE case_id = 1233 AND sla_def_id = 6 AND stage = 'in_progress';"
+    }
+  },
+  "verifier_summary_collapsed": {
+    "failed": 0,
+    "pass_rate": 1.0,
+    "passed": 7,
+    "total": 7
+  },
+  "verifier_summary_indexed": {
+    "failed": 1,
+    "pass_rate": 0.9166666666666666,
+    "passed": 11,
+    "total": 12
+  }
+}

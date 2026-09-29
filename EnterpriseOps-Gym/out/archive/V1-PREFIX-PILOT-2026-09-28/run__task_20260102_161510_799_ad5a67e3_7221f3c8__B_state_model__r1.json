@@ -1,0 +1,104 @@
+{
+  "agent_error": true,
+  "complexity_category": "TYPE_5_MULTI_STEP",
+  "condition": "B_state_model",
+  "error_message": "StateModelDeliveryError: state model delivery failed: route=UNRESOLVED, records=8, tokens=829; non-empty COMPLETE state context required",
+  "experiment": "experiment_1",
+  "fingerprint_match": null,
+  "fingerprint_mismatch_reason": null,
+  "finished_at": "2026-09-28T06:35:17.480561+00:00",
+  "goal_states": [
+    "AGENT_RUNNING",
+    "VERIFIED",
+    "RECORDED"
+  ],
+  "initial_state_fingerprint": "63bccb645c6158cf23310d6fd633ad3966ebde05112baf78f8141a81b11ca689",
+  "input_tokens": null,
+  "invalid_action_count": 0,
+  "latency_ms": 0,
+  "max_steps": 5,
+  "model_name": "space-bunny-alpha",
+  "model_provider": "openrouter",
+  "orchestrator": "react",
+  "output_tokens": null,
+  "overall_success": false,
+  "read_query_count": 0,
+  "run_index": 1,
+  "run_uid": "b54cddf76b0248f7b5e27c3a4cac2249",
+  "runtime_database_id": "db_1790577296107_y4mjvpgqo",
+  "seed_database_file": "Domain Wise DBs and Task-DB Mappings/csm/dbs/db_1762254390925_u5icw4thh.sql",
+  "started_at": "",
+  "state_retrieval": {
+    "anchor_row_id": "5",
+    "anchor_status": "RESOLVED",
+    "anchor_table": "product",
+    "context_tokens_injected": 0,
+    "retrieval_latency_ms": 4228.336100000888,
+    "retrieved_records": 8,
+    "retrieved_rows": [
+      [
+        "account",
+        "40"
+      ],
+      [
+        "customer_case",
+        "915"
+      ],
+      [
+        "customer_case",
+        "917"
+      ],
+      [
+        "customer_case",
+        "921"
+      ],
+      [
+        "customer_case",
+        "925"
+      ],
+      [
+        "customer_case",
+        "926"
+      ],
+      [
+        "customer_case",
+        "928"
+      ],
+      [
+        "product",
+        "5"
+      ]
+    ],
+    "retrieved_table_names": [
+      "account",
+      "customer_case",
+      "product"
+    ],
+    "retrieved_tables": 3,
+    "retrieved_tokens": 829,
+    "state_error": null,
+    "state_model_available": false,
+    "state_model_delivered": false,
+    "state_retrieval_count": 1,
+    "state_route_status": "UNRESOLVED"
+  },
+  "steps_taken": 0,
+  "task_id": "task_20260102_161510_799_ad5a67e3_7221f3c8",
+  "temperature": 0.0,
+  "timings_ms": {
+    "agent": 22752.89610004984,
+    "lost_to_collision": 0.0,
+    "verify": 0.0
+  },
+  "tool_call_count": 0,
+  "tool_mode": "oracle",
+  "verifier_results_collapsed": {},
+  "verifier_results_indexed": {},
+  "verifier_summary_collapsed": {
+    "failed": 0,
+    "pass_rate": 0.0,
+    "passed": 0,
+    "total": 0
+  },
+  "verifier_summary_indexed": {}
+}

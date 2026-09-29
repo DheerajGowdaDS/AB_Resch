@@ -1,0 +1,292 @@
+{
+  "agent_error": false,
+  "complexity_category": "TYPE_4_CROSS_ENTITY",
+  "condition": "A_baseline",
+  "error_message": null,
+  "experiment": "experiment_1",
+  "experiment_version": "V1.2-STATE-MODEL-REFINED",
+  "fingerprint_match": null,
+  "fingerprint_mismatch_reason": null,
+  "finished_at": "2026-09-28T15:32:05.853836+00:00",
+  "goal_states": [
+    "AGENT_RUNNING",
+    "VERIFIED",
+    "RECORDED"
+  ],
+  "initial_state_fingerprint": "63bccb645c6158cf23310d6fd633ad3966ebde05112baf78f8141a81b11ca689",
+  "input_tokens": 141761,
+  "invalid_action_count": 0,
+  "latency_ms": 166860,
+  "manifest_hash": null,
+  "max_steps": 15,
+  "model_name": "space-bunny-alpha",
+  "model_provider": "openrouter",
+  "orchestrator": "react",
+  "output_tokens": 7601,
+  "overall_success": false,
+  "read_query_count": 24,
+  "run_index": 1,
+  "run_uid": "3ae586903aea499cb1b9f6b493c0a786",
+  "runtime_database_id": "db_1790609353738_zmwbf9kot",
+  "seed_database_file": "Domain Wise DBs and Task-DB Mappings/csm/dbs/db_1762254390925_u5icw4thh.sql",
+  "started_at": "2026-09-28T15:29:13.738942+00:00",
+  "state_retrieval": null,
+  "steps_taken": 14,
+  "task_id": "task_20260101_043715_660_a8eea1c0_7304e48e",
+  "temperature": 0.0,
+  "timings_ms": {
+    "agent": 172919.74220005795,
+    "lost_to_collision": 9.0,
+    "verify": 166860.0
+  },
+  "tool_call_count": 29,
+  "tool_mode": "oracle",
+  "verifier_results_collapsed": {
+    "add_location": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM location WHERE location_id = 907 AND name = 'Stark Industries - New Lab' AND active = 1;"
+    },
+    "add_new_entitlement": {
+      "actual": 154,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 154 vs 154",
+      "expected": 154,
+      "passed": true,
+      "query": "SELECT contract_id FROM entitlement WHERE entitlement_id = 432;"
+    },
+    "assign_case_to_user": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM user_group_member WHERE user_id = 127 AND group_id = 2;"
+    },
+    "create_new_case": {
+      "actual": 10,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 10 vs 10",
+      "expected": 10,
+      "passed": true,
+      "query": "SELECT contact_id FROM customer_case WHERE case_id = 1233;"
+    },
+    "enlist_new_contract": {
+      "actual": "2026-11-27",
+      "comparison_type": "equals",
+      "details": "Comparison equals: 2026-11-27 vs 2026-11-27",
+      "expected": "2026-11-27",
+      "passed": true,
+      "query": "SELECT end_date FROM contract WHERE contract_id = 154;"
+    },
+    "link_case_knowledge": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM case_knowledge WHERE case_id = 1233 AND knowledge_id = 209 AND used_as = 'suggested';"
+    },
+    "link_new_case_sla": {
+      "actual": "critical",
+      "comparison_type": "equals",
+      "details": "Comparison equals: critical vs critical",
+      "expected": "critical",
+      "passed": true,
+      "query": "SELECT applies_to_priority FROM sla_definition WHERE sla_def_id = 6;"
+    },
+    "register_new_installed_product": {
+      "actual": [],
+      "comparison_type": "equals",
+      "details": "Comparison equals: [] vs in_use",
+      "expected": "in_use",
+      "passed": false,
+      "query": "SELECT status FROM installed_product WHERE installed_product_id = 301;"
+    },
+    "send_notification": {
+      "actual": null,
+      "comparison_type": "equals",
+      "details": "Comparison equals: None vs 209",
+      "expected": 209,
+      "passed": false,
+      "query": "SELECT knowledge_id FROM notification WHERE case_id = 1233 AND email = 'marc.henry@stark-industries.com';"
+    },
+    "update_case": {
+      "actual": "new",
+      "comparison_type": "equals",
+      "details": "Comparison equals: new vs in_progress",
+      "expected": "in_progress",
+      "passed": false,
+      "query": "SELECT state FROM customer_case WHERE case_id = 1233;"
+    }
+  },
+  "verifier_results_indexed": {
+    "0:add_location": {
+      "actual": [],
+      "comparison_type": "equals",
+      "details": "Comparison equals: [] vs london",
+      "expected": "london",
+      "passed": false,
+      "query": "SELECT city FROM location WHERE location_id = 907;"
+    },
+    "10:create_new_case": {
+      "actual": 10,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 10 vs 10",
+      "expected": 10,
+      "passed": true,
+      "query": "SELECT contact_id FROM customer_case WHERE case_id = 1233;"
+    },
+    "11:assign_case_to_user": {
+      "actual": null,
+      "comparison_type": "equals",
+      "details": "Comparison equals: None vs 127",
+      "expected": 127,
+      "passed": false,
+      "query": "SELECT assigned_to FROM customer_case WHERE case_id = 1233;"
+    },
+    "12:assign_case_to_user": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM user_group_member WHERE user_id = 127 AND group_id = 2;"
+    },
+    "13:update_case": {
+      "actual": "new",
+      "comparison_type": "equals",
+      "details": "Comparison equals: new vs in_progress",
+      "expected": "in_progress",
+      "passed": false,
+      "query": "SELECT state FROM customer_case WHERE case_id = 1233;"
+    },
+    "14:link_new_case_sla": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM case_sla WHERE case_id = 1233 AND sla_def_id = 6 AND stage = 'in_progress';"
+    },
+    "15:link_new_case_sla": {
+      "actual": "critical",
+      "comparison_type": "equals",
+      "details": "Comparison equals: critical vs critical",
+      "expected": "critical",
+      "passed": true,
+      "query": "SELECT applies_to_priority FROM sla_definition WHERE sla_def_id = 6;"
+    },
+    "16:link_case_knowledge": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM case_knowledge WHERE case_id = 1233 AND knowledge_id = 209 AND used_as = 'suggested';"
+    },
+    "17:send_notification": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM notification WHERE case_id = 1233 AND email = 'marc.henry@stark-industries.com' AND type = 'solution_proposal';"
+    },
+    "18:send_notification": {
+      "actual": null,
+      "comparison_type": "equals",
+      "details": "Comparison equals: None vs 209",
+      "expected": 209,
+      "passed": false,
+      "query": "SELECT knowledge_id FROM notification WHERE case_id = 1233 AND email = 'marc.henry@stark-industries.com';"
+    },
+    "1:link_case_knowledge": {
+      "actual": "published",
+      "comparison_type": "equals",
+      "details": "Comparison equals: published vs published",
+      "expected": "published",
+      "passed": true,
+      "query": "SELECT state FROM knowledge WHERE knowledge_id = 209;"
+    },
+    "2:register_new_installed_product": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM installed_product WHERE installed_product_id = 301 AND location_id = 907 AND product_id = 139;"
+    },
+    "3:add_location": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM location WHERE location_id = 907 AND name = 'Stark Industries - New Lab' AND active = 1;"
+    },
+    "4:register_new_installed_product": {
+      "actual": [],
+      "comparison_type": "equals",
+      "details": "Comparison equals: [] vs in_use",
+      "expected": "in_use",
+      "passed": false,
+      "query": "SELECT status FROM installed_product WHERE installed_product_id = 301;"
+    },
+    "5:enlist_new_contract": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM contract WHERE contract_id = 154 AND account_id = 8 AND status = 'active';"
+    },
+    "6:enlist_new_contract": {
+      "actual": "2026-11-27",
+      "comparison_type": "equals",
+      "details": "Comparison equals: 2026-11-27 vs 2026-11-27",
+      "expected": "2026-11-27",
+      "passed": true,
+      "query": "SELECT end_date FROM contract WHERE contract_id = 154;"
+    },
+    "7:add_new_entitlement": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM entitlement WHERE entitlement_id = 432 AND product_id = 139 AND support_level = 'enterprise' AND coverage_hours = 'h24x7';"
+    },
+    "8:add_new_entitlement": {
+      "actual": 154,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 154 vs 154",
+      "expected": 154,
+      "passed": true,
+      "query": "SELECT contract_id FROM entitlement WHERE entitlement_id = 432;"
+    },
+    "9:create_new_case": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM customer_case WHERE case_id = 1233 AND priority = 'critical' AND installed_product_id = 301;"
+    }
+  },
+  "verifier_summary_collapsed": {
+    "failed": 4,
+    "pass_rate": 0.6,
+    "passed": 6,
+    "total": 10
+  },
+  "verifier_summary_indexed": {
+    "failed": 9,
+    "pass_rate": 0.5263157894736842,
+    "passed": 10,
+    "total": 19
+  }
+}

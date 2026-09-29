@@ -1,0 +1,37 @@
+# ---------------------------------------------------------------------------
+# State Model 2.0 / GGQR research workspace
+# ---------------------------------------------------------------------------
+# NOTE: `EnterpriseOps-Gym/.gitignore` is authoritative for the benchmark
+# subtree (it already excludes `conf/` and `logs/`). This root file adds the
+# same protections for the workspace root, which had NO ignore file at all --
+# without it, `__pycache__` trees and the credential-bearing paths below would
+# have been committed.
+
+# --- Python caches (regenerable) -------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# --- Secrets and local config: NEVER commit ---------------------------------
+# `conf/llm/my-model.json` and `logs/llm_smoke.py` contain a live LLM API key.
+.env
+.env.*
+conf/
+logs/
+secrets/
+credentials.json
+*.pem
+*.key
+*.p12
+
+# --- Derived experiment data (regenerable from the seed archive) ----------
+.seed_cache/
+
+# --- OS noise --------------------------------------------------------------
+.DS_Store
+Thumbs.db

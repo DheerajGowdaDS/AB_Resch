@@ -1,0 +1,299 @@
+{
+  "report": {
+    "title": "EnterpriseOps-Gym x csm_env \u2014 live verification source of truth",
+    "generated_at_utc": "2026-09-24T15:27:52.777139+00:00",
+    "scope": "Docker-hosted csm-server, seeded CSM database, full live test suite + dynamic mutation cycle, with before/after snapshots"
+  },
+  "system": {
+    "docker_container": {
+      "Command": "\"python -m uvicorn m\u00e2\u20ac\u00a6\"",
+      "CreatedAt": "2026-09-24 16:13:40 +0530 IST",
+      "HealthStatus": "healthy",
+      "ID": "e5a4f04df302",
+      "Image": "shivakrishnareddyma225/enterpriseops-gym-mcp-csm:latest",
+      "Labels": "desktop.docker.io/ports.scheme=v2,desktop.docker.io/ports/8005/tcp=:8001",
+      "LocalVolumes": "0",
+      "Mounts": "",
+      "Names": "csm-server",
+      "Networks": "bridge",
+      "Platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      },
+      "Ports": "0.0.0.0:8001->8005/tcp, [::]:8001->8005/tcp",
+      "RunningFor": "5 hours ago",
+      "Size": "2.54MB (virtual 296MB)",
+      "State": "running",
+      "Status": "Up 5 hours (healthy)"
+    },
+    "server": {
+      "base_url": "http://localhost:8001",
+      "health": {
+        "status_code": 200,
+        "body": {
+          "status": "healthy",
+          "service": "sn-csm"
+        }
+      }
+    },
+    "database": {
+      "database_id": "db_1762254390925_u5icw4thh",
+      "seed_source": "gym_dbs.zip :: Domain Wise DBs and Task-DB Mappings/csm/dbs/db_1762254390925_u5icw4thh.sql",
+      "seeded_via": "manual POST /api/seed-database",
+      "note": "manually seeded, so the executor's auto-cleanup does not cover it; delete via /api/delete-database when done"
+    }
+  },
+  "test_run": {
+    "command": "python -m pytest csm_env/tests tests/test_csm_wiring_smoke.py -p no:cacheprovider --asyncio-mode=auto",
+    "env_vars": {
+      "CSM_LIVE_BASE_URL": "http://localhost:8001",
+      "CSM_LIVE_DATABASE_ID": "db_1762254390925_u5icw4thh"
+    },
+    "note": "--asyncio-mode=auto is a CLI-only harness flag; the 3 live opt-in tests lack @pytest.mark.asyncio markers, no source files were edited",
+    "results": {
+      "total": 124,
+      "passed": 124,
+      "failed": 0,
+      "skipped": 0,
+      "duration_s": 3.68,
+      "breakdown": {
+        "csm_env_offline": 111,
+        "csm_env_live_opt_in": 3,
+        "wiring_smoke": 10
+      }
+    },
+    "live_opt_in_tests": [
+      "csm_env/tests/verification/test_live_opt_in.py::test_live_schema_manifest_matches_database",
+      "csm_env/tests/verification/test_live_opt_in.py::test_live_case_routing_round_trip",
+      "csm_env/tests/verification/test_live_opt_in.py::test_live_graph_sql_equivalence"
+    ]
+  },
+  "mutation_cycle": {
+    "purpose": "prove live writes reach the DB and csm_env fresh reads reflect them instantly",
+    "write_path": "MCP tool update_case via benchmark.mcp_client.MCPClient (sql-runner is read-only by design, 400 on UPDATE)",
+    "target": "customer_case.case_id = 1, field priority",
+    "phases": [
+      {
+        "step": "before",
+        "priority": "critical"
+      },
+      {
+        "step": "mutate",
+        "action": "update_case(case_id=1, priority='low')"
+      },
+      {
+        "step": "after_fresh_read",
+        "priority": "low",
+        "note": "cache bypassed, fresh DB read"
+      },
+      {
+        "step": "revert",
+        "action": "update_case(case_id=1, priority='critical')"
+      },
+      {
+        "step": "restored",
+        "priority": "critical"
+      }
+    ],
+    "assertions_passed": true
+  },
+  "snapshots_recorded_during_run": {
+    "snapshot_1_before_live_suite": {
+      "captured_at_utc": "2026-09-24T15:19:15.431Z",
+      "server_health": {
+        "status_code": 200,
+        "body": {
+          "status": "healthy",
+          "service": "sn-csm"
+        }
+      },
+      "table_row_counts": {
+        "account": 52,
+        "customer_case": 1232,
+        "interaction": 1232,
+        "knowledge": 369,
+        "product": 240
+      },
+      "customer_case_1": {
+        "case_id": 1,
+        "number": "CS-0000001",
+        "priority": "critical",
+        "state": "new",
+        "assigned_to": 403,
+        "account_id": 1,
+        "sys_updated_on": "2026-09-24 15:10:43"
+      },
+      "case_1_interactions": 1
+    },
+    "snapshot_2_after_live_suite": {
+      "captured_at_utc": "2026-09-24T15:19:35.400Z",
+      "server_health": {
+        "status_code": 200,
+        "body": {
+          "status": "healthy",
+          "service": "sn-csm"
+        }
+      },
+      "table_row_counts": {
+        "account": 52,
+        "customer_case": 1232,
+        "interaction": 1232,
+        "knowledge": 369,
+        "product": 240
+      },
+      "customer_case_1": {
+        "case_id": 1,
+        "number": "CS-0000001",
+        "priority": "critical",
+        "state": "new",
+        "assigned_to": 403,
+        "account_id": 1,
+        "sys_updated_on": "2026-09-24 15:10:43"
+      },
+      "case_1_interactions": 1
+    },
+    "snapshot_3_after_mutation_cycle": {
+      "captured_at_utc": "2026-09-24T15:20:09.765Z",
+      "server_health": {
+        "status_code": 200,
+        "body": {
+          "status": "healthy",
+          "service": "sn-csm"
+        }
+      },
+      "table_row_counts": {
+        "account": 52,
+        "customer_case": 1232,
+        "interaction": 1232,
+        "knowledge": 369,
+        "product": 240
+      },
+      "customer_case_1": {
+        "case_id": 1,
+        "number": "CS-0000001",
+        "priority": "critical",
+        "state": "new",
+        "assigned_to": 403,
+        "account_id": 1,
+        "sys_updated_on": "2026-09-24 15:19:47"
+      },
+      "case_1_interactions": 1
+    }
+  },
+  "current_state_at_generation": {
+    "captured_at_utc": "2026-09-24T15:27:52.777139+00:00",
+    "server_health": {
+      "status_code": 200,
+      "body": {
+        "status": "healthy",
+        "service": "sn-csm"
+      }
+    },
+    "table_row_counts": {
+      "account": 52,
+      "customer_case": 1232,
+      "interaction": 1232,
+      "knowledge": 369,
+      "product": 240
+    },
+    "customer_case_1": {
+      "case_id": 1,
+      "number": "CS-0000001",
+      "priority": "critical",
+      "state": "new",
+      "assigned_to": 403,
+      "account_id": 1,
+      "sys_updated_on": "2026-09-24 15:19:47"
+    },
+    "case_1_interactions": 1
+  },
+  "diffs": {
+    "suite_impact_snapshot1_vs_snapshot2": {
+      "changed": [],
+      "unchanged_fields": [
+        "case_1_interactions",
+        "customer_case_1.account_id",
+        "customer_case_1.assigned_to",
+        "customer_case_1.case_id",
+        "customer_case_1.number",
+        "customer_case_1.priority",
+        "customer_case_1.state",
+        "customer_case_1.sys_updated_on",
+        "server_health.body.service",
+        "server_health.body.status",
+        "server_health.status_code",
+        "table_row_counts.account",
+        "table_row_counts.customer_case",
+        "table_row_counts.interaction",
+        "table_row_counts.knowledge",
+        "table_row_counts.product"
+      ],
+      "verdict": "IDENTICAL"
+    },
+    "overall_impact_snapshot1_vs_snapshot3": {
+      "changed": [
+        {
+          "field": "customer_case_1.sys_updated_on",
+          "from": "2026-09-24 15:10:43",
+          "to": "2026-09-24 15:19:47"
+        }
+      ],
+      "unchanged_fields": [
+        "case_1_interactions",
+        "customer_case_1.account_id",
+        "customer_case_1.assigned_to",
+        "customer_case_1.case_id",
+        "customer_case_1.number",
+        "customer_case_1.priority",
+        "customer_case_1.state",
+        "server_health.body.service",
+        "server_health.body.status",
+        "server_health.status_code",
+        "table_row_counts.account",
+        "table_row_counts.customer_case",
+        "table_row_counts.interaction",
+        "table_row_counts.knowledge",
+        "table_row_counts.product"
+      ],
+      "verdict": "1 field(s) changed"
+    },
+    "snapshot3_vs_current_state": {
+      "changed": [],
+      "unchanged_fields": [
+        "case_1_interactions",
+        "customer_case_1.account_id",
+        "customer_case_1.assigned_to",
+        "customer_case_1.case_id",
+        "customer_case_1.number",
+        "customer_case_1.priority",
+        "customer_case_1.state",
+        "customer_case_1.sys_updated_on",
+        "server_health.body.service",
+        "server_health.body.status",
+        "server_health.status_code",
+        "table_row_counts.account",
+        "table_row_counts.customer_case",
+        "table_row_counts.interaction",
+        "table_row_counts.knowledge",
+        "table_row_counts.product"
+      ],
+      "verdict": "IDENTICAL"
+    }
+  },
+  "conclusions": [
+    "124/124 tests passed (111 offline + 3 live opt-in + 10 wiring smoke).",
+    "Live suite is fully read-only: snapshot_1 == snapshot_2 in every field.",
+    "Dynamic write path proven: MCP update_case write was visible to fresh csm_env reads immediately; value reverted afterwards.",
+    "Only residual system change: customer_case 1 sys_updated_on bumped by the server's audit trigger (15:10:43 -> 15:19:47); all values restored."
+  ],
+  "artifacts": [
+    "csm_env/ (wired package)",
+    "csm_integration.py",
+    "tests/test_csm_wiring_smoke.py",
+    "live_snapshot.py",
+    "live_wiring_demo.py",
+    "live_freshness_demo.py",
+    "generate_live_report.py",
+    "live_verification_report.json"
+  ]
+}

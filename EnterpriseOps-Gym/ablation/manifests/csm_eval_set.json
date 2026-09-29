@@ -1,0 +1,742 @@
+{
+  "categories": {
+    "TYPE_1_SINGLE_ENTITY": 1,
+    "TYPE_2_ONE_HOP": 0,
+    "TYPE_3_MULTI_HOP": 1,
+    "TYPE_4_CROSS_ENTITY": 4,
+    "TYPE_5_MULTI_STEP": 5
+  },
+  "eval_set_id": "csm-eval-set",
+  "generated_from": "data/revised/csm",
+  "schema_version": "1.0.0",
+  "task_count": 11,
+  "tasks": [
+    {
+      "category_rationale": "asset path plus 3 other famil(ies): ['asset', 'case', 'commercial', 'party']",
+      "complexity_category": "TYPE_4_CROSS_ENTITY",
+      "database_id": null,
+      "ggqr_task_type": "check_entitlement",
+      "initial_state_fingerprint": null,
+      "number_of_runs": 1,
+      "reference_entities": [
+        "case_sla",
+        "customer_case",
+        "entitlement",
+        "interaction",
+        "location",
+        "product",
+        "user",
+        "user_group"
+      ],
+      "reference_names": [],
+      "reference_rows": [],
+      "reset_database_between_runs": true,
+      "seed_database_file": "Domain Wise DBs and Task-DB Mappings/csm/dbs/db_1762254390925_u5icw4thh.sql",
+      "selected_tools_count": 11,
+      "signals": {
+        "actions": [
+          "add",
+          "assign",
+          "ensure",
+          "register",
+          "update"
+        ],
+        "entity_count": 8,
+        "family_span": [
+          "asset",
+          "case",
+          "commercial",
+          "party"
+        ],
+        "literals": [
+          "PA-3220"
+        ],
+        "matched_tables": [
+          "case_sla",
+          "customer_case",
+          "entitlement",
+          "interaction",
+          "location",
+          "product",
+          "user",
+          "user_group"
+        ],
+        "proper_nouns": [
+          "Palo Alto Networks PA-3220",
+          "Escalation Management",
+          "Stark Industries",
+          "Resolution SLA",
+          "Curtis McCoy",
+          "Enterprise",
+          "Marc Henry",
+          "Dataplane",
+          "Variant"
+        ],
+        "reads": [],
+        "sequence_cues": [],
+        "serial_suffixes": [],
+        "task_id": "task_20251205_153330_906_a8eea1c0_8c7a6205",
+        "tool_count": 11
+      },
+      "task_config_path": "data/revised/csm/task_20251205_153330_906_a8eea1c0_8c7a6205.json",
+      "task_id": "task_20251205_153330_906_a8eea1c0_8c7a6205",
+      "verifier_count": 11
+    },
+    {
+      "category_rationale": "read+action interleaving (reads=['review'], actions=5, cues=[])",
+      "complexity_category": "TYPE_5_MULTI_STEP",
+      "database_id": null,
+      "ggqr_task_type": "case_overview",
+      "initial_state_fingerprint": null,
+      "number_of_runs": 1,
+      "reference_entities": [
+        "account",
+        "installed_product",
+        "location",
+        "notification",
+        "product"
+      ],
+      "reference_names": [],
+      "reference_rows": [],
+      "reset_database_between_runs": true,
+      "seed_database_file": "Domain Wise DBs and Task-DB Mappings/csm/dbs/db_1762254390925_u5icw4thh.sql",
+      "selected_tools_count": 8,
+      "signals": {
+        "actions": [
+          "add",
+          "change",
+          "ensure",
+          "set",
+          "update"
+        ],
+        "entity_count": 5,
+        "family_span": [
+          "asset",
+          "commercial",
+          "party"
+        ],
+        "literals": [],
+        "matched_tables": [
+          "account",
+          "installed_product",
+          "location",
+          "notification",
+          "product"
+        ],
+        "proper_nouns": [
+          "Pratt Curve",
+          "P25-serial",
+          "London"
+        ],
+        "reads": [
+          "review"
+        ],
+        "sequence_cues": [],
+        "serial_suffixes": [],
+        "task_id": "task_20251205_154853_044_d4a463c3_fce76046",
+        "tool_count": 8
+      },
+      "task_config_path": "data/revised/csm/task_20251205_154853_044_d4a463c3_fce76046.json",
+      "task_id": "task_20251205_154853_044_d4a463c3_fce76046",
+      "verifier_count": 4
+    },
+    {
+      "category_rationale": "asset path plus 2 other famil(ies): ['asset', 'case', 'party']",
+      "complexity_category": "TYPE_4_CROSS_ENTITY",
+      "database_id": null,
+      "ggqr_task_type": "case_overview",
+      "initial_state_fingerprint": null,
+      "number_of_runs": 1,
+      "reference_entities": [
+        "account",
+        "contact",
+        "customer_case",
+        "installed_product",
+        "interaction",
+        "location",
+        "product"
+      ],
+      "reference_names": [],
+      "reference_rows": [],
+      "reset_database_between_runs": true,
+      "seed_database_file": "Domain Wise DBs and Task-DB Mappings/csm/dbs/db_1762254390925_u5icw4thh.sql",
+      "selected_tools_count": 11,
+      "signals": {
+        "actions": [
+          "log"
+        ],
+        "entity_count": 7,
+        "family_span": [
+          "asset",
+          "case",
+          "party"
+        ],
+        "literals": [],
+        "matched_tables": [
+          "account",
+          "contact",
+          "customer_case",
+          "installed_product",
+          "interaction",
+          "location",
+          "product"
+        ],
+        "proper_nouns": [
+          "Dell PowerEdge R740",
+          "Dell"
+        ],
+        "reads": [],
+        "sequence_cues": [],
+        "serial_suffixes": [
+          "9300"
+        ],
+        "task_id": "task_20251210_002938_761_897c3e0b_f075229a",
+        "tool_count": 11
+      },
+      "task_config_path": "data/revised/csm/task_20251210_002938_761_897c3e0b_f075229a.json",
+      "task_id": "task_20251210_002938_761_897c3e0b_f075229a",
+      "verifier_count": 9
+    },
+    {
+      "category_rationale": "read+action interleaving (reads=['check', 'confirm', 'validate'], actions=7, cues=['as part of', 'first,', 'next,', 'then'])",
+      "complexity_category": "TYPE_5_MULTI_STEP",
+      "database_id": null,
+      "ggqr_task_type": "check_entitlement",
+      "initial_state_fingerprint": null,
+      "number_of_runs": 1,
+      "reference_entities": [
+        "account",
+        "case_sla",
+        "customer_case",
+        "entitlement",
+        "interaction",
+        "sla_definition",
+        "user_group"
+      ],
+      "reference_names": [
+        [
+          "customer_case",
+          "CS-0000888"
+        ]
+      ],
+      "reference_rows": [],
+      "reset_database_between_runs": true,
+      "seed_database_file": "Domain Wise DBs and Task-DB Mappings/csm/dbs/db_1762254390925_u5icw4thh.sql",
+      "selected_tools_count": 14,
+      "signals": {
+        "actions": [
+          "apply",
+          "create",
+          "ensure",
+          "link",
+          "open",
+          "register",
+          "update"
+        ],
+        "entity_count": 7,
+        "family_span": [
+          "case",
+          "commercial",
+          "party",
+          "reference"
+        ],
+        "literals": [
+          "CS-0000888"
+        ],
+        "matched_tables": [
+          "account",
+          "case_sla",
+          "customer_case",
+          "entitlement",
+          "interaction",
+          "sla_definition",
+          "user_group"
+        ],
+        "proper_nouns": [
+          "Network Resilience Health Check",
+          "CS-0000888 for Stark",
+          "Petersen and Palmer",
+          "Troubleshooting",
+          "Curtis Mccoy",
+          "Validate",
+          "Withdraw",
+          "Next"
+        ],
+        "reads": [
+          "check",
+          "confirm",
+          "validate"
+        ],
+        "sequence_cues": [
+          "as part of",
+          "first,",
+          "next,",
+          "then"
+        ],
+        "serial_suffixes": [],
+        "task_id": "task_20251210_113549_827_d4a463c3_47b48a98",
+        "tool_count": 14
+      },
+      "task_config_path": "data/revised/csm/task_20251210_113549_827_d4a463c3_47b48a98.json",
+      "task_id": "task_20251210_113549_827_d4a463c3_47b48a98",
+      "verifier_count": 6
+    },
+    {
+      "category_rationale": "5 entities across families ['case', 'commercial', 'party']",
+      "complexity_category": "TYPE_3_MULTI_HOP",
+      "database_id": null,
+      "ggqr_task_type": "check_entitlement",
+      "initial_state_fingerprint": null,
+      "number_of_runs": 1,
+      "reference_entities": [
+        "case_sla",
+        "contract",
+        "customer_case",
+        "entitlement",
+        "user_group"
+      ],
+      "reference_names": [],
+      "reference_rows": [],
+      "reset_database_between_runs": true,
+      "seed_database_file": "Domain Wise DBs and Task-DB Mappings/csm/dbs/db_1762254390925_u5icw4thh.sql",
+      "selected_tools_count": 15,
+      "signals": {
+        "actions": [
+          "link",
+          "log"
+        ],
+        "entity_count": 5,
+        "family_span": [
+          "case",
+          "commercial",
+          "party"
+        ],
+        "literals": [
+          "PA-3220"
+        ],
+        "matched_tables": [
+          "case_sla",
+          "contract",
+          "customer_case",
+          "entitlement",
+          "user_group"
+        ],
+        "proper_nouns": [
+          "Stark Industries PA-3220",
+          "Escalation Management",
+          "Enterprise"
+        ],
+        "reads": [],
+        "sequence_cues": [],
+        "serial_suffixes": [
+          "8853"
+        ],
+        "task_id": "task_20251231_162628_797_a8eea1c0_0a53db6c",
+        "tool_count": 15
+      },
+      "task_config_path": "data/revised/csm/task_20251231_162628_797_a8eea1c0_0a53db6c.json",
+      "task_id": "task_20251231_162628_797_a8eea1c0_0a53db6c",
+      "verifier_count": 12
+    },
+    {
+      "category_rationale": "asset path plus 3 other famil(ies): ['asset', 'case', 'commercial', 'party']",
+      "complexity_category": "TYPE_4_CROSS_ENTITY",
+      "database_id": null,
+      "ggqr_task_type": "check_entitlement",
+      "initial_state_fingerprint": null,
+      "number_of_runs": 1,
+      "reference_entities": [
+        "contract",
+        "customer_case",
+        "entitlement",
+        "installed_product",
+        "interaction",
+        "location",
+        "notification",
+        "user"
+      ],
+      "reference_names": [],
+      "reference_rows": [],
+      "reset_database_between_runs": true,
+      "seed_database_file": "Domain Wise DBs and Task-DB Mappings/csm/dbs/db_1762254390925_u5icw4thh.sql",
+      "selected_tools_count": 18,
+      "signals": {
+        "actions": [
+          "apply",
+          "assign"
+        ],
+        "entity_count": 8,
+        "family_span": [
+          "asset",
+          "case",
+          "commercial",
+          "party"
+        ],
+        "literals": [
+          "JEX-987654-NL"
+        ],
+        "matched_tables": [
+          "contract",
+          "customer_case",
+          "entitlement",
+          "installed_product",
+          "interaction",
+          "location",
+          "notification",
+          "user"
+        ],
+        "proper_nouns": [
+          "Juniper EX4300 Variant",
+          "Stark Industries",
+          "JEX-987654-NL",
+          "Enterprise",
+          "London Lab",
+          "Marc Henry",
+          "Tier"
+        ],
+        "reads": [],
+        "sequence_cues": [],
+        "serial_suffixes": [],
+        "task_id": "task_20260101_043715_660_a8eea1c0_7304e48e",
+        "tool_count": 18
+      },
+      "task_config_path": "data/revised/csm/task_20260101_043715_660_a8eea1c0_7304e48e.json",
+      "task_id": "task_20260101_043715_660_a8eea1c0_7304e48e",
+      "verifier_count": 19
+    },
+    {
+      "category_rationale": "read+action interleaving (reads=[], actions=4, cues=['then'])",
+      "complexity_category": "TYPE_5_MULTI_STEP",
+      "database_id": null,
+      "ggqr_task_type": "check_entitlement",
+      "initial_state_fingerprint": null,
+      "number_of_runs": 1,
+      "reference_entities": [
+        "case_sla",
+        "contact",
+        "contract",
+        "customer_case",
+        "entitlement",
+        "product",
+        "sla_definition"
+      ],
+      "reference_names": [],
+      "reference_rows": [],
+      "reset_database_between_runs": true,
+      "seed_database_file": "Domain Wise DBs and Task-DB Mappings/csm/dbs/db_1762254390925_u5icw4thh.sql",
+      "selected_tools_count": 10,
+      "signals": {
+        "actions": [
+          "add",
+          "attach",
+          "open",
+          "set"
+        ],
+        "entity_count": 7,
+        "family_span": [
+          "asset",
+          "case",
+          "commercial",
+          "party",
+          "reference"
+        ],
+        "literals": [
+          "SSL termination issue on Windows Server node"
+        ],
+        "matched_tables": [
+          "case_sla",
+          "contact",
+          "contract",
+          "customer_case",
+          "entitlement",
+          "product",
+          "sla_definition"
+        ],
+        "proper_nouns": [
+          "Wayne Enterprises' Windows Server",
+          "Windows Server",
+          "Datacenter"
+        ],
+        "reads": [],
+        "sequence_cues": [
+          "then"
+        ],
+        "serial_suffixes": [],
+        "task_id": "task_20260101_122222_300_ad5a67e3_3757206c",
+        "tool_count": 10
+      },
+      "task_config_path": "data/revised/csm/task_20260101_122222_300_ad5a67e3_3757206c.json",
+      "task_id": "task_20260101_122222_300_ad5a67e3_3757206c",
+      "verifier_count": 5
+    },
+    {
+      "category_rationale": "single entity touched (1 table(s), 1 action verb(s))",
+      "complexity_category": "TYPE_1_SINGLE_ENTITY",
+      "database_id": null,
+      "ggqr_task_type": "resolve_case",
+      "initial_state_fingerprint": null,
+      "number_of_runs": 1,
+      "reference_entities": [
+        "customer_case"
+      ],
+      "reference_names": [],
+      "reference_rows": [],
+      "reset_database_between_runs": true,
+      "seed_database_file": "Domain Wise DBs and Task-DB Mappings/csm/dbs/db_1762254390925_u5icw4thh.sql",
+      "selected_tools_count": 10,
+      "signals": {
+        "actions": [
+          "register"
+        ],
+        "entity_count": 1,
+        "family_span": [
+          "case"
+        ],
+        "literals": [],
+        "matched_tables": [
+          "customer_case"
+        ],
+        "proper_nouns": [
+          "Atlassian Jira Data Center",
+          "Perry Watts"
+        ],
+        "reads": [],
+        "sequence_cues": [],
+        "serial_suffixes": [],
+        "task_id": "task_20260102_155148_014_accab84d_910b176a",
+        "tool_count": 10
+      },
+      "task_config_path": "data/revised/csm/task_20260102_155148_014_accab84d_910b176a.json",
+      "task_id": "task_20260102_155148_014_accab84d_910b176a",
+      "verifier_count": 4
+    },
+    {
+      "category_rationale": "read+action interleaving (reads=['check'], actions=5, cues=[])",
+      "complexity_category": "TYPE_5_MULTI_STEP",
+      "database_id": null,
+      "ggqr_task_type": "check_entitlement",
+      "initial_state_fingerprint": null,
+      "number_of_runs": 1,
+      "reference_entities": [
+        "account",
+        "case_sla",
+        "contact",
+        "contract",
+        "entitlement",
+        "installed_product",
+        "interaction",
+        "location",
+        "product",
+        "sla_definition",
+        "user",
+        "user_group"
+      ],
+      "reference_names": [],
+      "reference_rows": [],
+      "reset_database_between_runs": true,
+      "seed_database_file": "Domain Wise DBs and Task-DB Mappings/csm/dbs/db_1762254390925_u5icw4thh.sql",
+      "selected_tools_count": 19,
+      "signals": {
+        "actions": [
+          "apply",
+          "assign",
+          "create",
+          "register",
+          "set"
+        ],
+        "entity_count": 12,
+        "family_span": [
+          "asset",
+          "case",
+          "commercial",
+          "party",
+          "reference"
+        ],
+        "literals": [
+          "elsa.larson@larsonplc.com",
+          "Larson London Office",
+          "SLES Setup Guide",
+          "Larson Operations Desk",
+          "+44-20-3000-6000",
+          "LAR-SLES-2027"
+        ],
+        "matched_tables": [
+          "account",
+          "case_sla",
+          "contact",
+          "contract",
+          "entitlement",
+          "installed_product",
+          "interaction",
+          "location",
+          "product",
+          "sla_definition",
+          "user",
+          "user_group"
+        ],
+        "proper_nouns": [
+          "SUSE Linux Enterprise Server",
+          "Larson Operations Desk",
+          "Larson London Office",
+          "SLES Setup Guide",
+          "LAR-SLES-2027",
+          "So Larson PLC",
+          "Elsa Larson",
+          "Whoever's",
+          "Elsa's",
+          "Larson",
+          "London",
+          "Serial",
+          "Apply",
+          "Elsa",
+          "SLES"
+        ],
+        "reads": [
+          "check"
+        ],
+        "sequence_cues": [],
+        "serial_suffixes": [],
+        "task_id": "task_20260102_161510_799_ad5a67e3_7221f3c8",
+        "tool_count": 19
+      },
+      "task_config_path": "data/revised/csm/task_20260102_161510_799_ad5a67e3_7221f3c8.json",
+      "task_id": "task_20260102_161510_799_ad5a67e3_7221f3c8",
+      "verifier_count": 15
+    },
+    {
+      "category_rationale": "asset path plus 3 other famil(ies): ['asset', 'case', 'party', 'reference']",
+      "complexity_category": "TYPE_4_CROSS_ENTITY",
+      "database_id": null,
+      "ggqr_task_type": "case_overview",
+      "initial_state_fingerprint": null,
+      "number_of_runs": 1,
+      "reference_entities": [
+        "case_sla",
+        "contact",
+        "customer_case",
+        "installed_product",
+        "interaction",
+        "location",
+        "product",
+        "sla_definition",
+        "user_group"
+      ],
+      "reference_names": [],
+      "reference_rows": [],
+      "reset_database_between_runs": true,
+      "seed_database_file": "Domain Wise DBs and Task-DB Mappings/csm/dbs/db_1762254390925_u5icw4thh.sql",
+      "selected_tools_count": 12,
+      "signals": {
+        "actions": [
+          "ensure",
+          "link",
+          "reflect",
+          "register",
+          "update"
+        ],
+        "entity_count": 9,
+        "family_span": [
+          "asset",
+          "case",
+          "party",
+          "reference"
+        ],
+        "literals": [
+          "RHEL-UMB-4500"
+        ],
+        "matched_tables": [
+          "case_sla",
+          "contact",
+          "customer_case",
+          "installed_product",
+          "interaction",
+          "location",
+          "product",
+          "sla_definition",
+          "user_group"
+        ],
+        "proper_nouns": [
+          "Proactive Case Monitoring",
+          "Red Hat Enterprise Linux",
+          "Umbrella's Tokyo",
+          "RHEL-UMB-4500",
+          "Travis Wood",
+          "Umbrella's",
+          "Dec-2026",
+          "Umbrella"
+        ],
+        "reads": [],
+        "sequence_cues": [],
+        "serial_suffixes": [],
+        "task_id": "task_20260102_172945_725_ad5a67e3_5480e26f",
+        "tool_count": 12
+      },
+      "task_config_path": "data/revised/csm/task_20260102_172945_725_ad5a67e3_5480e26f.json",
+      "task_id": "task_20260102_172945_725_ad5a67e3_5480e26f",
+      "verifier_count": 5
+    },
+    {
+      "category_rationale": "read+action interleaving (reads=['investigate'], actions=4, cues=['finally'])",
+      "complexity_category": "TYPE_5_MULTI_STEP",
+      "database_id": null,
+      "ggqr_task_type": "find_knowledge",
+      "initial_state_fingerprint": null,
+      "number_of_runs": 1,
+      "reference_entities": [
+        "customer_case",
+        "knowledge",
+        "notification",
+        "user",
+        "user_group"
+      ],
+      "reference_names": [],
+      "reference_rows": [],
+      "reset_database_between_runs": true,
+      "seed_database_file": "Domain Wise DBs and Task-DB Mappings/csm/dbs/db_1762254390925_u5icw4thh.sql",
+      "selected_tools_count": 14,
+      "signals": {
+        "actions": [
+          "assign",
+          "create",
+          "link",
+          "update"
+        ],
+        "entity_count": 5,
+        "family_span": [
+          "case",
+          "commercial",
+          "party",
+          "reference"
+        ],
+        "literals": [],
+        "matched_tables": [
+          "customer_case",
+          "knowledge",
+          "notification",
+          "user",
+          "user_group"
+        ],
+        "proper_nouns": [
+          "Case Assignment_3",
+          "MySQL Enterprise",
+          "Michael Ward",
+          "Robin Monroe",
+          "Finally",
+          "Variant"
+        ],
+        "reads": [
+          "investigate"
+        ],
+        "sequence_cues": [
+          "finally"
+        ],
+        "serial_suffixes": [],
+        "task_id": "task_20260104_202644_765_00364ece_a86667c0",
+        "tool_count": 14
+      },
+      "task_config_path": "data/revised/csm/task_20260104_202644_765_00364ece_a86667c0.json",
+      "task_id": "task_20260104_202644_765_00364ece_a86667c0",
+      "verifier_count": 6
+    }
+  ]
+}

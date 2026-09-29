@@ -1,0 +1,93 @@
+{
+  "ablation_files_sha256": {
+    "ablation/__init__.py": "3bcfef34f30e55d968df74632d4dcd80ca2f53340ea7f27925696237455d384c",
+    "ablation/conditions.py": "343f8236baeeb27c0575dd1b23a4e01b6deda4a7c4c705dc7d03d3183d362bf0",
+    "ablation/experiment_manifest.py": "ffe5ef9b39b845999f5ff92af246587ead89ccc13333df0d13d547d07c33913d",
+    "ablation/fingerprint.py": "ddaf5228246358303c53b76fee51dd7b2ac9d38dbdef1e2b30b7ae428e1b02e0",
+    "ablation/goals.py": "b17649ddae74738f535519b60cbcbbaefe3da512eca11b21d5be82425b28b8ff",
+    "ablation/gold_state.py": "3a0667ca4fb652500451a908e0f35aede9f5efa587b81460539098b80ad7f17b",
+    "ablation/horizon.py": "1085d00ba71c8043eb16ff369cf7a0cefc41e6e23f91e085db6c0183a1bd2db7",
+    "ablation/initial_relevance.py": "0bc87d36af0b8dc6928932e46031107d6b40949f5b70f378295a07f96636cd85",
+    "ablation/minimal_state.py": "fb2b06482498736e2c9fa13e8a990916e831a9f7ef69fd47c973efad3f0eef7e",
+    "ablation/parity.py": "ce53f3faf408760f0fb4ad8317eb6d706bebf9dc5d7802244bb3d518ab2be41b",
+    "ablation/preflight.py": "39fc3b2d15aa00ff19e6ece6b07f81de886096f3fbcb05c192e5d3bb9f85e4b6",
+    "ablation/relevance.py": "0c6151406dcd302e1a921f5c2f343d1d144d934cb2f813b4c9f8be8bfa43fc36",
+    "ablation/report.py": "3eec9dc39f69e3345cfd9af0b7e8c30ed9517640153b79e7db1cdd72f8b0b844",
+    "ablation/results.py": "73d3df3a978818e1f9f24c4a3816cd7843948c0258c30729f27be04a0efab4af",
+    "ablation/route_policy.py": "c4d22230682c388578570c9f7ef559c6ee76c4cc878256e28ca113033a684b11",
+    "ablation/runner.py": "d39b3f818fa6f4b4299c2b5306c00ef2f2eb0e4888b93ddfca4b187e6bf0c4f8",
+    "ablation/score_bridge.py": "b959955af265a85a84539c429075c862b0a6ad4a28d3f2e67895591fcf157c39",
+    "ablation/seeds.py": "141f1f3301bcfadc2c3cf190c08ee98169ff05132e4b49a21227993ac5a28e39",
+    "ablation/state_model.py": "2f629fddf6801d6dcbea4d92e0a171e3b921374e555086194978f1a4554b6586",
+    "ablation/state_model_orchestrator.py": "cdbc8fcd6fed5e78dfc97f6856ffab088b379b1b04b80c0da50b0ca5d314fd41",
+    "ablation/state_validation.py": "f00b6d40382d916b4f1c1ceb14fd2d55224eae1a20776fede24ccb77f518a713",
+    "ablation/stats.py": "d385e9fed222d8c8a9b433c2e93912da258602631d43803156e2559507e1e5c8",
+    "ablation/task_registry.py": "c88dd831e0b6c1e8c4fe0728698e138a164d3654ac826478978a4db7b5312f16",
+    "ablation/verifier_bridge.py": "5f11e12cafb841a7f221d7a26aba23cc0a6537df673e577a8b0f9550f09dc68d",
+    "ablation/verifier_validation.py": "8526dad5e90b22f155caaf1e41f7f01bf67e52884700fe4feabec99213efc64c",
+    "ablation/verify_pinning.py": "e046e83ac5515cf22cd95f05a5fee301855e55c41e7e3903837ef624c41d3f90"
+  },
+  "benchmark_files_sha256": {
+    "benchmark/executor.py": "d0e1f9d5031cb0a150ec65b951d2ba8e0de2a0994d949f7ca6ff1fa689d96282",
+    "benchmark/llm_client.py": "6228bbe345184a7d4e1ab5bcaec8dcc6455755b3589b588ba27ce994546ae972",
+    "benchmark/mcp_client.py": "5461ce2cdb3126dd57d9c30664edf0ba6bb17f18308f9ad93a126fceca6f6379",
+    "benchmark/models.py": "b4507906214e1d65525a6131b9e24ddbd76c77dffbfb39bf9636bac2639cc9b4",
+    "benchmark/verifier.py": "75ab9bad5561a5841de4bac898fc5d541ad8078ca899abe9a7cb77122eebe864",
+    "benchmark_utils.py": "53664371c88ef712b0ca3b693015127afdf733fbff209ffb34c42fb638e2e10f",
+    "compute_score.py": "2bc35d5601116b951b3f054db852eaff0e2022025ffdeab9a1613b81470bd403",
+    "csm_integration.py": "c870721031dd5048004b2787428d5c84a322f97f16f2ab769896b6a9b24f0c20",
+    "evaluate.py": "ce6ecb0fb6403401b4e971df83c714b784c68658a50f0ee28431615775e12c0f",
+    "orchestrators/base.py": "2a5922346fac989708b31b48dec19902f50889cbef137e6bc61e69a1e827db82",
+    "orchestrators/react.py": "6ceef84c5e8e233bb041e505590095d87e976f57a22195afc08aa3d5da1c9b2c",
+    "utils/task_queue_worker.py": "dbeee80eca2e885ca94ea0a040ce03e2dab3c327640ea79f4ef0646999303fdd"
+  },
+  "csm_env": {
+    "parity": {
+      "changed": [],
+      "gym_package": "csm_env",
+      "identical_count": 62,
+      "is_identical": true,
+      "only_in_gym": [],
+      "only_in_root": [],
+      "root_package": "../csm_env"
+    },
+    "schema_version": "1.0.0",
+    "table_count": 17
+  },
+  "dataset": {
+    "categories": {
+      "TYPE_1_SINGLE_ENTITY": 1,
+      "TYPE_2_ONE_HOP": 0,
+      "TYPE_3_MULTI_HOP": 1,
+      "TYPE_4_CROSS_ENTITY": 4,
+      "TYPE_5_MULTI_STEP": 5
+    },
+    "local_csm_task_count": 11,
+    "published_csm_task_count": 186,
+    "shortfall": 175
+  },
+  "generated_at_epoch": 1790684384,
+  "interpreter": {
+    "executable": "C:\\Users\\gowda\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "implementation": "CPython",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python": "3.11.8"
+  },
+  "seed_archive": {
+    "path": "gym_dbs.zip",
+    "sha256": "d947543d4fba1aabc4aade73d3df955114187b7a94da7ac825c4c31169ddab47"
+  },
+  "task_files_sha256": {
+    "task_20251205_153330_906_a8eea1c0_8c7a6205": "4ff75ccdd51877bac9f811af81eb43b92f51cf4db8c7e6ed9b5ca3977ac99699",
+    "task_20251205_154853_044_d4a463c3_fce76046": "f327badebf45e7e04beb6557b8ab212d0f229ae487e85172172171a5064661d0",
+    "task_20251210_002938_761_897c3e0b_f075229a": "a8e7d9ab119d8b0391cd5e102100b160385622cdd0f01c5965f80f22b782a1ef",
+    "task_20251210_113549_827_d4a463c3_47b48a98": "eec3181160e389394ab941b569692f5d60a32c76295aa206effdb0836bc7cf75",
+    "task_20251231_162628_797_a8eea1c0_0a53db6c": "d5ada5664b97a9adf26cc1c855028ecffaf3198a791c34e74bf1a7bd7e5898c2",
+    "task_20260101_043715_660_a8eea1c0_7304e48e": "e864b4296b70f7c8b6ed989bcd53618d60e4ef4cc96a033fb7c59b4caee9d981",
+    "task_20260101_122222_300_ad5a67e3_3757206c": "7f0b184133317886b61942add13c533ac744b3323d10465ad5aeaf31e0fe317d",
+    "task_20260102_155148_014_accab84d_910b176a": "9eaa3f16df1124a5a2b3f9e8f27870f43adfc6589fcfc6662a62cb3d54b0f906",
+    "task_20260102_161510_799_ad5a67e3_7221f3c8": "4478ac4da30e2ed4716355b8ca0dfd4b34ba61ec31662c8ea1f360a3e76cc59c",
+    "task_20260102_172945_725_ad5a67e3_5480e26f": "01fd2ee2d7877b90115aa2b2c6c5e9199e5ceef1c7ff711bff7409b282154206",
+    "task_20260104_202644_765_00364ece_a86667c0": "e23342e357cf1ada873224c238d4dc4dcd2be5ae7b936cc037f65e5baafa1efe"
+  }
+}

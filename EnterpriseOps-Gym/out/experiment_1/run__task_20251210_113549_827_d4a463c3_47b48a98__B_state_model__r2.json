@@ -1,0 +1,230 @@
+{
+  "agent_error": false,
+  "complexity_category": "TYPE_5_MULTI_STEP",
+  "condition": "B_state_model",
+  "error_message": null,
+  "experiment": "experiment_1",
+  "experiment_version": "V1.2-STATE-MODEL-REFINED",
+  "fingerprint_match": null,
+  "fingerprint_mismatch_reason": null,
+  "finished_at": "2026-09-28T15:18:48.332785+00:00",
+  "goal_states": [
+    "AGENT_RUNNING",
+    "VERIFIED",
+    "RECORDED"
+  ],
+  "initial_state_fingerprint": "63bccb645c6158cf23310d6fd633ad3966ebde05112baf78f8141a81b11ca689",
+  "input_tokens": 183378,
+  "invalid_action_count": 0,
+  "latency_ms": 153843,
+  "manifest_hash": null,
+  "max_steps": 15,
+  "model_name": "space-bunny-alpha",
+  "model_provider": "openrouter",
+  "orchestrator": "react",
+  "output_tokens": 5990,
+  "overall_success": false,
+  "read_query_count": 9,
+  "run_index": 2,
+  "run_uid": "68f8eb901edc457a87dbdf480f8e8c49",
+  "runtime_database_id": "db_1790608572652_xbqjfsru1",
+  "seed_database_file": "Domain Wise DBs and Task-DB Mappings/csm/dbs/db_1762254390925_u5icw4thh.sql",
+  "started_at": "2026-09-28T15:16:12.652217+00:00",
+  "state_retrieval": {
+    "anchor_row_id": "888",
+    "anchor_status": "RESOLVED",
+    "anchor_table": "customer_case",
+    "context_tokens_injected": 1000,
+    "retrieval_latency_ms": 1000.488999998197,
+    "retrieved_records": 13,
+    "retrieved_rows": [
+      [
+        "account",
+        "38"
+      ],
+      [
+        "contract",
+        "95"
+      ],
+      [
+        "contract",
+        "96"
+      ],
+      [
+        "contract",
+        "97"
+      ],
+      [
+        "customer_case",
+        "888"
+      ],
+      [
+        "entitlement",
+        "329"
+      ],
+      [
+        "entitlement",
+        "330"
+      ],
+      [
+        "entitlement",
+        "331"
+      ],
+      [
+        "entitlement",
+        "332"
+      ],
+      [
+        "entitlement",
+        "333"
+      ],
+      [
+        "entitlement",
+        "334"
+      ],
+      [
+        "entitlement",
+        "335"
+      ],
+      [
+        "entitlement",
+        "336"
+      ]
+    ],
+    "retrieved_table_names": [
+      "account",
+      "contract",
+      "customer_case",
+      "entitlement"
+    ],
+    "retrieved_tables": 4,
+    "retrieved_tokens": 1000,
+    "state_error": null,
+    "state_model_available": true,
+    "state_model_delivered": true,
+    "state_retrieval_count": 1,
+    "state_route_status": "COMPLETE"
+  },
+  "steps_taken": 11,
+  "task_id": "task_20251210_113549_827_d4a463c3_47b48a98",
+  "temperature": 0.0,
+  "timings_ms": {
+    "agent": 156436.5004999563,
+    "lost_to_collision": 0.0,
+    "verify": 153843.0
+  },
+  "tool_call_count": 17,
+  "tool_mode": "oracle",
+  "verifier_results_collapsed": {
+    "Verify Knowledge Created": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) AS kb_network_resilience_cnt\nFROM knowledge AS k\nWHERE k.title = 'Network Resilience Health Check Troubleshooting'\nAND k.state = 'published'\nAND k.visibility = 'internal'\nAND k.owner_id = 32\nAND k.product_id = 241;\n"
+    },
+    "Verify New Case": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) AS case_network_resilience_cnt\nFROM customer_case AS cc\nWHERE cc.case_id = 1233 \nAND cc.account_id = 38\nAND cc.contact_id = 84\nAND cc.product_id = 241\nAND cc.channel = 'phone'\nAND cc.priority = 'critical'\nAND cc.state = 'in_progress'\nAND cc.assignment_group_id = 18\nAND cc.escalation = 1\nAND cc.escalation_reason = 'impact';\n"
+    },
+    "Verify New Case Knowledge Link": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) AS case_1233_kb_370_cnt\nFROM case_knowledge AS ck\nWHERE ck.case_id = 1233\nAND ck.knowledge_id = 370\nAND ck.used_as = 'suggested';\n"
+    },
+    "Verify New Case SLA": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) AS case_1234_sla_cnt\nFROM case_sla AS cs\nWHERE cs.case_id = 1233\nAND cs.sla_def_id = 1\nAND cs.stage = 'in_progress';\n"
+    },
+    "Verify New Product": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) AS service_healthy_cnt\nFROM product AS p\nWHERE p.name = 'Network Resilience Health Check'\nAND p.category = 'service'\nAND p.lifecycle_state = 'active';\n"
+    },
+    "Verify Update Case": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) AS case_888_canceled_cnt\nFROM customer_case AS cc\nWHERE cc.case_id = 888\nAND cc.state = 'canceled';\n"
+    }
+  },
+  "verifier_results_indexed": {
+    "0:Verify New Product": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) AS service_healthy_cnt\nFROM product AS p\nWHERE p.name = 'Network Resilience Health Check'\nAND p.category = 'service'\nAND p.lifecycle_state = 'active';\n"
+    },
+    "1:Verify Update Case": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) AS case_888_canceled_cnt\nFROM customer_case AS cc\nWHERE cc.case_id = 888\nAND cc.state = 'canceled';\n"
+    },
+    "2:Verify Knowledge Created": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) AS kb_network_resilience_cnt\nFROM knowledge AS k\nWHERE k.title = 'Network Resilience Health Check Troubleshooting'\nAND k.state = 'published'\nAND k.visibility = 'internal'\nAND k.owner_id = 32\nAND k.product_id = 241;\n"
+    },
+    "3:Verify New Case": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) AS case_network_resilience_cnt\nFROM customer_case AS cc\nWHERE cc.case_id = 1233 \nAND cc.account_id = 38\nAND cc.contact_id = 84\nAND cc.product_id = 241\nAND cc.channel = 'phone'\nAND cc.priority = 'critical'\nAND cc.state = 'in_progress'\nAND cc.assignment_group_id = 18\nAND cc.escalation = 1\nAND cc.escalation_reason = 'impact';\n"
+    },
+    "4:Verify New Case Knowledge Link": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) AS case_1233_kb_370_cnt\nFROM case_knowledge AS ck\nWHERE ck.case_id = 1233\nAND ck.knowledge_id = 370\nAND ck.used_as = 'suggested';\n"
+    },
+    "5:Verify New Case SLA": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) AS case_1234_sla_cnt\nFROM case_sla AS cs\nWHERE cs.case_id = 1233\nAND cs.sla_def_id = 1\nAND cs.stage = 'in_progress';\n"
+    }
+  },
+  "verifier_summary_collapsed": {
+    "failed": 2,
+    "pass_rate": 0.6666666666666666,
+    "passed": 4,
+    "total": 6
+  },
+  "verifier_summary_indexed": {
+    "failed": 2,
+    "pass_rate": 0.6666666666666666,
+    "passed": 4,
+    "total": 6
+  }
+}

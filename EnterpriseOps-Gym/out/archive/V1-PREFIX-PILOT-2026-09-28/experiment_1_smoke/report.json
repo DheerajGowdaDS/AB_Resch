@@ -1,0 +1,450 @@
+{
+  "analysis_notes": [
+    "Primary outcome is task success (all verifiers pass), the benchmark's own definition.",
+    "Stratified tables are exploratory; the pre-registered comparison is the paired one.",
+    "Pooled verifier pass rate is a companion metric, not the official VPR.",
+    "Condition B is fail-closed: runs without a usable state intervention are execution errors, not baseline fallbacks.",
+    "The Experiment-1 causal effect is reported only when the state intervention is delivered on every analyzed B run."
+  ],
+  "by_complexity": {
+    "TYPE_1_SINGLE_ENTITY": {
+      "A_baseline": {
+        "n": 1,
+        "tsr": 0.0,
+        "vpr": 0.5
+      },
+      "B_state_model": {
+        "n": 1,
+        "tsr": 0.0,
+        "vpr": 0.5
+      }
+    },
+    "TYPE_2_ONE_HOP": {
+      "A_baseline": {
+        "n": 0,
+        "tsr": null,
+        "vpr": null
+      },
+      "B_state_model": {
+        "n": 0,
+        "tsr": null,
+        "vpr": null
+      }
+    },
+    "TYPE_3_MULTI_HOP": {
+      "A_baseline": {
+        "n": 0,
+        "tsr": null,
+        "vpr": null
+      },
+      "B_state_model": {
+        "n": 0,
+        "tsr": null,
+        "vpr": null
+      }
+    },
+    "TYPE_4_CROSS_ENTITY": {
+      "A_baseline": {
+        "n": 0,
+        "tsr": null,
+        "vpr": null
+      },
+      "B_state_model": {
+        "n": 0,
+        "tsr": null,
+        "vpr": null
+      }
+    },
+    "TYPE_5_MULTI_STEP": {
+      "A_baseline": {
+        "n": 0,
+        "tsr": null,
+        "vpr": null
+      },
+      "B_state_model": {
+        "n": 0,
+        "tsr": null,
+        "vpr": null
+      }
+    }
+  },
+  "by_steps": {
+    "A_baseline": [
+      {
+        "attribute": "steps_taken",
+        "n": 1,
+        "range": "[-inf, 3)",
+        "tsr": 0.0,
+        "vpr": 0.5
+      },
+      {
+        "attribute": "steps_taken",
+        "n": 0,
+        "range": "[3, 6)",
+        "tsr": null,
+        "vpr": null
+      },
+      {
+        "attribute": "steps_taken",
+        "n": 0,
+        "range": "[6, 10)",
+        "tsr": null,
+        "vpr": null
+      },
+      {
+        "attribute": "steps_taken",
+        "n": 0,
+        "range": "[10, 15)",
+        "tsr": null,
+        "vpr": null
+      },
+      {
+        "attribute": "steps_taken",
+        "n": 0,
+        "range": "[15, inf)",
+        "tsr": null,
+        "vpr": null
+      }
+    ],
+    "B_state_model": [
+      {
+        "attribute": "steps_taken",
+        "n": 1,
+        "range": "[-inf, 3)",
+        "tsr": 0.0,
+        "vpr": 0.5
+      },
+      {
+        "attribute": "steps_taken",
+        "n": 0,
+        "range": "[3, 6)",
+        "tsr": null,
+        "vpr": null
+      },
+      {
+        "attribute": "steps_taken",
+        "n": 0,
+        "range": "[6, 10)",
+        "tsr": null,
+        "vpr": null
+      },
+      {
+        "attribute": "steps_taken",
+        "n": 0,
+        "range": "[10, 15)",
+        "tsr": null,
+        "vpr": null
+      },
+      {
+        "attribute": "steps_taken",
+        "n": 0,
+        "range": "[15, inf)",
+        "tsr": null,
+        "vpr": null
+      }
+    ]
+  },
+  "design": {
+    "baseline": "A_baseline",
+    "manipulated_variable": "state_model_availability",
+    "models": [
+      "openrouter/space-bunny-alpha"
+    ],
+    "orchestrator": [
+      "react"
+    ],
+    "run_indices": [
+      1
+    ],
+    "temperatures": [
+      0.0
+    ],
+    "tool_mode": [
+      "oracle"
+    ],
+    "treatment": "B_state_model"
+  },
+  "evaluation_set": {
+    "categories": {
+      "TYPE_1_SINGLE_ENTITY": 1,
+      "TYPE_2_ONE_HOP": 0,
+      "TYPE_3_MULTI_HOP": 0,
+      "TYPE_4_CROSS_ENTITY": 0,
+      "TYPE_5_MULTI_STEP": 0
+    },
+    "eval_set_id": "csm-eval-set",
+    "schema_version": "1.0.0",
+    "task_count": 1
+  },
+  "experiment": "experiment_1",
+  "experimental_validity": {
+    "causal_effect_estimate_ready": true,
+    "clean_intervention_delivery": true,
+    "reason": "All Condition-B runs delivered a usable state intervention and paired analysis is eligible."
+  },
+  "fingerprint_pairing": {
+    "pairs_flagged": 0,
+    "pairs_matched": 1,
+    "pairs_reviewed": 1,
+    "reasons": []
+  },
+  "generated_at": "2026-09-28T06:15:50.672486+00:00",
+  "headline": {
+    "A_baseline": {
+      "agent_error_rate": 0.0,
+      "extra": {
+        "input_tokens": 5427.0,
+        "invalid_action_count": 0.0,
+        "latency_ms": 16353.0,
+        "output_tokens": 44.0,
+        "read_query_count": 1.0,
+        "state_records": null,
+        "state_tokens": null,
+        "steps_taken": 1.0,
+        "tool_call_count": 1.0
+      },
+      "label": "native agent",
+      "runs": 1,
+      "state_model": false,
+      "tsr": 0.0,
+      "vpr": 0.5,
+      "vpr_indexed": 0.5,
+      "vpr_pooled_non_official": 0.5
+    },
+    "B_state_model": {
+      "agent_error_rate": 0.0,
+      "extra": {
+        "input_tokens": 6566.0,
+        "invalid_action_count": 0.0,
+        "latency_ms": 18695.0,
+        "output_tokens": 69.0,
+        "read_query_count": 2.0,
+        "state_records": 18.0,
+        "state_tokens": 1000.0,
+        "steps_taken": 1.0,
+        "tool_call_count": 2.0
+      },
+      "label": "+ csm_env state model",
+      "runs": 1,
+      "state_model": true,
+      "tsr": 0.0,
+      "vpr": 0.5,
+      "vpr_indexed": 0.5,
+      "vpr_pooled_non_official": 0.5
+    },
+    "delta_agent_error_rate": 0.0,
+    "delta_tsr": 0.0,
+    "delta_vpr": 0.0
+  },
+  "paired": {
+    "bootstrap": {
+      "alpha": 0.05,
+      "ci_high": 0.0,
+      "ci_low": 0.0,
+      "delta": 0.0,
+      "n": 1,
+      "n_resamples": 10000,
+      "seed": 0
+    },
+    "ci_high": 0.0,
+    "ci_low": 0.0,
+    "delta_tsr": 0.0,
+    "mcnemar": {
+      "baseline_only_pass": 0,
+      "discordant": 0,
+      "method": "none",
+      "p_value": 1.0,
+      "statistic": 0.0,
+      "test": "mcnemar",
+      "treatment_only_pass": 0
+    },
+    "outcomes": {
+      "baseline_only_pass": 0,
+      "both_fail": 1,
+      "both_pass": 0,
+      "excluded": 0,
+      "total_pairs": 1,
+      "treatment_only_pass": 0
+    }
+  },
+  "performance": {
+    "completed": 1,
+    "concurrency": 1,
+    "failed": 0,
+    "goals_per_minute": 2.5043760737069998,
+    "skipped": 1,
+    "stage_summary": {
+      "agent": {
+        "count": 1,
+        "mean_ms": 23957.13589992374,
+        "total_ms": 23957.13589992374
+      }
+    },
+    "total_goals": 2,
+    "traces": [
+      {
+        "condition": "A_baseline",
+        "error": null,
+        "history": [
+          "PENDING",
+          "SKIPPED"
+        ],
+        "recorded": false,
+        "run_index": 1,
+        "state": "SKIPPED",
+        "task_id": "task_20260102_155148_014_accab84d_910b176a",
+        "timings_ms": {},
+        "wall_clock_ms": 0.39379997178912163
+      },
+      {
+        "condition": "B_state_model",
+        "error": null,
+        "history": [
+          "PENDING",
+          "RECORDED"
+        ],
+        "recorded": true,
+        "run_index": 1,
+        "state": "RECORDED",
+        "task_id": "task_20260102_155148_014_accab84d_910b176a",
+        "timings_ms": {
+          "agent": 23957.13589992374
+        },
+        "wall_clock_ms": 23957.46089995373
+      }
+    ],
+    "wall_clock_ms": 23958.06309999898
+  },
+  "pinned_revisions": {
+    "ablation_files_sha256": {
+      "ablation/__init__.py": "6010524f9d0420e8de5d41ffdae6e66675e2ab18642d79d72fb28966cc5b0ef2",
+      "ablation/conditions.py": "7afe25625926ca5d067bc40352cfc61c3c2f41de1fbeb439a45bf5ebd8b400f0",
+      "ablation/fingerprint.py": "ddaf5228246358303c53b76fee51dd7b2ac9d38dbdef1e2b30b7ae428e1b02e0",
+      "ablation/goals.py": "b17649ddae74738f535519b60cbcbbaefe3da512eca11b21d5be82425b28b8ff",
+      "ablation/parity.py": "ce53f3faf408760f0fb4ad8317eb6d706bebf9dc5d7802244bb3d518ab2be41b",
+      "ablation/preflight.py": "2dea0b9d123aa920ff70198d37c06c2f674011b8252ed0cfeb63b153747c154a",
+      "ablation/relevance.py": "8d4359376137ed6f897a67804e58c3277e870c4f852413cca847c97e7ef6461f",
+      "ablation/report.py": "7760fca75c4f3c2f5b566b06e0832109b34ab2f973ddc8800879a63c2e8d9ab8",
+      "ablation/results.py": "75952e83016b4e3741d796a8ed8eb8ab0396e45bd1ea17c6d12680478d64ad77",
+      "ablation/runner.py": "e93f8f62fdac6a4e4425da364d77a7b810dd141e1baca25ef9710daa897e5dd6",
+      "ablation/score_bridge.py": "b959955af265a85a84539c429075c862b0a6ad4a28d3f2e67895591fcf157c39",
+      "ablation/seeds.py": "141f1f3301bcfadc2c3cf190c08ee98169ff05132e4b49a21227993ac5a28e39",
+      "ablation/state_model.py": "359477a419331fd7f937cc43b1fa19775cc3264cc50fe6b205d0b45b390da414",
+      "ablation/state_model_orchestrator.py": "782bc92896a1f7b283ae6ba8e7f7d2d97f0fcfb5d44873dd22af842f774847b7",
+      "ablation/stats.py": "c305057f9b424b1c042a29f4274a9d025932bd91548aa409964dd27f279d28fb",
+      "ablation/task_registry.py": "7d8f48618553c57dfc16e91f35b852c82bc1b3b25d565ca4d4226827a753c255",
+      "ablation/verifier_bridge.py": "5f11e12cafb841a7f221d7a26aba23cc0a6537df673e577a8b0f9550f09dc68d",
+      "ablation/verify_pinning.py": "e046e83ac5515cf22cd95f05a5fee301855e55c41e7e3903837ef624c41d3f90"
+    },
+    "benchmark_files_sha256": {
+      "benchmark/executor.py": "d0e1f9d5031cb0a150ec65b951d2ba8e0de2a0994d949f7ca6ff1fa689d96282",
+      "benchmark/llm_client.py": "6228bbe345184a7d4e1ab5bcaec8dcc6455755b3589b588ba27ce994546ae972",
+      "benchmark/mcp_client.py": "5461ce2cdb3126dd57d9c30664edf0ba6bb17f18308f9ad93a126fceca6f6379",
+      "benchmark/models.py": "b4507906214e1d65525a6131b9e24ddbd76c77dffbfb39bf9636bac2639cc9b4",
+      "benchmark/verifier.py": "75ab9bad5561a5841de4bac898fc5d541ad8078ca899abe9a7cb77122eebe864",
+      "benchmark_utils.py": "53664371c88ef712b0ca3b693015127afdf733fbff209ffb34c42fb638e2e10f",
+      "compute_score.py": "2bc35d5601116b951b3f054db852eaff0e2022025ffdeab9a1613b81470bd403",
+      "csm_integration.py": "faba2d5957fc2d97f6419072e706bae77b41967a38e3b7a55e7a57473e618136",
+      "evaluate.py": "ce6ecb0fb6403401b4e971df83c714b784c68658a50f0ee28431615775e12c0f",
+      "orchestrators/base.py": "2a5922346fac989708b31b48dec19902f50889cbef137e6bc61e69a1e827db82",
+      "orchestrators/react.py": "6ceef84c5e8e233bb041e505590095d87e976f57a22195afc08aa3d5da1c9b2c",
+      "utils/task_queue_worker.py": "dbeee80eca2e885ca94ea0a040ce03e2dab3c327640ea79f4ef0646999303fdd"
+    },
+    "csm_env": {
+      "parity": {
+        "changed": [],
+        "gym_package": "csm_env",
+        "identical_count": 57,
+        "is_identical": true,
+        "only_in_gym": [],
+        "only_in_root": [],
+        "root_package": "../csm_env"
+      },
+      "schema_version": "1.0.0",
+      "table_count": 17
+    },
+    "dataset": {
+      "categories": {
+        "TYPE_1_SINGLE_ENTITY": 1,
+        "TYPE_2_ONE_HOP": 0,
+        "TYPE_3_MULTI_HOP": 1,
+        "TYPE_4_CROSS_ENTITY": 4,
+        "TYPE_5_MULTI_STEP": 5
+      },
+      "local_csm_task_count": 11,
+      "published_csm_task_count": 186,
+      "shortfall": 175
+    },
+    "generated_at_epoch": 1790573880,
+    "interpreter": {
+      "executable": "/opt/pyvenv/bin/python",
+      "implementation": "CPython",
+      "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+      "python": "3.13.5"
+    },
+    "seed_archive": {
+      "path": "gym_dbs.zip",
+      "sha256": "d947543d4fba1aabc4aade73d3df955114187b7a94da7ac825c4c31169ddab47"
+    },
+    "task_files_sha256": {
+      "task_20251205_153330_906_a8eea1c0_8c7a6205": "4ff75ccdd51877bac9f811af81eb43b92f51cf4db8c7e6ed9b5ca3977ac99699",
+      "task_20251205_154853_044_d4a463c3_fce76046": "f327badebf45e7e04beb6557b8ab212d0f229ae487e85172172171a5064661d0",
+      "task_20251210_002938_761_897c3e0b_f075229a": "a8e7d9ab119d8b0391cd5e102100b160385622cdd0f01c5965f80f22b782a1ef",
+      "task_20251210_113549_827_d4a463c3_47b48a98": "eec3181160e389394ab941b569692f5d60a32c76295aa206effdb0836bc7cf75",
+      "task_20251231_162628_797_a8eea1c0_0a53db6c": "d5ada5664b97a9adf26cc1c855028ecffaf3198a791c34e74bf1a7bd7e5898c2",
+      "task_20260101_043715_660_a8eea1c0_7304e48e": "e864b4296b70f7c8b6ed989bcd53618d60e4ef4cc96a033fb7c59b4caee9d981",
+      "task_20260101_122222_300_ad5a67e3_3757206c": "7f0b184133317886b61942add13c533ac744b3323d10465ad5aeaf31e0fe317d",
+      "task_20260102_155148_014_accab84d_910b176a": "9eaa3f16df1124a5a2b3f9e8f27870f43adfc6589fcfc6662a62cb3d54b0f906",
+      "task_20260102_161510_799_ad5a67e3_7221f3c8": "4478ac4da30e2ed4716355b8ca0dfd4b34ba61ec31662c8ea1f360a3e76cc59c",
+      "task_20260102_172945_725_ad5a67e3_5480e26f": "01fd2ee2d7877b90115aa2b2c6c5e9199e5ceef1c7ff711bff7409b282154206",
+      "task_20260104_202644_765_00364ece_a86667c0": "e23342e357cf1ada873224c238d4dc4dcd2be5ae7b936cc037f65e5baafa1efe"
+    }
+  },
+  "record_counts": {
+    "by_condition": {
+      "A_baseline": 1,
+      "B_state_model": 1
+    },
+    "total": 2
+  },
+  "retrieval_quality": {
+    "B_state_model": {
+      "granularity": "table",
+      "mean_precision": 0.2,
+      "mean_recall": 0.3333333333333333,
+      "per_run": [
+        {
+          "condition": "B_state_model",
+          "granularity": "table",
+          "overlap": 1,
+          "precision": 0.2,
+          "recall": 0.3333333333333333,
+          "relevant": 3,
+          "retrieved": 5,
+          "task_id": "task_20260102_155148_014_accab84d_910b176a"
+        }
+      ],
+      "runs_excluded": 0,
+      "runs_measured": 1
+    }
+  },
+  "state_injection": {
+    "causal_estimate_ready": true,
+    "delivery_failures": 0,
+    "empty_context": 0,
+    "failed_route": 0,
+    "injected": 1,
+    "injection_rate": 1.0,
+    "mean_retrieved_records": 18.0,
+    "mean_retrieved_tokens": 1000.0,
+    "no_telemetry": 0,
+    "runs": 1,
+    "unresolved_anchor": 0
+  },
+  "verifier_reconciliation": {
+    "collapsed_verifiers": 8,
+    "indexed_verifiers": 8,
+    "lost_to_collision": 0,
+    "runs_where_collision_changed_outcome": 0
+  }
+}

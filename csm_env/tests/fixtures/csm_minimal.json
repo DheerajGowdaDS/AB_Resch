@@ -1,0 +1,237 @@
+{
+  "fixture_version": "1.0.0",
+  "schema_version": "1.0.0",
+  "database_id": "fixture-db",
+  "tables": {
+    "customer_case": [
+      {
+        "case_id": 1233,
+        "number": "CS001233",
+        "account_id": 10,
+        "contact_id": 55,
+        "product_id": 20,
+        "installed_product_id": 91,
+        "channel": "email",
+        "priority": "P1",
+        "state": "open",
+        "short_description": "Synthetic production outage",
+        "assignment_group_id": 7,
+        "assigned_to": 17,
+        "escalation": true,
+        "escalation_reason": "impact",
+        "reopen_count": 0,
+        "sys_created_on": null,
+        "sys_updated_on": null,
+        "closed_on": null
+      },
+      {
+        "case_id": 1240,
+        "number": "CS001240",
+        "account_id": 10,
+        "contact_id": null,
+        "product_id": 21,
+        "installed_product_id": null,
+        "channel": "phone",
+        "priority": "P3",
+        "state": "open",
+        "short_description": "Synthetic how-to question",
+        "assignment_group_id": 7,
+        "assigned_to": null,
+        "escalation": false,
+        "escalation_reason": null,
+        "reopen_count": 0,
+        "sys_created_on": null,
+        "sys_updated_on": null,
+        "closed_on": null
+      }
+    ],
+    "account": [
+      {
+        "account_id": 10,
+        "name": "SynthCorp",
+        "account_type": "enterprise",
+        "email_domain": "synthcorp.example",
+        "active": true,
+        "sys_created_on": null,
+        "sys_updated_on": null
+      }
+    ],
+    "contact": [
+      {
+        "contact_id": 55,
+        "account_id": 10,
+        "portal_user_id": 17,
+        "active": true,
+        "is_primary": true,
+        "sys_created_on": null,
+        "sys_updated_on": null
+      }
+    ],
+    "product": [
+      {
+        "product_id": 20,
+        "name": "Router-X",
+        "category": "network",
+        "product_price": 1000,
+        "lifecycle_state": "active",
+        "sys_created_on": null,
+        "sys_updated_on": null
+      },
+      {
+        "product_id": 21,
+        "name": "Switch-Y",
+        "category": "network",
+        "product_price": 500,
+        "lifecycle_state": "active",
+        "sys_created_on": null,
+        "sys_updated_on": null
+      }
+    ],
+    "installed_product": [
+      {
+        "installed_product_id": 91,
+        "account_id": 10,
+        "product_id": 20,
+        "location_id": 1,
+        "serial_number": "SYN-91",
+        "status": "installed",
+        "warranty_end": null,
+        "sys_created_on": null,
+        "sys_updated_on": null
+      }
+    ],
+    "user": [
+      {
+        "user_id": 17,
+        "first_name": "Jane",
+        "last_name": "Doe",
+        "email": "jane.doe@example.com",
+        "phone": null,
+        "role": "agent",
+        "location_id": 1,
+        "active": true,
+        "sys_created_on": null,
+        "sys_updated_on": null
+      }
+    ],
+    "user_group": [
+      {
+        "group_id": 7,
+        "name": "Network Support",
+        "type": "support",
+        "active": true,
+        "sys_created_on": null,
+        "sys_updated_on": null
+      }
+    ],
+    "location": [
+      {
+        "location_id": 1,
+        "name": "Synthetic City",
+        "plot_no": null,
+        "street": "1 Example St",
+        "city": "Exampleville",
+        "country": "Testland",
+        "active": true,
+        "sys_created_on": null,
+        "sys_updated_on": null
+      }
+    ],
+    "entitlement": [
+      {
+        "entitlement_id": 50,
+        "account_id": 10,
+        "product_id": 20,
+        "contract_id": 90,
+        "support_level": "premium",
+        "coverage_hours": "24x7",
+        "max_cases_per_month": 100,
+        "active": true,
+        "sys_created_on": null,
+        "sys_updated_on": null
+      },
+      {
+        "entitlement_id": 51,
+        "account_id": 10,
+        "product_id": 21,
+        "contract_id": null,
+        "support_level": "standard",
+        "coverage_hours": "8x5",
+        "max_cases_per_month": 20,
+        "active": false,
+        "sys_created_on": null,
+        "sys_updated_on": null
+      }
+    ],
+    "contract": [
+      {
+        "contract_id": 90,
+        "account_id": 10,
+        "contract_type": "support",
+        "status": "active",
+        "contract_price": 12000,
+        "start_date": null,
+        "end_date": null,
+        "sys_created_on": null,
+        "sys_updated_on": null
+      }
+    ],
+    "sla_definition": [
+      {
+        "sla_def_id": 30,
+        "name": "P1 Response",
+        "metric": "response_time",
+        "target_mins": 60,
+        "pause_on_pending": true,
+        "applies_to_priority": "P1",
+        "active": true,
+        "sys_created_on": null,
+        "sys_updated_on": null
+      }
+    ],
+    "case_sla": [
+      {
+        "case_sla_id": 300,
+        "case_id": 1233,
+        "sla_def_id": 30,
+        "stage": "in_progress",
+        "start_time": null,
+        "breach_time": null,
+        "has_breached": false,
+        "completed_time": null
+      }
+    ],
+    "knowledge": [
+      {
+        "knowledge_id": 400,
+        "kb_number": "KB00400",
+        "title": "Synthetic router troubleshooting",
+        "state": "published",
+        "visibility": "public",
+        "product_id": 20,
+        "owner_id": 17,
+        "body": "Synthetic troubleshooting steps.",
+        "sys_created_on": null,
+        "sys_updated_on": null
+      }
+    ],
+    "case_knowledge": [
+      {
+        "case_kb_id": 500,
+        "case_id": 1233,
+        "knowledge_id": 400,
+        "used_as": "troubleshoot"
+      }
+    ],
+    "notification": [],
+    "interaction": [],
+    "user_group_member": [
+      {
+        "member_id": 600,
+        "group_id": 7,
+        "user_id": 17,
+        "sys_created_on": null
+      }
+    ]
+  }
+}

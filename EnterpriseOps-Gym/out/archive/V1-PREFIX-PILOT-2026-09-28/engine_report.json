@@ -1,0 +1,370 @@
+{
+  "completed": 22,
+  "concurrency": 1,
+  "failed": 0,
+  "goals_per_minute": 0.9949352507505053,
+  "skipped": 0,
+  "stage_summary": {
+    "agent": {
+      "count": 22,
+      "mean_ms": 60305.29154999054,
+      "total_ms": 1326716.414099792
+    }
+  },
+  "total_goals": 22,
+  "traces": [
+    {
+      "condition": "A_baseline",
+      "error": null,
+      "history": [
+        "PENDING",
+        "RECORDED"
+      ],
+      "recorded": true,
+      "run_index": 1,
+      "state": "RECORDED",
+      "task_id": "task_20251205_153330_906_a8eea1c0_8c7a6205",
+      "timings_ms": {
+        "agent": 53800.72149995249
+      },
+      "wall_clock_ms": 53800.88140000589
+    },
+    {
+      "condition": "B_state_model",
+      "error": null,
+      "history": [
+        "PENDING",
+        "RECORDED"
+      ],
+      "recorded": true,
+      "run_index": 1,
+      "state": "RECORDED",
+      "task_id": "task_20251205_153330_906_a8eea1c0_8c7a6205",
+      "timings_ms": {
+        "agent": 45935.9064999735
+      },
+      "wall_clock_ms": 99468.052500044
+    },
+    {
+      "condition": "A_baseline",
+      "error": null,
+      "history": [
+        "PENDING",
+        "RECORDED"
+      ],
+      "recorded": true,
+      "run_index": 1,
+      "state": "RECORDED",
+      "task_id": "task_20251205_154853_044_d4a463c3_fce76046",
+      "timings_ms": {
+        "agent": 61661.006000009365
+      },
+      "wall_clock_ms": 161128.95170005504
+    },
+    {
+      "condition": "B_state_model",
+      "error": null,
+      "history": [
+        "PENDING",
+        "RECORDED"
+      ],
+      "recorded": true,
+      "run_index": 1,
+      "state": "RECORDED",
+      "task_id": "task_20251205_154853_044_d4a463c3_fce76046",
+      "timings_ms": {
+        "agent": 15271.986400010064
+      },
+      "wall_clock_ms": 176401.01919998415
+    },
+    {
+      "condition": "A_baseline",
+      "error": null,
+      "history": [
+        "PENDING",
+        "RECORDED"
+      ],
+      "recorded": true,
+      "run_index": 1,
+      "state": "RECORDED",
+      "task_id": "task_20251210_002938_761_897c3e0b_f075229a",
+      "timings_ms": {
+        "agent": 49536.15349996835
+      },
+      "wall_clock_ms": 225937.24649993237
+    },
+    {
+      "condition": "B_state_model",
+      "error": null,
+      "history": [
+        "PENDING",
+        "RECORDED"
+      ],
+      "recorded": true,
+      "run_index": 1,
+      "state": "RECORDED",
+      "task_id": "task_20251210_002938_761_897c3e0b_f075229a",
+      "timings_ms": {
+        "agent": 14961.397100007161
+      },
+      "wall_clock_ms": 240898.70820008218
+    },
+    {
+      "condition": "A_baseline",
+      "error": null,
+      "history": [
+        "PENDING",
+        "RECORDED"
+      ],
+      "recorded": true,
+      "run_index": 1,
+      "state": "RECORDED",
+      "task_id": "task_20251210_113549_827_d4a463c3_47b48a98",
+      "timings_ms": {
+        "agent": 94886.36080001015
+      },
+      "wall_clock_ms": 335785.18690005876
+    },
+    {
+      "condition": "B_state_model",
+      "error": null,
+      "history": [
+        "PENDING",
+        "RECORDED"
+      ],
+      "recorded": true,
+      "run_index": 1,
+      "state": "RECORDED",
+      "task_id": "task_20251210_113549_827_d4a463c3_47b48a98",
+      "timings_ms": {
+        "agent": 80298.2032999862
+      },
+      "wall_clock_ms": 416083.5473999614
+    },
+    {
+      "condition": "A_baseline",
+      "error": null,
+      "history": [
+        "PENDING",
+        "RECORDED"
+      ],
+      "recorded": true,
+      "run_index": 1,
+      "state": "RECORDED",
+      "task_id": "task_20251231_162628_797_a8eea1c0_0a53db6c",
+      "timings_ms": {
+        "agent": 68035.75899999123
+      },
+      "wall_clock_ms": 484119.4218999008
+    },
+    {
+      "condition": "B_state_model",
+      "error": null,
+      "history": [
+        "PENDING",
+        "RECORDED"
+      ],
+      "recorded": true,
+      "run_index": 1,
+      "state": "RECORDED",
+      "task_id": "task_20251231_162628_797_a8eea1c0_0a53db6c",
+      "timings_ms": {
+        "agent": 91867.04459995963
+      },
+      "wall_clock_ms": 575986.5818000399
+    },
+    {
+      "condition": "A_baseline",
+      "error": null,
+      "history": [
+        "PENDING",
+        "RECORDED"
+      ],
+      "recorded": true,
+      "run_index": 1,
+      "state": "RECORDED",
+      "task_id": "task_20260101_043715_660_a8eea1c0_7304e48e",
+      "timings_ms": {
+        "agent": 83442.04999995418
+      },
+      "wall_clock_ms": 659428.7205000874
+    },
+    {
+      "condition": "B_state_model",
+      "error": null,
+      "history": [
+        "PENDING",
+        "RECORDED"
+      ],
+      "recorded": true,
+      "run_index": 1,
+      "state": "RECORDED",
+      "task_id": "task_20260101_043715_660_a8eea1c0_7304e48e",
+      "timings_ms": {
+        "agent": 75015.20699996036
+      },
+      "wall_clock_ms": 734444.0756000113
+    },
+    {
+      "condition": "A_baseline",
+      "error": null,
+      "history": [
+        "PENDING",
+        "RECORDED"
+      ],
+      "recorded": true,
+      "run_index": 1,
+      "state": "RECORDED",
+      "task_id": "task_20260101_122222_300_ad5a67e3_3757206c",
+      "timings_ms": {
+        "agent": 53701.09170000069
+      },
+      "wall_clock_ms": 788145.289799897
+    },
+    {
+      "condition": "B_state_model",
+      "error": null,
+      "history": [
+        "PENDING",
+        "RECORDED"
+      ],
+      "recorded": true,
+      "run_index": 1,
+      "state": "RECORDED",
+      "task_id": "task_20260101_122222_300_ad5a67e3_3757206c",
+      "timings_ms": {
+        "agent": 20332.60079997126
+      },
+      "wall_clock_ms": 808477.9901999282
+    },
+    {
+      "condition": "A_baseline",
+      "error": null,
+      "history": [
+        "PENDING",
+        "RECORDED"
+      ],
+      "recorded": true,
+      "run_index": 1,
+      "state": "RECORDED",
+      "task_id": "task_20260102_155148_014_accab84d_910b176a",
+      "timings_ms": {
+        "agent": 44367.19899997115
+      },
+      "wall_clock_ms": 852845.2437999658
+    },
+    {
+      "condition": "B_state_model",
+      "error": null,
+      "history": [
+        "PENDING",
+        "RECORDED"
+      ],
+      "recorded": true,
+      "run_index": 1,
+      "state": "RECORDED",
+      "task_id": "task_20260102_155148_014_accab84d_910b176a",
+      "timings_ms": {
+        "agent": 47512.969200033695
+      },
+      "wall_clock_ms": 900358.3211000077
+    },
+    {
+      "condition": "A_baseline",
+      "error": null,
+      "history": [
+        "PENDING",
+        "RECORDED"
+      ],
+      "recorded": true,
+      "run_index": 1,
+      "state": "RECORDED",
+      "task_id": "task_20260102_161510_799_ad5a67e3_7221f3c8",
+      "timings_ms": {
+        "agent": 174605.37520004436
+      },
+      "wall_clock_ms": 1074963.8169999234
+    },
+    {
+      "condition": "B_state_model",
+      "error": null,
+      "history": [
+        "PENDING",
+        "RECORDED"
+      ],
+      "recorded": true,
+      "run_index": 1,
+      "state": "RECORDED",
+      "task_id": "task_20260102_161510_799_ad5a67e3_7221f3c8",
+      "timings_ms": {
+        "agent": 22761.99040003121
+      },
+      "wall_clock_ms": 1097725.9380000178
+    },
+    {
+      "condition": "A_baseline",
+      "error": null,
+      "history": [
+        "PENDING",
+        "RECORDED"
+      ],
+      "recorded": true,
+      "run_index": 1,
+      "state": "RECORDED",
+      "task_id": "task_20260102_172945_725_ad5a67e3_5480e26f",
+      "timings_ms": {
+        "agent": 52912.04159997869
+      },
+      "wall_clock_ms": 1150638.0604000296
+    },
+    {
+      "condition": "B_state_model",
+      "error": null,
+      "history": [
+        "PENDING",
+        "RECORDED"
+      ],
+      "recorded": true,
+      "run_index": 1,
+      "state": "RECORDED",
+      "task_id": "task_20260102_172945_725_ad5a67e3_5480e26f",
+      "timings_ms": {
+        "agent": 58025.82280000206
+      },
+      "wall_clock_ms": 1208663.971700007
+    },
+    {
+      "condition": "A_baseline",
+      "error": null,
+      "history": [
+        "PENDING",
+        "RECORDED"
+      ],
+      "recorded": true,
+      "run_index": 1,
+      "state": "RECORDED",
+      "task_id": "task_20260104_202644_765_00364ece_a86667c0",
+      "timings_ms": {
+        "agent": 55418.9413000131
+      },
+      "wall_clock_ms": 1264082.991000032
+    },
+    {
+      "condition": "B_state_model",
+      "error": null,
+      "history": [
+        "PENDING",
+        "RECORDED"
+      ],
+      "recorded": true,
+      "run_index": 1,
+      "state": "RECORDED",
+      "task_id": "task_20260104_202644_765_00364ece_a86667c0",
+      "timings_ms": {
+        "agent": 62366.586399963126
+      },
+      "wall_clock_ms": 1326449.6599000413
+    }
+  ],
+  "wall_clock_ms": 1326719.5016000187
+}

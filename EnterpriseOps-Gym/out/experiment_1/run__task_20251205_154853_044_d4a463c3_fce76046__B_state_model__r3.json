@@ -1,0 +1,144 @@
+{
+  "agent_error": false,
+  "complexity_category": "TYPE_5_MULTI_STEP",
+  "condition": "B_state_model",
+  "error_message": null,
+  "experiment": "experiment_1",
+  "experiment_version": "V1.2-STATE-MODEL-REFINED",
+  "fingerprint_match": null,
+  "fingerprint_mismatch_reason": null,
+  "finished_at": "2026-09-28T15:02:36.843688+00:00",
+  "goal_states": [
+    "AGENT_RUNNING",
+    "VERIFIED",
+    "RECORDED"
+  ],
+  "initial_state_fingerprint": "63bccb645c6158cf23310d6fd633ad3966ebde05112baf78f8141a81b11ca689",
+  "input_tokens": 5425,
+  "invalid_action_count": 0,
+  "latency_ms": 23932,
+  "manifest_hash": null,
+  "max_steps": 15,
+  "model_name": "space-bunny-alpha",
+  "model_provider": "openrouter",
+  "orchestrator": "react",
+  "output_tokens": 57,
+  "overall_success": false,
+  "read_query_count": 1,
+  "run_index": 3,
+  "run_uid": "87987ab005df4d26ba0242cc29f50566",
+  "runtime_database_id": "db_1790607731614_rw4i0eh2l",
+  "seed_database_file": "Domain Wise DBs and Task-DB Mappings/csm/dbs/db_1762254390925_u5icw4thh.sql",
+  "started_at": "2026-09-28T15:02:11.614455+00:00",
+  "state_retrieval": {
+    "anchor_row_id": "692",
+    "anchor_status": "RESOLVED",
+    "anchor_table": "location",
+    "context_tokens_injected": 209,
+    "retrieval_latency_ms": 985.6452998938039,
+    "retrieved_records": 2,
+    "retrieved_rows": [
+      [
+        "location",
+        "692"
+      ],
+      [
+        "user",
+        "692"
+      ]
+    ],
+    "retrieved_table_names": [
+      "location",
+      "user"
+    ],
+    "retrieved_tables": 2,
+    "retrieved_tokens": 209,
+    "state_error": null,
+    "state_model_available": true,
+    "state_model_delivered": true,
+    "state_retrieval_count": 1,
+    "state_route_status": "UNRESOLVED"
+  },
+  "steps_taken": 2,
+  "task_id": "task_20251205_154853_044_d4a463c3_fce76046",
+  "temperature": 0.0,
+  "timings_ms": {
+    "agent": 26000.67440001294,
+    "lost_to_collision": 1.0,
+    "verify": 23932.0
+  },
+  "tool_call_count": 1,
+  "tool_mode": "oracle",
+  "verifier_results_collapsed": {
+    "Verify Create New Case": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*)\nFROM customer_case AS c\nWHERE c.account_id = 8\n  AND c.contact_id = 10\n  AND c.channel = 'alert'\n  AND c.priority = 'low'\n  AND c.state = 'closed';\n "
+    },
+    "Verify Notification Sent ": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'tonya.stevens@stark-industries.com'\n  AND n.type = 'update';\n"
+    },
+    "Verify Updated Installed Product": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) \nFROM installed_product AS ip\nWHERE ip.installed_product_id = 40\n  AND ip.location_id = 692\n  AND ip.status = 'in_use';\n"
+    }
+  },
+  "verifier_results_indexed": {
+    "0:Verify Updated Installed Product": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) \nFROM installed_product AS ip\nWHERE ip.installed_product_id = 40\n  AND ip.location_id = 692\n  AND ip.status = 'in_use';\n"
+    },
+    "1:Verify Create New Case": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*)\nFROM customer_case AS c\nWHERE c.account_id = 8\n  AND c.contact_id = 10\n  AND c.channel = 'alert'\n  AND c.priority = 'low'\n  AND c.state = 'closed';\n "
+    },
+    "2:Verify Notification Sent ": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'marc.henry@stark-industries.com'\n  AND n.type = 'update';\n"
+    },
+    "3:Verify Notification Sent ": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'tonya.stevens@stark-industries.com'\n  AND n.type = 'update';\n"
+    }
+  },
+  "verifier_summary_collapsed": {
+    "failed": 3,
+    "pass_rate": 0.0,
+    "passed": 0,
+    "total": 3
+  },
+  "verifier_summary_indexed": {
+    "failed": 4,
+    "pass_rate": 0.0,
+    "passed": 0,
+    "total": 4
+  }
+}

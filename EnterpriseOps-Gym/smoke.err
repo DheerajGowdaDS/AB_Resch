@@ -1,0 +1,31 @@
+D:\Visual code projects\csm_ggqr_work\EnterpriseOps-Gym\benchmark\executor.py:110: UserWarning: Parameters {'extra_body'} should be specified explicitly. Instead they were passed in as part of `model_kwargs` parameter.
+  self.llm_client = LLMClient(
+Traceback (most recent call last):
+  File "D:\Visual code projects\csm_ggqr_work\EnterpriseOps-Gym\run_ablation.py", line 340, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "D:\Visual code projects\csm_ggqr_work\EnterpriseOps-Gym\run_ablation.py", line 336, in main
+    return asyncio.run(_async_main(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gowda\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\gowda\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gowda\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "D:\Visual code projects\csm_ggqr_work\EnterpriseOps-Gym\run_ablation.py", line 261, in _async_main
+    return await _run_sweep(args, eval_set, conditions, registry)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Visual code projects\csm_ggqr_work\EnterpriseOps-Gym\run_ablation.py", line 302, in _run_sweep
+    paths = report_from_directory(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Visual code projects\csm_ggqr_work\EnterpriseOps-Gym\ablation\report.py", line 494, in report_from_directory
+    report = build_report(
+             ^^^^^^^^^^^^^
+  File "D:\Visual code projects\csm_ggqr_work\EnterpriseOps-Gym\ablation\report.py", line 130, in build_report
+    treatment = conditions[1]
+                ~~~~~~~~~~^^^
+IndexError: tuple index out of range

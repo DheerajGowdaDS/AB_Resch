@@ -1,0 +1,357 @@
+{
+  "agent_error": false,
+  "complexity_category": "TYPE_4_CROSS_ENTITY",
+  "condition": "B_state_model",
+  "error_message": null,
+  "experiment": "experiment_1",
+  "experiment_version": "V1.2-STATE-MODEL-REFINED",
+  "fingerprint_match": null,
+  "fingerprint_mismatch_reason": null,
+  "finished_at": "2026-09-28T15:05:54.870571+00:00",
+  "goal_states": [
+    "AGENT_RUNNING",
+    "VERIFIED",
+    "RECORDED"
+  ],
+  "initial_state_fingerprint": "63bccb645c6158cf23310d6fd633ad3966ebde05112baf78f8141a81b11ca689",
+  "input_tokens": 1,
+  "invalid_action_count": 0,
+  "latency_ms": 52348,
+  "manifest_hash": null,
+  "max_steps": 15,
+  "model_name": "space-bunny-alpha",
+  "model_provider": "openrouter",
+  "orchestrator": "react",
+  "output_tokens": 0,
+  "overall_success": false,
+  "read_query_count": 0,
+  "run_index": 2,
+  "run_uid": "4bb2e59167374205b15cd7518d893e9b",
+  "runtime_database_id": "db_1790607899933_hm047gy8c",
+  "seed_database_file": "Domain Wise DBs and Task-DB Mappings/csm/dbs/db_1762254390925_u5icw4thh.sql",
+  "started_at": "2026-09-28T15:04:59.933096+00:00",
+  "state_retrieval": {
+    "anchor_row_id": "121",
+    "anchor_status": "RESOLVED",
+    "anchor_table": "product",
+    "context_tokens_injected": 1000,
+    "retrieval_latency_ms": 1829.7651000320911,
+    "retrieved_records": 32,
+    "retrieved_rows": [
+      [
+        "account",
+        "35"
+      ],
+      [
+        "account",
+        "39"
+      ],
+      [
+        "account",
+        "4"
+      ],
+      [
+        "account",
+        "5"
+      ],
+      [
+        "contact",
+        "2"
+      ],
+      [
+        "contact",
+        "3"
+      ],
+      [
+        "contact",
+        "4"
+      ],
+      [
+        "contact",
+        "5"
+      ],
+      [
+        "contact",
+        "76"
+      ],
+      [
+        "contact",
+        "86"
+      ],
+      [
+        "customer_case",
+        "109"
+      ],
+      [
+        "customer_case",
+        "76"
+      ],
+      [
+        "customer_case",
+        "79"
+      ],
+      [
+        "customer_case",
+        "808"
+      ],
+      [
+        "customer_case",
+        "809"
+      ],
+      [
+        "customer_case",
+        "812"
+      ],
+      [
+        "customer_case",
+        "817"
+      ],
+      [
+        "customer_case",
+        "83"
+      ],
+      [
+        "customer_case",
+        "88"
+      ],
+      [
+        "customer_case",
+        "893"
+      ],
+      [
+        "customer_case",
+        "90"
+      ],
+      [
+        "installed_product",
+        "191"
+      ],
+      [
+        "installed_product",
+        "22"
+      ],
+      [
+        "installed_product",
+        "27"
+      ],
+      [
+        "product",
+        "121"
+      ],
+      [
+        "user",
+        "392"
+      ],
+      [
+        "user",
+        "496"
+      ],
+      [
+        "user",
+        "782"
+      ],
+      [
+        "user_group",
+        "17"
+      ],
+      [
+        "user_group",
+        "35"
+      ],
+      [
+        "user_group",
+        "55"
+      ],
+      [
+        "user_group",
+        "9"
+      ]
+    ],
+    "retrieved_table_names": [
+      "account",
+      "contact",
+      "customer_case",
+      "installed_product",
+      "product",
+      "user",
+      "user_group"
+    ],
+    "retrieved_tables": 7,
+    "retrieved_tokens": 1000,
+    "state_error": null,
+    "state_model_available": true,
+    "state_model_delivered": true,
+    "state_retrieval_count": 1,
+    "state_route_status": "COMPLETE"
+  },
+  "steps_taken": 1,
+  "task_id": "task_20251210_002938_761_897c3e0b_f075229a",
+  "temperature": 0.0,
+  "timings_ms": {
+    "agent": 55749.466999899596,
+    "lost_to_collision": 0.0,
+    "verify": 52348.0
+  },
+  "tool_call_count": 0,
+  "tool_mode": "oracle",
+  "verifier_results_collapsed": {
+    "Case assigned to Installed Base Support group": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM customer_case WHERE account_id = 52 AND product_id = 133 AND assignment_group_id = 10 AND short_description = 'Product: Dell PowerEdge R740 (Config 1), Issue: is not working as expected.';"
+    },
+    "Case created with correct attributes": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM customer_case WHERE account_id = 52 AND product_id = 133 AND installed_product_id = 295 AND priority = 'moderate' AND channel = 'community' AND short_description = 'Product: Dell PowerEdge R740 (Config 1), Issue: is not working as expected.' AND assignment_group_id = 10;"
+    },
+    "Case linked to primary contact": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM customer_case cc JOIN contact c ON cc.contact_id = c.contact_id WHERE cc.account_id = 52 AND cc.product_id = 133 AND c.is_primary = 1 AND cc.short_description = 'Product: Dell PowerEdge R740 (Config 1), Issue: is not working as expected.';"
+    },
+    "Case state updated to in_progress": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM customer_case WHERE account_id = 52 AND product_id = 133 AND state = 'in_progress' AND short_description = 'Product: Dell PowerEdge R740 (Config 1), Issue: is not working as expected.';"
+    },
+    "Case sys_updated_on changed after state transition": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM customer_case WHERE account_id = 52 AND product_id = 133 AND short_description = 'Product: Dell PowerEdge R740 (Config 1), Issue: is not working as expected.' AND sys_updated_on > sys_created_on;"
+    },
+    "Correct installed product linked (serial ends with 9300)": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM customer_case WHERE account_id = 52 AND product_id = 133 AND installed_product_id = 295 AND priority = 'moderate' AND channel = 'community' AND assignment_group_id = 10 AND short_description = 'Product: Dell PowerEdge R740 (Config 1), Issue: is not working as expected.';"
+    },
+    "No duplicate cases created": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM customer_case WHERE account_id = 52 AND product_id = 133 AND priority = 'moderate' AND channel = 'community' AND short_description = 'Product: Dell PowerEdge R740 (Config 1), Issue: is not working as expected.';"
+    },
+    "Response SLA linked for moderate priority": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM case_sla cs JOIN customer_case cc ON cs.case_id = cc.case_id JOIN sla_definition sd ON cs.sla_def_id = sd.sla_def_id WHERE cc.account_id = 52 AND cc.product_id = 133 AND sd.metric = 'response' AND sd.applies_to_priority = 'moderate' AND sd.active = 1 AND cc.short_description = 'Product: Dell PowerEdge R740 (Config 1), Issue: is not working as expected.';"
+    },
+    "SLA timer started (stage in_progress)": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM case_sla cs JOIN customer_case cc ON cs.case_id = cc.case_id WHERE cc.account_id = 52 AND cc.product_id = 133 AND cs.stage = 'in_progress' AND cs.start_time IS NOT NULL AND cc.short_description = 'Product: Dell PowerEdge R740 (Config 1), Issue: is not working as expected.';"
+    }
+  },
+  "verifier_results_indexed": {
+    "0:Case created with correct attributes": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM customer_case WHERE account_id = 52 AND product_id = 133 AND installed_product_id = 295 AND priority = 'moderate' AND channel = 'community' AND short_description = 'Product: Dell PowerEdge R740 (Config 1), Issue: is not working as expected.' AND assignment_group_id = 10;"
+    },
+    "1:Case linked to primary contact": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM customer_case cc JOIN contact c ON cc.contact_id = c.contact_id WHERE cc.account_id = 52 AND cc.product_id = 133 AND c.is_primary = 1 AND cc.short_description = 'Product: Dell PowerEdge R740 (Config 1), Issue: is not working as expected.';"
+    },
+    "2:Case state updated to in_progress": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM customer_case WHERE account_id = 52 AND product_id = 133 AND state = 'in_progress' AND short_description = 'Product: Dell PowerEdge R740 (Config 1), Issue: is not working as expected.';"
+    },
+    "3:Correct installed product linked (serial ends with 9300)": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM customer_case WHERE account_id = 52 AND product_id = 133 AND installed_product_id = 295 AND priority = 'moderate' AND channel = 'community' AND assignment_group_id = 10 AND short_description = 'Product: Dell PowerEdge R740 (Config 1), Issue: is not working as expected.';"
+    },
+    "4:Case assigned to Installed Base Support group": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM customer_case WHERE account_id = 52 AND product_id = 133 AND assignment_group_id = 10 AND short_description = 'Product: Dell PowerEdge R740 (Config 1), Issue: is not working as expected.';"
+    },
+    "5:Response SLA linked for moderate priority": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM case_sla cs JOIN customer_case cc ON cs.case_id = cc.case_id JOIN sla_definition sd ON cs.sla_def_id = sd.sla_def_id WHERE cc.account_id = 52 AND cc.product_id = 133 AND sd.metric = 'response' AND sd.applies_to_priority = 'moderate' AND sd.active = 1 AND cc.short_description = 'Product: Dell PowerEdge R740 (Config 1), Issue: is not working as expected.';"
+    },
+    "6:SLA timer started (stage in_progress)": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM case_sla cs JOIN customer_case cc ON cs.case_id = cc.case_id WHERE cc.account_id = 52 AND cc.product_id = 133 AND cs.stage = 'in_progress' AND cs.start_time IS NOT NULL AND cc.short_description = 'Product: Dell PowerEdge R740 (Config 1), Issue: is not working as expected.';"
+    },
+    "7:No duplicate cases created": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM customer_case WHERE account_id = 52 AND product_id = 133 AND priority = 'moderate' AND channel = 'community' AND short_description = 'Product: Dell PowerEdge R740 (Config 1), Issue: is not working as expected.';"
+    },
+    "8:Case sys_updated_on changed after state transition": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM customer_case WHERE account_id = 52 AND product_id = 133 AND short_description = 'Product: Dell PowerEdge R740 (Config 1), Issue: is not working as expected.' AND sys_updated_on > sys_created_on;"
+    }
+  },
+  "verifier_summary_collapsed": {
+    "failed": 8,
+    "pass_rate": 0.1111111111111111,
+    "passed": 1,
+    "total": 9
+  },
+  "verifier_summary_indexed": {
+    "failed": 8,
+    "pass_rate": 0.1111111111111111,
+    "passed": 1,
+    "total": 9
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "derived_from": "csm_env.query.requirements.RequirementRegistry",
+  "intent": {
+    "account_profile": [
+      "read"
+    ],
+    "case_overview": [
+      "read"
+    ],
+    "check_entitlement": [
+      "read"
+    ],
+    "find_knowledge": [
+      "read"
+    ],
+    "resolve_case": [
+      "read",
+      "update"
+    ]
+  },
+  "required_attributes": {
+    "account_profile": [
+      "support_level",
+      "coverage_hours",
+      "active",
+      "status",
+      "serial_number"
+    ],
+    "case_overview": [
+      "state",
+      "status",
+      "lifecycle_state",
+      "priority",
+      "assignment_group_id",
+      "assigned_to"
+    ],
+    "check_entitlement": [
+      "support_level",
+      "coverage_hours",
+      "active",
+      "state",
+      "status"
+    ],
+    "find_knowledge": [
+      "state",
+      "lifecycle_state",
+      "title"
+    ],
+    "resolve_case": [
+      "priority",
+      "state",
+      "lifecycle_state",
+      "assignment_group_id",
+      "escalation",
+      "escalation_reason"
+    ]
+  },
+  "required_relations": {
+    "account_profile": [
+      [
+        "account",
+        "entitlement"
+      ],
+      [
+        "account",
+        "contract"
+      ]
+    ],
+    "case_overview": [
+      [
+        "customer_case",
+        "account"
+      ],
+      [
+        "customer_case",
+        "contact"
+      ],
+      [
+        "customer_case",
+        "user_group"
+      ]
+    ],
+    "check_entitlement": [
+      [
+        "customer_case",
+        "account"
+      ],
+      [
+        "entitlement",
+        "contract"
+      ]
+    ],
+    "find_knowledge": [
+      [
+        "customer_case",
+        "product"
+      ],
+      [
+        "knowledge",
+        "product"
+      ]
+    ],
+    "resolve_case": [
+      [
+        "customer_case",
+        "account"
+      ],
+      [
+        "customer_case",
+        "user_group"
+      ]
+    ]
+  },
+  "schema_version": "1.0.0",
+  "task_assignment": {
+    "task_20251205_153330_906_a8eea1c0_8c7a6205": "check_entitlement",
+    "task_20251205_154853_044_d4a463c3_fce76046": "case_overview",
+    "task_20251210_002938_761_897c3e0b_f075229a": "case_overview",
+    "task_20251210_113549_827_d4a463c3_47b48a98": "check_entitlement",
+    "task_20251231_162628_797_a8eea1c0_0a53db6c": "check_entitlement",
+    "task_20260101_043715_660_a8eea1c0_7304e48e": "check_entitlement",
+    "task_20260101_122222_300_ad5a67e3_3757206c": "check_entitlement",
+    "task_20260102_155148_014_accab84d_910b176a": "resolve_case",
+    "task_20260102_161510_799_ad5a67e3_7221f3c8": "check_entitlement",
+    "task_20260102_172945_725_ad5a67e3_5480e26f": "case_overview",
+    "task_20260104_202644_765_00364ece_a86667c0": "find_knowledge"
+  },
+  "tasks": {
+    "account_profile": [
+      "account",
+      "contract",
+      "entitlement",
+      "installed_product"
+    ],
+    "case_overview": [
+      "customer_case",
+      "account",
+      "contact",
+      "product",
+      "installed_product",
+      "user",
+      "user_group"
+    ],
+    "check_entitlement": [
+      "customer_case",
+      "account",
+      "entitlement",
+      "contract"
+    ],
+    "find_knowledge": [
+      "customer_case",
+      "product",
+      "knowledge"
+    ],
+    "resolve_case": [
+      "customer_case",
+      "account",
+      "entitlement",
+      "case_sla",
+      "product"
+    ]
+  }
+}

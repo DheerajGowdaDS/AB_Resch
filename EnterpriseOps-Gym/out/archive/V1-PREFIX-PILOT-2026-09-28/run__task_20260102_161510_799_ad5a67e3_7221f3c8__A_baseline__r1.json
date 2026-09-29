@@ -1,0 +1,298 @@
+{
+  "agent_error": false,
+  "complexity_category": "TYPE_5_MULTI_STEP",
+  "condition": "A_baseline",
+  "error_message": null,
+  "experiment": "experiment_1",
+  "fingerprint_match": null,
+  "fingerprint_mismatch_reason": null,
+  "finished_at": "2026-09-28T06:34:54.719366+00:00",
+  "goal_states": [
+    "AGENT_RUNNING",
+    "VERIFIED",
+    "RECORDED"
+  ],
+  "initial_state_fingerprint": "63bccb645c6158cf23310d6fd633ad3966ebde05112baf78f8141a81b11ca689",
+  "input_tokens": 313336,
+  "invalid_action_count": 0,
+  "latency_ms": 165123,
+  "max_steps": 5,
+  "model_name": "space-bunny-alpha",
+  "model_provider": "openrouter",
+  "orchestrator": "react",
+  "output_tokens": 6878,
+  "overall_success": false,
+  "read_query_count": 5,
+  "run_index": 1,
+  "run_uid": "5ec63d6b46ef4427b697d88007351228",
+  "runtime_database_id": "db_1790577121657_hm047gy8c",
+  "seed_database_file": "Domain Wise DBs and Task-DB Mappings/csm/dbs/db_1762254390925_u5icw4thh.sql",
+  "started_at": "2026-09-28T06:32:01.657693+00:00",
+  "state_retrieval": null,
+  "steps_taken": 5,
+  "task_id": "task_20260102_161510_799_ad5a67e3_7221f3c8",
+  "temperature": 0.0,
+  "timings_ms": {
+    "agent": 174597.0602000598,
+    "lost_to_collision": 0.0,
+    "verify": 165123.0
+  },
+  "tool_call_count": 14,
+  "tool_mode": "oracle",
+  "verifier_results_collapsed": {
+    "Verify Elsa Larson is a member of Larson Operations Desk": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM user_group_member ugm JOIN user_group g ON ugm.group_id = g.group_id JOIN user u ON ugm.user_id = u.user_id WHERE g.name = 'Larson Operations Desk' AND u.email = 'elsa.larson@larsonplc.com';"
+    },
+    "Verify KB owner selection rule (min +44 agent/manager)": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM knowledge k JOIN user u ON k.owner_id = u.user_id WHERE k.title = 'SLES Setup Guide' AND k.owner_id = 152 AND u.active = 1 AND u.role IN ('agent','manager') AND u.phone LIKE '+44%' AND u.user_id = (SELECT MIN(user_id) FROM user WHERE active = 1 AND role IN ('agent','manager') AND phone LIKE '+44%');"
+    },
+    "Verify the Elsa Larson contact": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM contact c JOIN account a ON c.account_id = a.account_id JOIN user u ON c.portal_user_id = u.user_id WHERE a.name = 'Larson PLC' AND u.email = 'elsa.larson@larsonplc.com' AND c.active = 1 AND c.is_primary = 1;"
+    },
+    "Verify the Larson Operations Desk group exists": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM user_group WHERE name = 'Larson Operations Desk' AND type = 'support' AND active = 1;"
+    },
+    "Verify the Larson PLC account exists": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM account WHERE name = 'Larson PLC' AND active = 1;"
+    },
+    "Verify the London location for Larson PLC exists": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM location WHERE name = 'Larson London Office' AND city = 'london' AND country = 'uk' AND active = 1;"
+    },
+    "Verify the SUSE installed product record": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM installed_product ip JOIN account a ON ip.account_id = a.account_id JOIN product p ON ip.product_id = p.product_id JOIN location l ON ip.location_id = l.location_id WHERE a.name = 'Larson PLC' AND p.name = 'SUSE Linux Enterprise Server 15' AND l.name = 'Larson London Office' AND ip.serial_number = 'LAR-SLES-2027' AND ip.status = 'in_use' AND ip.warranty_end = '2027-06-30';"
+    },
+    "Verify the SUSE product exists": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM product WHERE name = 'SUSE Linux Enterprise Server 15' AND lifecycle_state = 'active';"
+    },
+    "Verify the case and its SLA linkage": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM customer_case cc JOIN account a ON cc.account_id = a.account_id JOIN case_sla cs ON cc.case_id = cs.case_id JOIN sla_definition s ON s.sla_def_id = cs.sla_def_id WHERE a.name = 'Larson PLC' AND cc.case_id = 1233 AND cc.assignment_group_id = 81 AND cc.assigned_to = 217 AND cc.channel = 'phone' AND cc.priority = 'moderate' AND cc.state = 'in_progress' AND s.name = 'SLA Response - Moderate' AND cs.stage = 'in_progress';"
+    },
+    "Verify the knowledge article exists": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM knowledge k JOIN product p ON k.product_id = p.product_id WHERE k.title = 'SLES Setup Guide' AND k.state = 'published' AND k.owner_id = 152 AND k.visibility = 'internal' AND p.name = 'SUSE Linux Enterprise Server 15';"
+    },
+    "Verify the knowledge article was correctly linked to the case as a resolution": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM case_knowledge ck JOIN knowledge k ON ck.knowledge_id = k.knowledge_id JOIN customer_case cc ON ck.case_id = cc.case_id WHERE k.title = 'SLES Setup Guide' AND k.owner_id = 152 AND ck.used_as = 'resolution';"
+    },
+    "Verify the portal user for Elsa Larson": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM user WHERE email = 'elsa.larson@larsonplc.com' AND first_name = 'Elsa' AND last_name = 'Larson' AND role = 'customer' AND active = 1 AND phone = '+44-20-3000-6000';"
+    },
+    "Verify the premium 24x7 entitlement": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM entitlement e JOIN account a ON e.account_id = a.account_id WHERE a.name = 'Larson PLC' AND e.support_level = 'premium' AND e.coverage_hours = 'h24x7' AND e.max_cases_per_month = 20 AND e.active = 1;"
+    },
+    "Verify the solution proposal notification was sent": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM notification n JOIN customer_case cc ON n.case_id = cc.case_id WHERE n.email = 'elsa.larson@larsonplc.com' AND n.type = 'solution_proposal' AND n.status = 'success';"
+    },
+    "Verify the support contract for 2026": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM contract c JOIN account a ON c.account_id = a.account_id WHERE a.name = 'Larson PLC' AND c.contract_type = 'support' AND c.status = 'active' AND c.start_date = '2026-01-01' AND c.end_date = '2026-12-31' AND c.contract_price = 120000;"
+    }
+  },
+  "verifier_results_indexed": {
+    "0:Verify the SUSE product exists": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM product WHERE name = 'SUSE Linux Enterprise Server 15' AND lifecycle_state = 'active';"
+    },
+    "10:Verify the knowledge article was correctly linked to the case as a resolution": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM case_knowledge ck JOIN knowledge k ON ck.knowledge_id = k.knowledge_id JOIN customer_case cc ON ck.case_id = cc.case_id WHERE k.title = 'SLES Setup Guide' AND k.owner_id = 152 AND ck.used_as = 'resolution';"
+    },
+    "11:Verify the Larson Operations Desk group exists": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM user_group WHERE name = 'Larson Operations Desk' AND type = 'support' AND active = 1;"
+    },
+    "12:Verify Elsa Larson is a member of Larson Operations Desk": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM user_group_member ugm JOIN user_group g ON ugm.group_id = g.group_id JOIN user u ON ugm.user_id = u.user_id WHERE g.name = 'Larson Operations Desk' AND u.email = 'elsa.larson@larsonplc.com';"
+    },
+    "13:Verify the solution proposal notification was sent": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM notification n JOIN customer_case cc ON n.case_id = cc.case_id WHERE n.email = 'elsa.larson@larsonplc.com' AND n.type = 'solution_proposal' AND n.status = 'success';"
+    },
+    "14:Verify KB owner selection rule (min +44 agent/manager)": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM knowledge k JOIN user u ON k.owner_id = u.user_id WHERE k.title = 'SLES Setup Guide' AND k.owner_id = 152 AND u.active = 1 AND u.role IN ('agent','manager') AND u.phone LIKE '+44%' AND u.user_id = (SELECT MIN(user_id) FROM user WHERE active = 1 AND role IN ('agent','manager') AND phone LIKE '+44%');"
+    },
+    "1:Verify the Larson PLC account exists": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM account WHERE name = 'Larson PLC' AND active = 1;"
+    },
+    "2:Verify the London location for Larson PLC exists": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM location WHERE name = 'Larson London Office' AND city = 'london' AND country = 'uk' AND active = 1;"
+    },
+    "3:Verify the portal user for Elsa Larson": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM user WHERE email = 'elsa.larson@larsonplc.com' AND first_name = 'Elsa' AND last_name = 'Larson' AND role = 'customer' AND active = 1 AND phone = '+44-20-3000-6000';"
+    },
+    "4:Verify the Elsa Larson contact": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM contact c JOIN account a ON c.account_id = a.account_id JOIN user u ON c.portal_user_id = u.user_id WHERE a.name = 'Larson PLC' AND u.email = 'elsa.larson@larsonplc.com' AND c.active = 1 AND c.is_primary = 1;"
+    },
+    "5:Verify the SUSE installed product record": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM installed_product ip JOIN account a ON ip.account_id = a.account_id JOIN product p ON ip.product_id = p.product_id JOIN location l ON ip.location_id = l.location_id WHERE a.name = 'Larson PLC' AND p.name = 'SUSE Linux Enterprise Server 15' AND l.name = 'Larson London Office' AND ip.serial_number = 'LAR-SLES-2027' AND ip.status = 'in_use' AND ip.warranty_end = '2027-06-30';"
+    },
+    "6:Verify the support contract for 2026": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM contract c JOIN account a ON c.account_id = a.account_id WHERE a.name = 'Larson PLC' AND c.contract_type = 'support' AND c.status = 'active' AND c.start_date = '2026-01-01' AND c.end_date = '2026-12-31' AND c.contract_price = 120000;"
+    },
+    "7:Verify the premium 24x7 entitlement": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM entitlement e JOIN account a ON e.account_id = a.account_id WHERE a.name = 'Larson PLC' AND e.support_level = 'premium' AND e.coverage_hours = 'h24x7' AND e.max_cases_per_month = 20 AND e.active = 1;"
+    },
+    "8:Verify the case and its SLA linkage": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM customer_case cc JOIN account a ON cc.account_id = a.account_id JOIN case_sla cs ON cc.case_id = cs.case_id JOIN sla_definition s ON s.sla_def_id = cs.sla_def_id WHERE a.name = 'Larson PLC' AND cc.case_id = 1233 AND cc.assignment_group_id = 81 AND cc.assigned_to = 217 AND cc.channel = 'phone' AND cc.priority = 'moderate' AND cc.state = 'in_progress' AND s.name = 'SLA Response - Moderate' AND cs.stage = 'in_progress';"
+    },
+    "9:Verify the knowledge article exists": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM knowledge k JOIN product p ON k.product_id = p.product_id WHERE k.title = 'SLES Setup Guide' AND k.state = 'published' AND k.owner_id = 152 AND k.visibility = 'internal' AND p.name = 'SUSE Linux Enterprise Server 15';"
+    }
+  },
+  "verifier_summary_collapsed": {
+    "failed": 6,
+    "pass_rate": 0.6,
+    "passed": 9,
+    "total": 15
+  },
+  "verifier_summary_indexed": {
+    "failed": 6,
+    "pass_rate": 0.6,
+    "passed": 9,
+    "total": 15
+  }
+}

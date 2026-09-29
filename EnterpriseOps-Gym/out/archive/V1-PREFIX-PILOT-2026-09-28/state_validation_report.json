@@ -1,0 +1,280 @@
+{
+  "anchors_resolved": 10,
+  "condition": "B_state_model",
+  "delivered": 7,
+  "delivery_rate": 0.6363636363636364,
+  "mean_precision": 0.575,
+  "mean_recall": 0.3364866194411649,
+  "per_task": [
+    {
+      "anchor_row_id": "1",
+      "anchor_strategy": "",
+      "anchor_table": "customer_case",
+      "delivered": true,
+      "error": null,
+      "precision": 0.5,
+      "precision_granularity": "table",
+      "recall": 0.6666666666666666,
+      "retrieved_records": 14,
+      "retrieved_table_names": [
+        "account",
+        "contract",
+        "customer_case",
+        "entitlement"
+      ],
+      "retrieved_tables": 4,
+      "retrieved_tokens": 1000,
+      "route_status": "COMPLETE",
+      "run_index": 1,
+      "structurally_valid": true,
+      "task_id": "task_20251205_153330_906_a8eea1c0_8c7a6205"
+    },
+    {
+      "anchor_row_id": "692",
+      "anchor_strategy": "",
+      "anchor_table": "location",
+      "delivered": false,
+      "error": "StateModelDeliveryError: state model delivery failed: route=UNRESOLVED, records=2, tokens=209; non-empty COMPLETE state context required",
+      "precision": 0.0,
+      "precision_granularity": "table",
+      "recall": 0.0,
+      "retrieved_records": 2,
+      "retrieved_table_names": [
+        "location",
+        "user"
+      ],
+      "retrieved_tables": 2,
+      "retrieved_tokens": 0,
+      "route_status": "UNRESOLVED",
+      "run_index": 1,
+      "structurally_valid": true,
+      "task_id": "task_20251205_154853_044_d4a463c3_fce76046"
+    },
+    {
+      "anchor_row_id": "20",
+      "anchor_strategy": "",
+      "anchor_table": "customer_case",
+      "delivered": false,
+      "error": "StateModelDeliveryError: state model delivery failed: route=UNRESOLVED, records=4, tokens=453; non-empty COMPLETE state context required",
+      "precision": 0.5,
+      "precision_granularity": "table",
+      "recall": 0.5,
+      "retrieved_records": 4,
+      "retrieved_table_names": [
+        "account",
+        "contact",
+        "customer_case",
+        "product"
+      ],
+      "retrieved_tables": 4,
+      "retrieved_tokens": 0,
+      "route_status": "UNRESOLVED",
+      "run_index": 1,
+      "structurally_valid": true,
+      "task_id": "task_20251210_002938_761_897c3e0b_f075229a"
+    },
+    {
+      "anchor_row_id": "888",
+      "anchor_strategy": "",
+      "anchor_table": "customer_case",
+      "delivered": true,
+      "error": null,
+      "precision": 0.25,
+      "precision_granularity": "table",
+      "recall": 0.2,
+      "retrieved_records": 13,
+      "retrieved_table_names": [
+        "account",
+        "contract",
+        "customer_case",
+        "entitlement"
+      ],
+      "retrieved_tables": 4,
+      "retrieved_tokens": 1000,
+      "route_status": "COMPLETE",
+      "run_index": 1,
+      "structurally_valid": true,
+      "task_id": "task_20251210_113549_827_d4a463c3_47b48a98"
+    },
+    {
+      "anchor_row_id": "18",
+      "anchor_strategy": "",
+      "anchor_table": "user_group",
+      "delivered": true,
+      "error": null,
+      "precision": 0.8,
+      "precision_granularity": "table",
+      "recall": 0.5714285714285714,
+      "retrieved_records": 77,
+      "retrieved_table_names": [
+        "account",
+        "contract",
+        "customer_case",
+        "entitlement",
+        "user_group"
+      ],
+      "retrieved_tables": 5,
+      "retrieved_tokens": 1000,
+      "route_status": "COMPLETE",
+      "run_index": 1,
+      "structurally_valid": true,
+      "task_id": "task_20251231_162628_797_a8eea1c0_0a53db6c"
+    },
+    {
+      "anchor_row_id": "9",
+      "anchor_strategy": "",
+      "anchor_table": "customer_case",
+      "delivered": true,
+      "error": null,
+      "precision": 0.75,
+      "precision_granularity": "table",
+      "recall": 0.2727272727272727,
+      "retrieved_records": 14,
+      "retrieved_table_names": [
+        "account",
+        "contract",
+        "customer_case",
+        "entitlement"
+      ],
+      "retrieved_tables": 4,
+      "retrieved_tokens": 1000,
+      "route_status": "COMPLETE",
+      "run_index": 1,
+      "structurally_valid": true,
+      "task_id": "task_20260101_043715_660_a8eea1c0_7304e48e"
+    },
+    {
+      "anchor_row_id": null,
+      "anchor_strategy": "",
+      "anchor_table": null,
+      "delivered": false,
+      "error": "StateModelDeliveryError: state model delivery failed: HTTPStatusError: Client error '400 Bad Request' for url 'http://localhost:8001/api/sql-runner'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400",
+      "precision": null,
+      "precision_granularity": "table",
+      "recall": 0.0,
+      "retrieved_records": 0,
+      "retrieved_table_names": [],
+      "retrieved_tables": 0,
+      "retrieved_tokens": 0,
+      "route_status": "FAILED",
+      "run_index": 1,
+      "structurally_valid": false,
+      "task_id": "task_20260101_122222_300_ad5a67e3_3757206c"
+    },
+    {
+      "anchor_row_id": "56",
+      "anchor_strategy": "",
+      "anchor_table": "customer_case",
+      "delivered": true,
+      "error": null,
+      "precision": 0.2,
+      "precision_granularity": "table",
+      "recall": 0.3333333333333333,
+      "retrieved_records": 18,
+      "retrieved_table_names": [
+        "account",
+        "case_sla",
+        "customer_case",
+        "entitlement",
+        "product"
+      ],
+      "retrieved_tables": 5,
+      "retrieved_tokens": 1000,
+      "route_status": "COMPLETE",
+      "run_index": 1,
+      "structurally_valid": true,
+      "task_id": "task_20260102_155148_014_accab84d_910b176a"
+    },
+    {
+      "anchor_row_id": "5",
+      "anchor_strategy": "",
+      "anchor_table": "product",
+      "delivered": false,
+      "error": "StateModelDeliveryError: state model delivery failed: route=UNRESOLVED, records=8, tokens=829; non-empty COMPLETE state context required",
+      "precision": 1.0,
+      "precision_granularity": "table",
+      "recall": 0.1875,
+      "retrieved_records": 8,
+      "retrieved_table_names": [
+        "account",
+        "customer_case",
+        "product"
+      ],
+      "retrieved_tables": 3,
+      "retrieved_tokens": 0,
+      "route_status": "UNRESOLVED",
+      "run_index": 1,
+      "structurally_valid": true,
+      "task_id": "task_20260102_161510_799_ad5a67e3_7221f3c8"
+    },
+    {
+      "anchor_row_id": "11",
+      "anchor_strategy": "",
+      "anchor_table": "user_group",
+      "delivered": true,
+      "error": null,
+      "precision": 1.0,
+      "precision_granularity": "table",
+      "recall": 0.6363636363636364,
+      "retrieved_records": 17,
+      "retrieved_table_names": [
+        "account",
+        "contact",
+        "customer_case",
+        "installed_product",
+        "product",
+        "user",
+        "user_group"
+      ],
+      "retrieved_tables": 7,
+      "retrieved_tokens": 1000,
+      "route_status": "COMPLETE",
+      "run_index": 1,
+      "structurally_valid": true,
+      "task_id": "task_20260102_172945_725_ad5a67e3_5480e26f"
+    },
+    {
+      "anchor_row_id": "102",
+      "anchor_strategy": "",
+      "anchor_table": "customer_case",
+      "delivered": true,
+      "error": null,
+      "precision": 0.75,
+      "precision_granularity": "table",
+      "recall": 0.3333333333333333,
+      "retrieved_records": 4,
+      "retrieved_table_names": [
+        "case_knowledge",
+        "customer_case",
+        "knowledge",
+        "product"
+      ],
+      "retrieved_tables": 4,
+      "retrieved_tokens": 346,
+      "route_status": "COMPLETE",
+      "run_index": 1,
+      "structurally_valid": true,
+      "task_id": "task_20260104_202644_765_00364ece_a86667c0"
+    }
+  ],
+  "routes_structurally_valid": 10,
+  "runs_seen": 11,
+  "runs_with_telemetry": 11,
+  "targets": {
+    "delivery": {
+      "met": false,
+      "observed": 0.6363636363636364,
+      "target": 1.0
+    },
+    "precision": {
+      "met": false,
+      "observed": 0.575,
+      "target": 0.8
+    },
+    "recall": {
+      "met": false,
+      "observed": 0.3364866194411649,
+      "target": 0.8
+    }
+  }
+}

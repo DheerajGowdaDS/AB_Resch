@@ -1,0 +1,79 @@
+{
+  "agent_error": true,
+  "complexity_category": "TYPE_5_MULTI_STEP",
+  "condition": "B_state_model",
+  "error_message": "StateModelDeliveryError: state model delivery failed: route=UNRESOLVED, records=2, tokens=209; non-empty COMPLETE state context required",
+  "experiment": "experiment_1",
+  "fingerprint_match": null,
+  "fingerprint_mismatch_reason": null,
+  "finished_at": "2026-09-28T06:19:56.158348+00:00",
+  "goal_states": [
+    "AGENT_RUNNING",
+    "VERIFIED",
+    "RECORDED"
+  ],
+  "initial_state_fingerprint": "63bccb645c6158cf23310d6fd633ad3966ebde05112baf78f8141a81b11ca689",
+  "input_tokens": null,
+  "invalid_action_count": 0,
+  "latency_ms": 0,
+  "max_steps": 5,
+  "model_name": "space-bunny-alpha",
+  "model_provider": "openrouter",
+  "orchestrator": "react",
+  "output_tokens": null,
+  "overall_success": false,
+  "read_query_count": 0,
+  "run_index": 1,
+  "run_uid": "e27797d9667a4470817d746e3e81a3ea",
+  "runtime_database_id": "db_1790576381827_v68r5j2ta",
+  "seed_database_file": "Domain Wise DBs and Task-DB Mappings/csm/dbs/db_1762254390925_u5icw4thh.sql",
+  "started_at": "",
+  "state_retrieval": {
+    "anchor_row_id": "692",
+    "anchor_status": "RESOLVED",
+    "anchor_table": "location",
+    "context_tokens_injected": 0,
+    "retrieval_latency_ms": 2320.4749999567866,
+    "retrieved_records": 2,
+    "retrieved_rows": [
+      [
+        "location",
+        "692"
+      ],
+      [
+        "user",
+        "692"
+      ]
+    ],
+    "retrieved_table_names": [
+      "location",
+      "user"
+    ],
+    "retrieved_tables": 2,
+    "retrieved_tokens": 209,
+    "state_error": null,
+    "state_model_available": false,
+    "state_model_delivered": false,
+    "state_retrieval_count": 1,
+    "state_route_status": "UNRESOLVED"
+  },
+  "steps_taken": 0,
+  "task_id": "task_20251205_154853_044_d4a463c3_fce76046",
+  "temperature": 0.0,
+  "timings_ms": {
+    "agent": 15267.998899915256,
+    "lost_to_collision": 0.0,
+    "verify": 0.0
+  },
+  "tool_call_count": 0,
+  "tool_mode": "oracle",
+  "verifier_results_collapsed": {},
+  "verifier_results_indexed": {},
+  "verifier_summary_collapsed": {
+    "failed": 0,
+    "pass_rate": 0.0,
+    "passed": 0,
+    "total": 0
+  },
+  "verifier_summary_indexed": {}
+}

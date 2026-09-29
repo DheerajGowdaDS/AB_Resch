@@ -1,0 +1,138 @@
+{
+  "agent_error": false,
+  "complexity_category": "TYPE_5_MULTI_STEP",
+  "condition": "A_baseline",
+  "error_message": null,
+  "experiment": "experiment_1",
+  "fingerprint_match": null,
+  "fingerprint_mismatch_reason": null,
+  "finished_at": "2026-09-28T06:30:07.902542+00:00",
+  "goal_states": [
+    "AGENT_RUNNING",
+    "VERIFIED",
+    "RECORDED"
+  ],
+  "initial_state_fingerprint": "63bccb645c6158cf23310d6fd633ad3966ebde05112baf78f8141a81b11ca689",
+  "input_tokens": 30086,
+  "invalid_action_count": 0,
+  "latency_ms": 49003,
+  "max_steps": 5,
+  "model_name": "space-bunny-alpha",
+  "model_provider": "openrouter",
+  "orchestrator": "react",
+  "output_tokens": 1038,
+  "overall_success": false,
+  "read_query_count": 6,
+  "run_index": 1,
+  "run_uid": "318577d9114d4b8cab20f4bab4231308",
+  "runtime_database_id": "db_1790576955702_3dfzbu6ty",
+  "seed_database_file": "Domain Wise DBs and Task-DB Mappings/csm/dbs/db_1762254390925_u5icw4thh.sql",
+  "started_at": "2026-09-28T06:29:15.702342+00:00",
+  "state_retrieval": null,
+  "steps_taken": 5,
+  "task_id": "task_20260101_122222_300_ad5a67e3_3757206c",
+  "temperature": 0.0,
+  "timings_ms": {
+    "agent": 53693.03189998027,
+    "lost_to_collision": 0.0,
+    "verify": 49003.0
+  },
+  "tool_call_count": 9,
+  "tool_mode": "oracle",
+  "verifier_results_collapsed": {
+    "Confirm the case is linked to 'SLA Response - High' (RESPONSE metric) and is in_progress": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM case_sla cs JOIN customer_case cc ON cc.case_id = cs.case_id JOIN sla_definition s ON s.sla_def_id = cs.sla_def_id WHERE cc.short_description = 'SSL termination issue on Windows Server node' AND s.name = 'SLA Response - High' AND s.metric = 'response' AND cs.stage = 'in_progress';"
+    },
+    "Confirm the entitlement is properly linked to the new 2026 support contract": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM entitlement e JOIN contract c ON e.contract_id = c.contract_id JOIN account a ON c.account_id = a.account_id WHERE a.name = 'Wayne Enterprises' AND c.contract_type = 'support' AND c.start_date = '2026-01-01' AND e.support_level = 'premium' AND e.coverage_hours = 'h24x7';"
+    },
+    "Confirm the high-priority phone case was created as NEW then moved to IN_PROGRESS under an active primary contact": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM customer_case cc JOIN account a ON cc.account_id = a.account_id JOIN contact c ON cc.contact_id = c.contact_id JOIN product p ON cc.product_id = p.product_id WHERE a.name = 'Wayne Enterprises' AND p.name = 'Windows Server 2022 Datacenter' AND cc.short_description = 'SSL termination issue on Windows Server node' AND cc.channel = 'phone' AND cc.priority = 'high' AND cc.state = 'in_progress' AND c.is_primary = 1 AND c.active = 1 AND cc.sys_updated_on > cc.sys_created_on;"
+    },
+    "Confirm the premium 24\u00d77 entitlement exists under Wayne Enterprises with product linkage": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM entitlement e JOIN account a ON a.account_id = e.account_id JOIN product p ON e.product_id = p.product_id WHERE a.name = 'Wayne Enterprises' AND e.support_level = 'premium' AND e.coverage_hours = 'h24x7' AND e.max_cases_per_month = 50 AND e.active = 1 AND p.name = 'Windows Server 2022 Datacenter';"
+    },
+    "Confirm the support contract for Wayne Enterprises is created with correct attributes": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM contract c JOIN account a ON a.account_id = c.account_id WHERE a.name = 'Wayne Enterprises' AND c.contract_type = 'support' AND c.status = 'active' AND c.start_date = '2026-01-01' AND c.end_date = '2026-12-31' AND c.contract_price = 150000;"
+    }
+  },
+  "verifier_results_indexed": {
+    "0:Confirm the support contract for Wayne Enterprises is created with correct attributes": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM contract c JOIN account a ON a.account_id = c.account_id WHERE a.name = 'Wayne Enterprises' AND c.contract_type = 'support' AND c.status = 'active' AND c.start_date = '2026-01-01' AND c.end_date = '2026-12-31' AND c.contract_price = 150000;"
+    },
+    "1:Confirm the premium 24\u00d77 entitlement exists under Wayne Enterprises with product linkage": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM entitlement e JOIN account a ON a.account_id = e.account_id JOIN product p ON e.product_id = p.product_id WHERE a.name = 'Wayne Enterprises' AND e.support_level = 'premium' AND e.coverage_hours = 'h24x7' AND e.max_cases_per_month = 50 AND e.active = 1 AND p.name = 'Windows Server 2022 Datacenter';"
+    },
+    "2:Confirm the high-priority phone case was created as NEW then moved to IN_PROGRESS under an active primary contact": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM customer_case cc JOIN account a ON cc.account_id = a.account_id JOIN contact c ON cc.contact_id = c.contact_id JOIN product p ON cc.product_id = p.product_id WHERE a.name = 'Wayne Enterprises' AND p.name = 'Windows Server 2022 Datacenter' AND cc.short_description = 'SSL termination issue on Windows Server node' AND cc.channel = 'phone' AND cc.priority = 'high' AND cc.state = 'in_progress' AND c.is_primary = 1 AND c.active = 1 AND cc.sys_updated_on > cc.sys_created_on;"
+    },
+    "3:Confirm the case is linked to 'SLA Response - High' (RESPONSE metric) and is in_progress": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM case_sla cs JOIN customer_case cc ON cc.case_id = cs.case_id JOIN sla_definition s ON s.sla_def_id = cs.sla_def_id WHERE cc.short_description = 'SSL termination issue on Windows Server node' AND s.name = 'SLA Response - High' AND s.metric = 'response' AND cs.stage = 'in_progress';"
+    },
+    "4:Confirm the entitlement is properly linked to the new 2026 support contract": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM entitlement e JOIN contract c ON e.contract_id = c.contract_id JOIN account a ON c.account_id = a.account_id WHERE a.name = 'Wayne Enterprises' AND c.contract_type = 'support' AND c.start_date = '2026-01-01' AND e.support_level = 'premium' AND e.coverage_hours = 'h24x7';"
+    }
+  },
+  "verifier_summary_collapsed": {
+    "failed": 5,
+    "pass_rate": 0.0,
+    "passed": 0,
+    "total": 5
+  },
+  "verifier_summary_indexed": {
+    "failed": 5,
+    "pass_rate": 0.0,
+    "passed": 0,
+    "total": 5
+  }
+}

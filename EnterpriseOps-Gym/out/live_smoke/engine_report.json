@@ -1,0 +1,50 @@
+{
+  "completed": 2,
+  "concurrency": 1,
+  "failed": 0,
+  "goals_per_minute": 1.0664845471299738,
+  "skipped": 0,
+  "stage_summary": {
+    "agent": {
+      "count": 2,
+      "mean_ms": 56258.82685004035,
+      "total_ms": 112517.6537000807
+    }
+  },
+  "total_goals": 2,
+  "traces": [
+    {
+      "condition": "A_baseline",
+      "error": null,
+      "history": [
+        "PENDING",
+        "RECORDED"
+      ],
+      "recorded": true,
+      "run_index": 1,
+      "state": "RECORDED",
+      "task_id": "task_20260102_155148_014_accab84d_910b176a",
+      "timings_ms": {
+        "agent": 62585.46640002169
+      },
+      "wall_clock_ms": 62586.189099936746
+    },
+    {
+      "condition": "B_state_model",
+      "error": null,
+      "history": [
+        "PENDING",
+        "RECORDED"
+      ],
+      "recorded": true,
+      "run_index": 1,
+      "state": "RECORDED",
+      "task_id": "task_20260102_155148_014_accab84d_910b176a",
+      "timings_ms": {
+        "agent": 49932.18730005901
+      },
+      "wall_clock_ms": 112058.06169996504
+    }
+  ],
+  "wall_clock_ms": 112519.2111999495
+}

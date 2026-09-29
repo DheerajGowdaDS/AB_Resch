@@ -1,0 +1,14 @@
+{
+  "reason": "observed censored fraction 1.5% is within the predefined threshold; the current budget is supported by observed headroom.",
+  "recommended_max_steps": 15,
+  "validated": true,
+  "verdict": {
+    "budget_capped": 1,
+    "censored_failures": 1,
+    "censored_fraction": 0.015151515151515152,
+    "max_steps": 15,
+    "observed_max_steps": 15,
+    "runs": 66,
+    "sufficient": true
+  }
+}

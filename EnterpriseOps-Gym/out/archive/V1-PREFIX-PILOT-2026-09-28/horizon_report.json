@@ -1,0 +1,13 @@
+{
+  "reason": "18/22 runs hit the ceiling and failed; task success is currently measuring the budget, not the agent",
+  "recommended_max_steps": 50,
+  "verdict": {
+    "budget_capped": 18,
+    "censored_failures": 18,
+    "censored_fraction": 0.8181818181818182,
+    "max_steps": 5,
+    "observed_max_steps": 5,
+    "runs": 22,
+    "sufficient": false
+  }
+}
