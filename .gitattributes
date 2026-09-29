@@ -1,0 +1,17 @@
+# Normalize line endings so content hashes are reproducible.
+#
+# Why this file exists: `pinned_revisions.json` pins SHA-256 hashes of the
+# ablation modules, and those hashes are byte-sensitive. On Windows a default
+# `core.autocrlf=true` checkout rewrites LF files to CRLF, which silently
+# invalidates every pin while `git status` still reports the tree as clean --
+# exactly the drift the pin gate exists to prevent. Pinning the endings here
+# makes the gate platform-independent.
+* text=auto eol=lf
+
+# Binary payloads: never translate.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.zip binary
+*.sql -text
