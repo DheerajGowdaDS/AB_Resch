@@ -1,0 +1,172 @@
+{
+  "agent_error": false,
+  "complexity_category": "TYPE_4_CROSS_ENTITY",
+  "condition": "A_baseline",
+  "error_message": null,
+  "experiment": "experiment_1",
+  "experiment_version": "V1.2-STATE-MODEL-REFINED",
+  "fingerprint_match": null,
+  "fingerprint_mismatch_reason": null,
+  "finished_at": "2026-09-29T16:40:38.697808+00:00",
+  "goal_states": [
+    "AGENT_RUNNING",
+    "VERIFIED",
+    "RECORDED"
+  ],
+  "initial_state_fingerprint": "63bccb645c6158cf23310d6fd633ad3966ebde05112baf78f8141a81b11ca689",
+  "input_tokens": 6713,
+  "invalid_action_count": 0,
+  "latency_ms": 29360,
+  "manifest_hash": null,
+  "max_steps": 15,
+  "model_name": "nemotron-3-super-free",
+  "model_provider": "openrouter",
+  "orchestrator": "react",
+  "output_tokens": 286,
+  "overall_success": false,
+  "read_query_count": 1,
+  "run_index": 1,
+  "run_uid": "1dc2ee707db047039f669e61f9e4cd37",
+  "runtime_database_id": "db_1790700005769_41pjso2kr",
+  "seed_database_file": "Domain Wise DBs and Task-DB Mappings/csm/dbs/db_1762254390925_u5icw4thh.sql",
+  "started_at": "2026-09-29T16:40:05.769321+00:00",
+  "state_retrieval": null,
+  "steps_taken": 2,
+  "task_id": "task_20251205_153330_906_a8eea1c0_8c7a6205",
+  "temperature": 0.1,
+  "timings_ms": {
+    "agent": 37185.78780000098,
+    "lost_to_collision": 8.0,
+    "verify": 29360.0
+  },
+  "tool_call_count": 1,
+  "tool_mode": "oracle",
+  "verifier_results_collapsed": {
+    "create_new_case": {
+      "actual": [],
+      "comparison_type": "equals",
+      "details": "Comparison equals: [] vs in_progress",
+      "expected": "in_progress",
+      "passed": false,
+      "query": "SELECT state FROM customer_case WHERE case_id = 1233;"
+    },
+    "link_new_case_sla": {
+      "actual": [],
+      "comparison_type": "equals",
+      "details": "Comparison equals: [] vs in_progress",
+      "expected": "in_progress",
+      "passed": false,
+      "query": "SELECT stage FROM case_sla WHERE case_id = 1233 AND sla_def_id = 6;"
+    },
+    "update_entitlement": {
+      "actual": "standard",
+      "comparison_type": "equals",
+      "details": "Comparison equals: standard vs enterprise",
+      "expected": "enterprise",
+      "passed": false,
+      "query": "SELECT support_level FROM entitlement WHERE entitlement_id = 73;"
+    }
+  },
+  "verifier_results_indexed": {
+    "0:update_entitlement": {
+      "actual": "h8x5",
+      "comparison_type": "equals",
+      "details": "Comparison equals: h8x5 vs h24x7",
+      "expected": "h24x7",
+      "passed": false,
+      "query": "SELECT coverage_hours FROM entitlement WHERE entitlement_id = 73;"
+    },
+    "10:update_entitlement": {
+      "actual": "standard",
+      "comparison_type": "equals",
+      "details": "Comparison equals: standard vs enterprise",
+      "expected": "enterprise",
+      "passed": false,
+      "query": "SELECT support_level FROM entitlement WHERE entitlement_id = 73;"
+    },
+    "1:update_entitlement": {
+      "actual": 10,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 10 vs 0",
+      "expected": 0,
+      "passed": false,
+      "query": "SELECT max_cases_per_month FROM entitlement WHERE entitlement_id = 73;"
+    },
+    "2:update_entitlement": {
+      "actual": 1,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 1 vs 1",
+      "expected": 1,
+      "passed": true,
+      "query": "SELECT COUNT(*) FROM entitlement WHERE entitlement_id = 73 AND sys_updated_on IS NOT NULL"
+    },
+    "3:create_new_case": {
+      "actual": [],
+      "comparison_type": "equals",
+      "details": "Comparison equals: [] vs 42",
+      "expected": 42,
+      "passed": false,
+      "query": "SELECT installed_product_id FROM customer_case WHERE case_id = 1233;"
+    },
+    "4:create_new_case": {
+      "actual": [],
+      "comparison_type": "equals",
+      "details": "Comparison equals: [] vs critical",
+      "expected": "critical",
+      "passed": false,
+      "query": "SELECT priority FROM customer_case WHERE case_id = 1233 AND channel = 'phone';"
+    },
+    "5:create_new_case": {
+      "actual": [],
+      "comparison_type": "equals",
+      "details": "Comparison equals: [] vs 18",
+      "expected": 18,
+      "passed": false,
+      "query": "SELECT assignment_group_id FROM customer_case WHERE case_id = 1233;"
+    },
+    "6:create_new_case": {
+      "actual": [],
+      "comparison_type": "equals",
+      "details": "Comparison equals: [] vs 177",
+      "expected": 177,
+      "passed": false,
+      "query": "SELECT assigned_to FROM customer_case WHERE case_id = 1233;"
+    },
+    "7:create_new_case": {
+      "actual": [],
+      "comparison_type": "equals",
+      "details": "Comparison equals: [] vs in_progress",
+      "expected": "in_progress",
+      "passed": false,
+      "query": "SELECT state FROM customer_case WHERE case_id = 1233;"
+    },
+    "8:link_new_case_sla": {
+      "actual": 0,
+      "comparison_type": "equals",
+      "details": "Comparison equals: 0 vs 1",
+      "expected": 1,
+      "passed": false,
+      "query": "SELECT COUNT(*) FROM case_sla WHERE case_id = 1233 AND sla_def_id = 6;"
+    },
+    "9:link_new_case_sla": {
+      "actual": [],
+      "comparison_type": "equals",
+      "details": "Comparison equals: [] vs in_progress",
+      "expected": "in_progress",
+      "passed": false,
+      "query": "SELECT stage FROM case_sla WHERE case_id = 1233 AND sla_def_id = 6;"
+    }
+  },
+  "verifier_summary_collapsed": {
+    "failed": 3,
+    "pass_rate": 0.0,
+    "passed": 0,
+    "total": 3
+  },
+  "verifier_summary_indexed": {
+    "failed": 10,
+    "pass_rate": 0.09090909090909091,
+    "passed": 1,
+    "total": 11
+  }
+}

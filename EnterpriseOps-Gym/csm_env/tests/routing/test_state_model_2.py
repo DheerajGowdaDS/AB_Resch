@@ -263,3 +263,48 @@ def test_project_columns_and_registry_use_one_resolver(registry):
     # Every column the shared resolver realizes on customer_case must be in the
     # planner's projection (the planner's projection is a superset for that table).
     assert set(shared_cols) <= set(planner_cols or ())
+
+
+def test_frontier_step_carries_parent_dependency_and_project_columns(registry):
+    """A frontier (non-anchor) step must reference its parent and project columns.
+
+    This is the SQL-rendering fidelity test for the frontier path: the step
+    shape is what the router turns into the actual SELECT ... WHERE ... query,
+    so depends_on, binding_column, and columns must all be populated from the
+    planner's own projection rather than guessed at render time.
+    """
+    planner = QueryPlanner(build_schema_graph(registry), registry)
+    requirements = TaskRequirements(
+        task_type="custom",
+        required_tables=("customer_case", "account", "contact"),
+        required_relations=(("customer_case", "account"),),
+    )
+    plan = planner.plan(
+        task_type="custom",
+        anchor_table="customer_case",
+        anchor_key="case_id",
+        anchor_value=1233,
+        requirements=requirements,
+        budget=QueryBudget(max_hops=3),
+        route_id="route-frontier-shape",
+    )
+    anchor = plan.steps[0]
+    assert anchor.depends_on is None
+    assert anchor.step_id == "s000"
+
+    non_anchor_steps = [step for step in plan.steps if step.step_id != "s000"]
+    assert non_anchor_steps, "plan with two required tables must produce non-anchor steps"
+
+    for step in non_anchor_steps:
+        assert step.depends_on is not None, (
+            f"frontier step {step.step_id} for {step.table} must reference its parent"
+        )
+        assert step.depends_on in {s.step_id for s in plan.steps}, (
+            f"depends_on must point to a real step in the plan"
+        )
+        assert step.columns is not None, (
+            f"frontier step {step.step_id} must carry projected columns from project_columns"
+        )
+        assert step.binding_column is not None, (
+            f"frontier step {step.step_id} must declare the FK column used to propagate bindings"
+        )

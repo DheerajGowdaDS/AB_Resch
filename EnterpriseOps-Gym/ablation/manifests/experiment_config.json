@@ -1,0 +1,36 @@
+{
+  "experiment_id": "experiment_1",
+  "version": "V1.2-STATE-MODEL-REFINED",
+  "pre_registered_at": "2026-09-29",
+  "tau": {
+    "_comment": "Coverage threshold per task type. Pre-registered; not adaptive.",
+    "case_overview": 0.6,
+    "check_entitlement": 1.0,
+    "resolve_case": 1.0,
+    "find_knowledge": 1.0
+  },
+  "default_tau": 1.0,
+  "distinctness": {
+    "_comment": "B2≠B1 gate: B2 must have strictly fewer retrieved_records than B1 for at least one task in the eval set. Without this, a null result ('minimality does not help') is indistinguishable from 'minimality was not activated'.",
+    "assertion": "b2_retrieved_records_lt_b1_for_some_task",
+    "failure_mode": "gate_failed_runs_excluded_from_b1_vs_b2_contrast"
+  },
+  "c17_verifier_collision": {
+    "_comment": "Resolution for C17 verifier name collision. Option (a) renaming is rejected (changes pinned task-config hashes). Option (b) indexed verifier bridge is selected.",
+    "resolution": "indexed_verifier_bridge",
+    "module": "ablation.verifier_bridge",
+    "function": "run_verifiers_indexed",
+    "rejected_options": ["rename_verifiers_in_task_json"],
+    "note": "run_verifiers_indexed keys results by position (e.g. '0:create_new_case') so colliding names no longer overwrite each other. The benchmark code is unmodified."
+  },
+  "multi_anchor": {
+    "_comment": "Multi-anchor (blueprint section 3/4) is deferred. All 11 eval tasks resolve to exactly one anchor row; implementing multi-anchor yields zero payoff on this benchmark and requires changes to 6+ files.",
+    "status": "deferred",
+    "deviation_documented_in": [
+      "ablation/minimal_state.py",
+      "csm_env/query/coverage.py",
+      "csm_env/state/models.py",
+      "csm_env/state/builder.py"
+    ]
+  }
+}

@@ -470,3 +470,97 @@ def test_compose_state_user_prompt_preserves_the_task():
     assert composed.startswith("TASK PROMPT")
     assert "account 7 is present." in composed
     assert STATE_CONTEXT_HEADER in composed
+
+
+@pytest.mark.asyncio
+async def test_constrained_lookup_combines_name_with_attribute_predicate(registry):
+    """§4 constrained schema-aware lookup: compound predicates narrow the result.
+
+    When the candidate value itself is a compound (``Acme high``), the
+    lookup must combine the name LIKE with an AND constraint on the relevant
+    attribute column, so the returned row matches both conditions.
+    """
+    reader = FakeSQLReader(
+        {
+            "customer_case": [
+                {"case_id": 1, "priority": "high", "name": "Acme"},
+                {"case_id": 2, "priority": "low", "name": "Acme"},
+            ]
+        }
+    )
+    signals = analyze_prompt(
+        "Find Acme high-priority case.",
+        ["find_case"],
+        task_id="constrained",
+        registry=registry,
+    )
+    task = build_task(
+        registry,
+        task_id="constrained",
+        signals=signals,
+        reference_entities=("customer_case",),
+        reference_names=(("customer_case", "Acme"),),
+    )
+    adapter = StateModelAdapter(object(), task, registry=registry, reader=reader)
+
+    # Directly exercise the compound-predicate path: pass an explicit
+    # constraint to _lookup so the test does not depend on the heuristic
+    # extractor finding the qualifier in the prompt.
+    from csm_env.query.adapters import escape_like_pattern
+
+    spec = registry.require_table("customer_case")
+    constraints = (("priority", "high"),)
+    row_id = await adapter._lookup(
+        "customer_case", "Acme", exact=False, constraints=constraints
+    )
+    assert row_id == "1", (
+        f"constrained lookup must return the row matching both name and priority; got {row_id}"
+    )
+    # The generated query must contain both the LIKE predicate and the AND constraint.
+    statements = reader.statements
+    assert any("LIKE" in s and "%Acme%" in s for s in statements), (
+        "constrained lookup must emit a LIKE predicate for the name"
+    )
+    assert any("priority = 'high'" in s for s in statements), (
+        "constrained lookup must AND an equality predicate for the attribute"
+    )
+
+
+@pytest.mark.asyncio
+async def test_constrained_lookup_fallback_when_heuristic_misses(registry):
+    """§4 safety net: a noisy heuristic constraint must not block a valid anchor.
+
+    When the prompt names an attribute and the candidate is multi-word, the
+    heuristic can bind a tail word to the attribute column and eliminate every
+    row.  The fallback retries the same table without constraints, so the
+    anchor still resolves.
+    """
+    reader = FakeSQLReader(
+        {
+            "account": [
+                {"account_id": 7, "name": "Stark Industries", "account_type": "customer"},
+            ]
+        }
+    )
+    signals = analyze_prompt(
+        "Find the priority for Stark Industries.",
+        ["find_account"],
+        task_id="heuristic-fallback",
+        registry=registry,
+    )
+    task = build_task(
+        registry,
+        task_id="heuristic-fallback",
+        signals=signals,
+        reference_entities=("account",),
+        reference_names=(("account", "Stark Industries"),),
+    )
+    adapter = StateModelAdapter(object(), task, registry=registry, reader=reader)
+    anchor = await adapter.resolve_anchor()
+
+    assert anchor.resolved, (
+        f"anchor must resolve via fallback when heuristic constraint eliminates all rows; "
+        f"got {anchor.status}, lookups={anchor.lookups}, statements={reader.statements}"
+    )
+    assert anchor.table == "account"
+    assert anchor.row_id == "7"

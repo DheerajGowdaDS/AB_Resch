@@ -1,0 +1,2112 @@
+{
+  "analysis_notes": [
+    "Primary outcome is task success (all verifiers pass), the benchmark's own definition.",
+    "Stratified tables are exploratory; the pre-registered comparison is the paired one.",
+    "Pooled verifier pass rate is a companion metric, not the official VPR.",
+    "State-model arms are fail-closed: runs without a usable state intervention are execution errors, not baseline fallbacks.",
+    "The causal effect is reported only when the state intervention is delivered on every analyzed state-model run.",
+    "\u03c4 is pre-registered per task type in the design block. Measured recall (prompt-entity relevance) and required-fact coverage (\u03c4) use different denominators: flat measured recall does not imply zero required-fact loss."
+  ],
+  "b2_distinctness": {
+    "assertion": "b2_retrieved_records_lt_b1_for_some_task",
+    "overall_pass": false,
+    "task_details": [],
+    "tasks_passing": 0,
+    "tasks_with_both_arms": 0
+  },
+  "by_complexity": {
+    "TYPE_1_SINGLE_ENTITY": {
+      "A_baseline": {
+        "n": 0,
+        "tsr": null,
+        "vpr": null
+      },
+      "B1_state_model_broad": {
+        "n": 0,
+        "tsr": null,
+        "vpr": null
+      },
+      "B2_state_model_minimal": {
+        "n": 0,
+        "tsr": null,
+        "vpr": null
+      }
+    },
+    "TYPE_2_ONE_HOP": {
+      "A_baseline": {
+        "n": 0,
+        "tsr": null,
+        "vpr": null
+      },
+      "B1_state_model_broad": {
+        "n": 0,
+        "tsr": null,
+        "vpr": null
+      },
+      "B2_state_model_minimal": {
+        "n": 0,
+        "tsr": null,
+        "vpr": null
+      }
+    },
+    "TYPE_3_MULTI_HOP": {
+      "A_baseline": {
+        "n": 0,
+        "tsr": null,
+        "vpr": null
+      },
+      "B1_state_model_broad": {
+        "n": 0,
+        "tsr": null,
+        "vpr": null
+      },
+      "B2_state_model_minimal": {
+        "n": 0,
+        "tsr": null,
+        "vpr": null
+      }
+    },
+    "TYPE_4_CROSS_ENTITY": {
+      "A_baseline": {
+        "n": 3,
+        "tsr": 0.6666666666666666,
+        "vpr": 0.6666666666666666
+      },
+      "B1_state_model_broad": {
+        "n": 3,
+        "tsr": 0.0,
+        "vpr": 0.3333333333333333
+      },
+      "B2_state_model_minimal": {
+        "n": 1,
+        "tsr": 1.0,
+        "vpr": 1.0
+      }
+    },
+    "TYPE_5_MULTI_STEP": {
+      "A_baseline": {
+        "n": 0,
+        "tsr": null,
+        "vpr": null
+      },
+      "B1_state_model_broad": {
+        "n": 0,
+        "tsr": null,
+        "vpr": null
+      },
+      "B2_state_model_minimal": {
+        "n": 0,
+        "tsr": null,
+        "vpr": null
+      }
+    }
+  },
+  "by_steps": {
+    "A_baseline": [
+      {
+        "attribute": "steps_taken",
+        "n": 1,
+        "range": "[-inf, 3)",
+        "tsr": 0.0,
+        "vpr": 0.0
+      },
+      {
+        "attribute": "steps_taken",
+        "n": 0,
+        "range": "[3, 6)",
+        "tsr": null,
+        "vpr": null
+      },
+      {
+        "attribute": "steps_taken",
+        "n": 0,
+        "range": "[6, 10)",
+        "tsr": null,
+        "vpr": null
+      },
+      {
+        "attribute": "steps_taken",
+        "n": 2,
+        "range": "[10, 15)",
+        "tsr": 1.0,
+        "vpr": 1.0
+      },
+      {
+        "attribute": "steps_taken",
+        "n": 0,
+        "range": "[15, inf)",
+        "tsr": null,
+        "vpr": null
+      }
+    ],
+    "B1_state_model_broad": [
+      {
+        "attribute": "steps_taken",
+        "n": 0,
+        "range": "[-inf, 3)",
+        "tsr": null,
+        "vpr": null
+      },
+      {
+        "attribute": "steps_taken",
+        "n": 1,
+        "range": "[3, 6)",
+        "tsr": 0.0,
+        "vpr": 0.0
+      },
+      {
+        "attribute": "steps_taken",
+        "n": 1,
+        "range": "[6, 10)",
+        "tsr": 0.0,
+        "vpr": 0.3333333333333333
+      },
+      {
+        "attribute": "steps_taken",
+        "n": 1,
+        "range": "[10, 15)",
+        "tsr": 0.0,
+        "vpr": 0.6666666666666666
+      },
+      {
+        "attribute": "steps_taken",
+        "n": 0,
+        "range": "[15, inf)",
+        "tsr": null,
+        "vpr": null
+      }
+    ],
+    "B2_state_model_minimal": [
+      {
+        "attribute": "steps_taken",
+        "n": 0,
+        "range": "[-inf, 3)",
+        "tsr": null,
+        "vpr": null
+      },
+      {
+        "attribute": "steps_taken",
+        "n": 0,
+        "range": "[3, 6)",
+        "tsr": null,
+        "vpr": null
+      },
+      {
+        "attribute": "steps_taken",
+        "n": 0,
+        "range": "[6, 10)",
+        "tsr": null,
+        "vpr": null
+      },
+      {
+        "attribute": "steps_taken",
+        "n": 1,
+        "range": "[10, 15)",
+        "tsr": 1.0,
+        "vpr": 1.0
+      },
+      {
+        "attribute": "steps_taken",
+        "n": 0,
+        "range": "[15, inf)",
+        "tsr": null,
+        "vpr": null
+      }
+    ]
+  },
+  "design": {
+    "baseline": "A_baseline",
+    "conditions": [
+      "A_baseline",
+      "B1_state_model_broad",
+      "B2_state_model_minimal"
+    ],
+    "manipulated_variable": "state_model_availability_and_selection_mode",
+    "models": [
+      "openrouter/nemotron-3-super-free"
+    ],
+    "orchestrator": [
+      "react"
+    ],
+    "run_indices": [
+      1,
+      2,
+      3
+    ],
+    "tau": {
+      "default": 1.0,
+      "note": "\u03c4 bounds required-fact loss; measured recall uses prompt-entity relevance as its denominator. The two denominators differ, so flat measured recall does not imply zero required-fact loss.",
+      "per_task_type": {
+        "_comment": "Coverage threshold per task type. Pre-registered; not adaptive.",
+        "case_overview": 0.6,
+        "check_entitlement": 1.0,
+        "find_knowledge": 1.0,
+        "resolve_case": 1.0
+      }
+    },
+    "temperatures": [
+      0.1
+    ],
+    "tool_mode": [
+      "oracle"
+    ],
+    "treatment": "B1_state_model_broad"
+  },
+  "evaluation_set": {
+    "categories": {
+      "TYPE_1_SINGLE_ENTITY": 1,
+      "TYPE_2_ONE_HOP": 0,
+      "TYPE_3_MULTI_HOP": 1,
+      "TYPE_4_CROSS_ENTITY": 4,
+      "TYPE_5_MULTI_STEP": 5
+    },
+    "eval_set_id": "csm-eval-set",
+    "schema_version": "1.0.0",
+    "task_count": 11
+  },
+  "experiment": "experiment_1",
+  "experimental_validity": {
+    "causal_effect_estimate_ready": true,
+    "clean_intervention_delivery": true,
+    "reason": "Every state-model run delivered a usable state intervention and paired analysis is eligible."
+  },
+  "fingerprint_pairing": {
+    "pairs_flagged": 0,
+    "pairs_matched": 4,
+    "pairs_reviewed": 4,
+    "reasons": []
+  },
+  "generated_at": "2026-09-29T16:52:40.862056+00:00",
+  "headline": {
+    "A_baseline": {
+      "agent_error_rate": 0.0,
+      "extra": {
+        "input_tokens": 63603.0,
+        "invalid_action_count": 0.0,
+        "latency_ms": 86152.66666666667,
+        "output_tokens": 2212.6666666666665,
+        "read_query_count": 5.666666666666667,
+        "state_records": null,
+        "state_tokens": null,
+        "steps_taken": 9.0,
+        "tool_call_count": 8.0
+      },
+      "label": "native agent",
+      "runs": 3,
+      "state_model": false,
+      "tsr": 0.6666666666666666,
+      "vpr": 0.6666666666666666,
+      "vpr_indexed": 0.6969696969696969,
+      "vpr_pooled_non_official": 0.6666666666666666
+    },
+    "B1_state_model_broad": {
+      "agent_error_rate": 0.0,
+      "extra": {
+        "input_tokens": 76852.0,
+        "invalid_action_count": 0.0,
+        "latency_ms": 108875.0,
+        "output_tokens": 4324.0,
+        "read_query_count": 6.666666666666667,
+        "state_records": 32.0,
+        "state_tokens": 1000.0,
+        "steps_taken": 9.0,
+        "tool_call_count": 8.0
+      },
+      "label": "+ csm_env broad state model",
+      "runs": 3,
+      "state_model": true,
+      "tsr": 0.0,
+      "vpr": 0.3333333333333333,
+      "vpr_indexed": 0.3636363636363636,
+      "vpr_pooled_non_official": 0.3333333333333333
+    },
+    "B2_state_model_minimal": {
+      "agent_error_rate": 0.0,
+      "extra": {
+        "input_tokens": 99031.0,
+        "invalid_action_count": 0.0,
+        "latency_ms": 128931.0,
+        "output_tokens": 4856.0,
+        "read_query_count": 8.0,
+        "state_records": 4.0,
+        "state_tokens": 388.0,
+        "steps_taken": 12.0,
+        "tool_call_count": 11.0
+      },
+      "label": "+ csm_env minimal state model",
+      "runs": 1,
+      "state_model": true,
+      "tsr": 1.0,
+      "vpr": 1.0,
+      "vpr_indexed": 1.0,
+      "vpr_pooled_non_official": 1.0
+    },
+    "delta_agent_error_rate": 0.0,
+    "delta_tsr": -0.6666666666666666,
+    "delta_vpr": -0.3333333333333333
+  },
+  "paired": {
+    "bootstrap": {
+      "alpha": 0.05,
+      "ci_high": 0.0,
+      "ci_low": -1.0,
+      "delta": -0.6666666666666666,
+      "n": 3,
+      "n_resamples": 10000,
+      "seed": 0
+    },
+    "ci_high": 0.0,
+    "ci_low": -1.0,
+    "delta_tsr": -0.6666666666666666,
+    "mcnemar": {
+      "baseline_only_pass": 2,
+      "discordant": 2,
+      "method": "exact_binomial",
+      "p_value": 0.5,
+      "statistic": 0.0,
+      "test": "mcnemar",
+      "treatment_only_pass": 0
+    },
+    "outcomes": {
+      "baseline_only_pass": 2,
+      "both_fail": 1,
+      "both_pass": 0,
+      "excluded": 0,
+      "total_pairs": 3,
+      "treatment_only_pass": 0
+    }
+  },
+  "pairwise": {
+    "A_baseline_vs_B1_state_model_broad": {
+      "baseline": "A_baseline",
+      "bootstrap": {
+        "alpha": 0.05,
+        "ci_high": 0.0,
+        "ci_low": -1.0,
+        "delta": -0.6666666666666666,
+        "n": 3,
+        "n_resamples": 10000,
+        "seed": 0
+      },
+      "ci_high": 0.0,
+      "ci_low": -1.0,
+      "clean_intervention_delivery": true,
+      "delta_tsr": -0.6666666666666666,
+      "mcnemar": {
+        "baseline_only_pass": 2,
+        "discordant": 2,
+        "method": "exact_binomial",
+        "p_value": 0.5,
+        "statistic": 0.0,
+        "test": "mcnemar",
+        "treatment_only_pass": 0
+      },
+      "outcomes": {
+        "baseline_only_pass": 2,
+        "both_fail": 1,
+        "both_pass": 0,
+        "excluded": 0,
+        "total_pairs": 3,
+        "treatment_only_pass": 0
+      },
+      "treatment": "B1_state_model_broad"
+    },
+    "A_baseline_vs_B2_state_model_minimal": {
+      "baseline": "A_baseline",
+      "bootstrap": {
+        "alpha": 0.05,
+        "ci_high": 1.0,
+        "ci_low": 1.0,
+        "delta": 1.0,
+        "n": 1,
+        "n_resamples": 10000,
+        "seed": 0
+      },
+      "ci_high": 1.0,
+      "ci_low": 1.0,
+      "clean_intervention_delivery": true,
+      "delta_tsr": 1.0,
+      "mcnemar": {
+        "baseline_only_pass": 0,
+        "discordant": 1,
+        "method": "exact_binomial",
+        "p_value": 1.0,
+        "statistic": 0.0,
+        "test": "mcnemar",
+        "treatment_only_pass": 1
+      },
+      "outcomes": {
+        "baseline_only_pass": 0,
+        "both_fail": 0,
+        "both_pass": 0,
+        "excluded": 0,
+        "total_pairs": 1,
+        "treatment_only_pass": 1
+      },
+      "treatment": "B2_state_model_minimal"
+    },
+    "B1_state_model_broad_vs_B2_state_model_minimal": {
+      "baseline": "B1_state_model_broad",
+      "bootstrap": {
+        "alpha": 0.05,
+        "ci_high": 1.0,
+        "ci_low": 1.0,
+        "delta": 1.0,
+        "n": 1,
+        "n_resamples": 10000,
+        "seed": 0
+      },
+      "ci_high": 1.0,
+      "ci_low": 1.0,
+      "clean_intervention_delivery": true,
+      "delta_tsr": 1.0,
+      "mcnemar": {
+        "baseline_only_pass": 0,
+        "discordant": 1,
+        "method": "exact_binomial",
+        "p_value": 1.0,
+        "statistic": 0.0,
+        "test": "mcnemar",
+        "treatment_only_pass": 1
+      },
+      "outcomes": {
+        "baseline_only_pass": 0,
+        "both_fail": 0,
+        "both_pass": 0,
+        "excluded": 0,
+        "total_pairs": 1,
+        "treatment_only_pass": 1
+      },
+      "treatment": "B2_state_model_minimal"
+    }
+  },
+  "performance": {
+    "completed": 7,
+    "concurrency": 1,
+    "failed": 92,
+    "goals_per_minute": 0.5553066392076857,
+    "skipped": 0,
+    "stage_summary": {
+      "agent": {
+        "count": 7,
+        "mean_ms": 108043.58431434126,
+        "total_ms": 756305.0902003888
+      }
+    },
+    "total_goals": 99,
+    "traces": [
+      {
+        "condition": "A_baseline",
+        "error": null,
+        "history": [
+          "PENDING",
+          "RECORDED"
+        ],
+        "recorded": true,
+        "run_index": 1,
+        "state": "RECORDED",
+        "task_id": "task_20251205_153330_906_a8eea1c0_8c7a6205",
+        "timings_ms": {
+          "agent": 37198.089899960905
+        },
+        "wall_clock_ms": 37198.36779986508
+      },
+      {
+        "condition": "A_baseline",
+        "error": null,
+        "history": [
+          "PENDING",
+          "RECORDED"
+        ],
+        "recorded": true,
+        "run_index": 2,
+        "state": "RECORDED",
+        "task_id": "task_20251205_153330_906_a8eea1c0_8c7a6205",
+        "timings_ms": {
+          "agent": 120016.3290000055
+        },
+        "wall_clock_ms": 156815.0416999124
+      },
+      {
+        "condition": "A_baseline",
+        "error": null,
+        "history": [
+          "PENDING",
+          "RECORDED"
+        ],
+        "recorded": true,
+        "run_index": 3,
+        "state": "RECORDED",
+        "task_id": "task_20251205_153330_906_a8eea1c0_8c7a6205",
+        "timings_ms": {
+          "agent": 119071.88190007582
+        },
+        "wall_clock_ms": 275886.88959996216
+      },
+      {
+        "condition": "B1_state_model_broad",
+        "error": null,
+        "history": [
+          "PENDING",
+          "RECORDED"
+        ],
+        "recorded": true,
+        "run_index": 1,
+        "state": "RECORDED",
+        "task_id": "task_20251205_153330_906_a8eea1c0_8c7a6205",
+        "timings_ms": {
+          "agent": 103550.58110016398
+        },
+        "wall_clock_ms": 379437.5360000413
+      },
+      {
+        "condition": "B1_state_model_broad",
+        "error": null,
+        "history": [
+          "PENDING",
+          "RECORDED"
+        ],
+        "recorded": true,
+        "run_index": 2,
+        "state": "RECORDED",
+        "task_id": "task_20251205_153330_906_a8eea1c0_8c7a6205",
+        "timings_ms": {
+          "agent": 68323.39150016196
+        },
+        "wall_clock_ms": 447761.0679999925
+      },
+      {
+        "condition": "B1_state_model_broad",
+        "error": null,
+        "history": [
+          "PENDING",
+          "RECORDED"
+        ],
+        "recorded": true,
+        "run_index": 3,
+        "state": "RECORDED",
+        "task_id": "task_20251205_153330_906_a8eea1c0_8c7a6205",
+        "timings_ms": {
+          "agent": 173367.16950009577
+        },
+        "wall_clock_ms": 621128.3203000203
+      },
+      {
+        "condition": "B2_state_model_minimal",
+        "error": null,
+        "history": [
+          "PENDING",
+          "RECORDED"
+        ],
+        "recorded": true,
+        "run_index": 1,
+        "state": "RECORDED",
+        "task_id": "task_20251205_153330_906_a8eea1c0_8c7a6205",
+        "timings_ms": {
+          "agent": 134777.64729992487
+        },
+        "wall_clock_ms": 755906.0364000034
+      },
+      {
+        "condition": "B2_state_model_minimal",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 2,
+        "state": "FAILED",
+        "task_id": "task_20251205_153330_906_a8eea1c0_8c7a6205",
+        "timings_ms": {},
+        "wall_clock_ms": 755906.366399955
+      },
+      {
+        "condition": "B2_state_model_minimal",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 3,
+        "state": "FAILED",
+        "task_id": "task_20251205_153330_906_a8eea1c0_8c7a6205",
+        "timings_ms": {},
+        "wall_clock_ms": 755906.5787000582
+      },
+      {
+        "condition": "A_baseline",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 1,
+        "state": "FAILED",
+        "task_id": "task_20251205_154853_044_d4a463c3_fce76046",
+        "timings_ms": {},
+        "wall_clock_ms": 755906.7466000561
+      },
+      {
+        "condition": "A_baseline",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 2,
+        "state": "FAILED",
+        "task_id": "task_20251205_154853_044_d4a463c3_fce76046",
+        "timings_ms": {},
+        "wall_clock_ms": 755906.8992000539
+      },
+      {
+        "condition": "A_baseline",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 3,
+        "state": "FAILED",
+        "task_id": "task_20251205_154853_044_d4a463c3_fce76046",
+        "timings_ms": {},
+        "wall_clock_ms": 755907.4360998347
+      },
+      {
+        "condition": "B1_state_model_broad",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 1,
+        "state": "FAILED",
+        "task_id": "task_20251205_154853_044_d4a463c3_fce76046",
+        "timings_ms": {},
+        "wall_clock_ms": 755907.8339999542
+      },
+      {
+        "condition": "B1_state_model_broad",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 2,
+        "state": "FAILED",
+        "task_id": "task_20251205_154853_044_d4a463c3_fce76046",
+        "timings_ms": {},
+        "wall_clock_ms": 755908.1343999133
+      },
+      {
+        "condition": "B1_state_model_broad",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 3,
+        "state": "FAILED",
+        "task_id": "task_20251205_154853_044_d4a463c3_fce76046",
+        "timings_ms": {},
+        "wall_clock_ms": 755908.4324000869
+      },
+      {
+        "condition": "B2_state_model_minimal",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 1,
+        "state": "FAILED",
+        "task_id": "task_20251205_154853_044_d4a463c3_fce76046",
+        "timings_ms": {},
+        "wall_clock_ms": 755908.7843000889
+      },
+      {
+        "condition": "B2_state_model_minimal",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 2,
+        "state": "FAILED",
+        "task_id": "task_20251205_154853_044_d4a463c3_fce76046",
+        "timings_ms": {},
+        "wall_clock_ms": 755909.13429996
+      },
+      {
+        "condition": "B2_state_model_minimal",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 3,
+        "state": "FAILED",
+        "task_id": "task_20251205_154853_044_d4a463c3_fce76046",
+        "timings_ms": {},
+        "wall_clock_ms": 755909.2808999121
+      },
+      {
+        "condition": "A_baseline",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 1,
+        "state": "FAILED",
+        "task_id": "task_20251210_002938_761_897c3e0b_f075229a",
+        "timings_ms": {},
+        "wall_clock_ms": 755909.3760000542
+      },
+      {
+        "condition": "A_baseline",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 2,
+        "state": "FAILED",
+        "task_id": "task_20251210_002938_761_897c3e0b_f075229a",
+        "timings_ms": {},
+        "wall_clock_ms": 755909.4668999314
+      },
+      {
+        "condition": "A_baseline",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 3,
+        "state": "FAILED",
+        "task_id": "task_20251210_002938_761_897c3e0b_f075229a",
+        "timings_ms": {},
+        "wall_clock_ms": 755909.5517999958
+      },
+      {
+        "condition": "B1_state_model_broad",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 1,
+        "state": "FAILED",
+        "task_id": "task_20251210_002938_761_897c3e0b_f075229a",
+        "timings_ms": {},
+        "wall_clock_ms": 755909.6260000952
+      },
+      {
+        "condition": "B1_state_model_broad",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 2,
+        "state": "FAILED",
+        "task_id": "task_20251210_002938_761_897c3e0b_f075229a",
+        "timings_ms": {},
+        "wall_clock_ms": 755909.6948001534
+      },
+      {
+        "condition": "B1_state_model_broad",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 3,
+        "state": "FAILED",
+        "task_id": "task_20251210_002938_761_897c3e0b_f075229a",
+        "timings_ms": {},
+        "wall_clock_ms": 755909.7672000062
+      },
+      {
+        "condition": "B2_state_model_minimal",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 1,
+        "state": "FAILED",
+        "task_id": "task_20251210_002938_761_897c3e0b_f075229a",
+        "timings_ms": {},
+        "wall_clock_ms": 755909.8400999792
+      },
+      {
+        "condition": "B2_state_model_minimal",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 2,
+        "state": "FAILED",
+        "task_id": "task_20251210_002938_761_897c3e0b_f075229a",
+        "timings_ms": {},
+        "wall_clock_ms": 755909.8372000735
+      },
+      {
+        "condition": "B2_state_model_minimal",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 3,
+        "state": "FAILED",
+        "task_id": "task_20251210_002938_761_897c3e0b_f075229a",
+        "timings_ms": {},
+        "wall_clock_ms": 755909.916699864
+      },
+      {
+        "condition": "A_baseline",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 1,
+        "state": "FAILED",
+        "task_id": "task_20251210_113549_827_d4a463c3_47b48a98",
+        "timings_ms": {},
+        "wall_clock_ms": 755909.9775999784
+      },
+      {
+        "condition": "A_baseline",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 2,
+        "state": "FAILED",
+        "task_id": "task_20251210_113549_827_d4a463c3_47b48a98",
+        "timings_ms": {},
+        "wall_clock_ms": 755910.0452999119
+      },
+      {
+        "condition": "A_baseline",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 3,
+        "state": "FAILED",
+        "task_id": "task_20251210_113549_827_d4a463c3_47b48a98",
+        "timings_ms": {},
+        "wall_clock_ms": 755910.1471998729
+      },
+      {
+        "condition": "B1_state_model_broad",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 1,
+        "state": "FAILED",
+        "task_id": "task_20251210_113549_827_d4a463c3_47b48a98",
+        "timings_ms": {},
+        "wall_clock_ms": 755910.3526999243
+      },
+      {
+        "condition": "B1_state_model_broad",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 2,
+        "state": "FAILED",
+        "task_id": "task_20251210_113549_827_d4a463c3_47b48a98",
+        "timings_ms": {},
+        "wall_clock_ms": 755910.7919998933
+      },
+      {
+        "condition": "B1_state_model_broad",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 3,
+        "state": "FAILED",
+        "task_id": "task_20251210_113549_827_d4a463c3_47b48a98",
+        "timings_ms": {},
+        "wall_clock_ms": 755911.1364001874
+      },
+      {
+        "condition": "B2_state_model_minimal",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 1,
+        "state": "FAILED",
+        "task_id": "task_20251210_113549_827_d4a463c3_47b48a98",
+        "timings_ms": {},
+        "wall_clock_ms": 755911.4087000489
+      },
+      {
+        "condition": "B2_state_model_minimal",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 2,
+        "state": "FAILED",
+        "task_id": "task_20251210_113549_827_d4a463c3_47b48a98",
+        "timings_ms": {},
+        "wall_clock_ms": 755911.7111000232
+      },
+      {
+        "condition": "B2_state_model_minimal",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 3,
+        "state": "FAILED",
+        "task_id": "task_20251210_113549_827_d4a463c3_47b48a98",
+        "timings_ms": {},
+        "wall_clock_ms": 755912.0643001515
+      },
+      {
+        "condition": "A_baseline",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 1,
+        "state": "FAILED",
+        "task_id": "task_20251231_162628_797_a8eea1c0_0a53db6c",
+        "timings_ms": {},
+        "wall_clock_ms": 755912.4008999206
+      },
+      {
+        "condition": "A_baseline",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 2,
+        "state": "FAILED",
+        "task_id": "task_20251231_162628_797_a8eea1c0_0a53db6c",
+        "timings_ms": {},
+        "wall_clock_ms": 755912.8199000843
+      },
+      {
+        "condition": "A_baseline",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 3,
+        "state": "FAILED",
+        "task_id": "task_20251231_162628_797_a8eea1c0_0a53db6c",
+        "timings_ms": {},
+        "wall_clock_ms": 755913.1744999904
+      },
+      {
+        "condition": "B1_state_model_broad",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 1,
+        "state": "FAILED",
+        "task_id": "task_20251231_162628_797_a8eea1c0_0a53db6c",
+        "timings_ms": {},
+        "wall_clock_ms": 755913.5580000002
+      },
+      {
+        "condition": "B1_state_model_broad",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 2,
+        "state": "FAILED",
+        "task_id": "task_20251231_162628_797_a8eea1c0_0a53db6c",
+        "timings_ms": {},
+        "wall_clock_ms": 755913.8406000566
+      },
+      {
+        "condition": "B1_state_model_broad",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 3,
+        "state": "FAILED",
+        "task_id": "task_20251231_162628_797_a8eea1c0_0a53db6c",
+        "timings_ms": {},
+        "wall_clock_ms": 755914.2349001486
+      },
+      {
+        "condition": "B2_state_model_minimal",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 1,
+        "state": "FAILED",
+        "task_id": "task_20251231_162628_797_a8eea1c0_0a53db6c",
+        "timings_ms": {},
+        "wall_clock_ms": 755914.4729999825
+      },
+      {
+        "condition": "B2_state_model_minimal",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 2,
+        "state": "FAILED",
+        "task_id": "task_20251231_162628_797_a8eea1c0_0a53db6c",
+        "timings_ms": {},
+        "wall_clock_ms": 755914.7006999701
+      },
+      {
+        "condition": "B2_state_model_minimal",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 3,
+        "state": "FAILED",
+        "task_id": "task_20251231_162628_797_a8eea1c0_0a53db6c",
+        "timings_ms": {},
+        "wall_clock_ms": 755914.9292998482
+      },
+      {
+        "condition": "A_baseline",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 1,
+        "state": "FAILED",
+        "task_id": "task_20260101_043715_660_a8eea1c0_7304e48e",
+        "timings_ms": {},
+        "wall_clock_ms": 755915.1837001555
+      },
+      {
+        "condition": "A_baseline",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 2,
+        "state": "FAILED",
+        "task_id": "task_20260101_043715_660_a8eea1c0_7304e48e",
+        "timings_ms": {},
+        "wall_clock_ms": 755915.40479986
+      },
+      {
+        "condition": "A_baseline",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 3,
+        "state": "FAILED",
+        "task_id": "task_20260101_043715_660_a8eea1c0_7304e48e",
+        "timings_ms": {},
+        "wall_clock_ms": 755915.589600103
+      },
+      {
+        "condition": "B1_state_model_broad",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 1,
+        "state": "FAILED",
+        "task_id": "task_20260101_043715_660_a8eea1c0_7304e48e",
+        "timings_ms": {},
+        "wall_clock_ms": 755915.8003998455
+      },
+      {
+        "condition": "B1_state_model_broad",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 2,
+        "state": "FAILED",
+        "task_id": "task_20260101_043715_660_a8eea1c0_7304e48e",
+        "timings_ms": {},
+        "wall_clock_ms": 755915.9828999545
+      },
+      {
+        "condition": "B1_state_model_broad",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 3,
+        "state": "FAILED",
+        "task_id": "task_20260101_043715_660_a8eea1c0_7304e48e",
+        "timings_ms": {},
+        "wall_clock_ms": 755916.4676999208
+      },
+      {
+        "condition": "B2_state_model_minimal",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 1,
+        "state": "FAILED",
+        "task_id": "task_20260101_043715_660_a8eea1c0_7304e48e",
+        "timings_ms": {},
+        "wall_clock_ms": 755916.5908000432
+      },
+      {
+        "condition": "B2_state_model_minimal",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 2,
+        "state": "FAILED",
+        "task_id": "task_20260101_043715_660_a8eea1c0_7304e48e",
+        "timings_ms": {},
+        "wall_clock_ms": 755916.7732000351
+      },
+      {
+        "condition": "B2_state_model_minimal",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 3,
+        "state": "FAILED",
+        "task_id": "task_20260101_043715_660_a8eea1c0_7304e48e",
+        "timings_ms": {},
+        "wall_clock_ms": 755916.9648999814
+      },
+      {
+        "condition": "A_baseline",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 1,
+        "state": "FAILED",
+        "task_id": "task_20260101_122222_300_ad5a67e3_3757206c",
+        "timings_ms": {},
+        "wall_clock_ms": 755917.1659001149
+      },
+      {
+        "condition": "A_baseline",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 2,
+        "state": "FAILED",
+        "task_id": "task_20260101_122222_300_ad5a67e3_3757206c",
+        "timings_ms": {},
+        "wall_clock_ms": 755917.3461999744
+      },
+      {
+        "condition": "A_baseline",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 3,
+        "state": "FAILED",
+        "task_id": "task_20260101_122222_300_ad5a67e3_3757206c",
+        "timings_ms": {},
+        "wall_clock_ms": 755917.8666998632
+      },
+      {
+        "condition": "B1_state_model_broad",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 1,
+        "state": "FAILED",
+        "task_id": "task_20260101_122222_300_ad5a67e3_3757206c",
+        "timings_ms": {},
+        "wall_clock_ms": 755918.4215001296
+      },
+      {
+        "condition": "B1_state_model_broad",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 2,
+        "state": "FAILED",
+        "task_id": "task_20260101_122222_300_ad5a67e3_3757206c",
+        "timings_ms": {},
+        "wall_clock_ms": 755918.8624999952
+      },
+      {
+        "condition": "B1_state_model_broad",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 3,
+        "state": "FAILED",
+        "task_id": "task_20260101_122222_300_ad5a67e3_3757206c",
+        "timings_ms": {},
+        "wall_clock_ms": 755919.5126998238
+      },
+      {
+        "condition": "B2_state_model_minimal",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 1,
+        "state": "FAILED",
+        "task_id": "task_20260101_122222_300_ad5a67e3_3757206c",
+        "timings_ms": {},
+        "wall_clock_ms": 755919.7974000126
+      },
+      {
+        "condition": "B2_state_model_minimal",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 2,
+        "state": "FAILED",
+        "task_id": "task_20260101_122222_300_ad5a67e3_3757206c",
+        "timings_ms": {},
+        "wall_clock_ms": 755920.0044998433
+      },
+      {
+        "condition": "B2_state_model_minimal",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 3,
+        "state": "FAILED",
+        "task_id": "task_20260101_122222_300_ad5a67e3_3757206c",
+        "timings_ms": {},
+        "wall_clock_ms": 755920.1879000757
+      },
+      {
+        "condition": "A_baseline",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 1,
+        "state": "FAILED",
+        "task_id": "task_20260102_155148_014_accab84d_910b176a",
+        "timings_ms": {},
+        "wall_clock_ms": 755920.3681999352
+      },
+      {
+        "condition": "A_baseline",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 2,
+        "state": "FAILED",
+        "task_id": "task_20260102_155148_014_accab84d_910b176a",
+        "timings_ms": {},
+        "wall_clock_ms": 755920.5418999773
+      },
+      {
+        "condition": "A_baseline",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 3,
+        "state": "FAILED",
+        "task_id": "task_20260102_155148_014_accab84d_910b176a",
+        "timings_ms": {},
+        "wall_clock_ms": 755920.7000001334
+      },
+      {
+        "condition": "B1_state_model_broad",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 1,
+        "state": "FAILED",
+        "task_id": "task_20260102_155148_014_accab84d_910b176a",
+        "timings_ms": {},
+        "wall_clock_ms": 755920.8612998482
+      },
+      {
+        "condition": "B1_state_model_broad",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 2,
+        "state": "FAILED",
+        "task_id": "task_20260102_155148_014_accab84d_910b176a",
+        "timings_ms": {},
+        "wall_clock_ms": 755921.0301998537
+      },
+      {
+        "condition": "B1_state_model_broad",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 3,
+        "state": "FAILED",
+        "task_id": "task_20260102_155148_014_accab84d_910b176a",
+        "timings_ms": {},
+        "wall_clock_ms": 755921.1985999718
+      },
+      {
+        "condition": "B2_state_model_minimal",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 1,
+        "state": "FAILED",
+        "task_id": "task_20260102_155148_014_accab84d_910b176a",
+        "timings_ms": {},
+        "wall_clock_ms": 755921.3749000337
+      },
+      {
+        "condition": "B2_state_model_minimal",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 2,
+        "state": "FAILED",
+        "task_id": "task_20260102_155148_014_accab84d_910b176a",
+        "timings_ms": {},
+        "wall_clock_ms": 755921.5396998916
+      },
+      {
+        "condition": "B2_state_model_minimal",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 3,
+        "state": "FAILED",
+        "task_id": "task_20260102_155148_014_accab84d_910b176a",
+        "timings_ms": {},
+        "wall_clock_ms": 755921.695600031
+      },
+      {
+        "condition": "A_baseline",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 1,
+        "state": "FAILED",
+        "task_id": "task_20260102_161510_799_ad5a67e3_7221f3c8",
+        "timings_ms": {},
+        "wall_clock_ms": 755921.8866999727
+      },
+      {
+        "condition": "A_baseline",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 2,
+        "state": "FAILED",
+        "task_id": "task_20260102_161510_799_ad5a67e3_7221f3c8",
+        "timings_ms": {},
+        "wall_clock_ms": 755922.0824998338
+      },
+      {
+        "condition": "A_baseline",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 3,
+        "state": "FAILED",
+        "task_id": "task_20260102_161510_799_ad5a67e3_7221f3c8",
+        "timings_ms": {},
+        "wall_clock_ms": 755922.2549998667
+      },
+      {
+        "condition": "B1_state_model_broad",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 1,
+        "state": "FAILED",
+        "task_id": "task_20260102_161510_799_ad5a67e3_7221f3c8",
+        "timings_ms": {},
+        "wall_clock_ms": 755922.4851999898
+      },
+      {
+        "condition": "B1_state_model_broad",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 2,
+        "state": "FAILED",
+        "task_id": "task_20260102_161510_799_ad5a67e3_7221f3c8",
+        "timings_ms": {},
+        "wall_clock_ms": 755922.7434999775
+      },
+      {
+        "condition": "B1_state_model_broad",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 3,
+        "state": "FAILED",
+        "task_id": "task_20260102_161510_799_ad5a67e3_7221f3c8",
+        "timings_ms": {},
+        "wall_clock_ms": 755922.9680001736
+      },
+      {
+        "condition": "B2_state_model_minimal",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 1,
+        "state": "FAILED",
+        "task_id": "task_20260102_161510_799_ad5a67e3_7221f3c8",
+        "timings_ms": {},
+        "wall_clock_ms": 755923.2252000365
+      },
+      {
+        "condition": "B2_state_model_minimal",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 2,
+        "state": "FAILED",
+        "task_id": "task_20260102_161510_799_ad5a67e3_7221f3c8",
+        "timings_ms": {},
+        "wall_clock_ms": 755923.4696000349
+      },
+      {
+        "condition": "B2_state_model_minimal",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 3,
+        "state": "FAILED",
+        "task_id": "task_20260102_161510_799_ad5a67e3_7221f3c8",
+        "timings_ms": {},
+        "wall_clock_ms": 755923.7031000666
+      },
+      {
+        "condition": "A_baseline",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 1,
+        "state": "FAILED",
+        "task_id": "task_20260102_172945_725_ad5a67e3_5480e26f",
+        "timings_ms": {},
+        "wall_clock_ms": 755923.9231999964
+      },
+      {
+        "condition": "A_baseline",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 2,
+        "state": "FAILED",
+        "task_id": "task_20260102_172945_725_ad5a67e3_5480e26f",
+        "timings_ms": {},
+        "wall_clock_ms": 755924.190199934
+      },
+      {
+        "condition": "A_baseline",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 3,
+        "state": "FAILED",
+        "task_id": "task_20260102_172945_725_ad5a67e3_5480e26f",
+        "timings_ms": {},
+        "wall_clock_ms": 755924.4770999067
+      },
+      {
+        "condition": "B1_state_model_broad",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 1,
+        "state": "FAILED",
+        "task_id": "task_20260102_172945_725_ad5a67e3_5480e26f",
+        "timings_ms": {},
+        "wall_clock_ms": 755924.7773999814
+      },
+      {
+        "condition": "B1_state_model_broad",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 2,
+        "state": "FAILED",
+        "task_id": "task_20260102_172945_725_ad5a67e3_5480e26f",
+        "timings_ms": {},
+        "wall_clock_ms": 755925.1125999726
+      },
+      {
+        "condition": "B1_state_model_broad",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 3,
+        "state": "FAILED",
+        "task_id": "task_20260102_172945_725_ad5a67e3_5480e26f",
+        "timings_ms": {},
+        "wall_clock_ms": 755925.5585998762
+      },
+      {
+        "condition": "B2_state_model_minimal",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 1,
+        "state": "FAILED",
+        "task_id": "task_20260102_172945_725_ad5a67e3_5480e26f",
+        "timings_ms": {},
+        "wall_clock_ms": 755926.0114999488
+      },
+      {
+        "condition": "B2_state_model_minimal",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 2,
+        "state": "FAILED",
+        "task_id": "task_20260102_172945_725_ad5a67e3_5480e26f",
+        "timings_ms": {},
+        "wall_clock_ms": 755926.4576998539
+      },
+      {
+        "condition": "B2_state_model_minimal",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 3,
+        "state": "FAILED",
+        "task_id": "task_20260102_172945_725_ad5a67e3_5480e26f",
+        "timings_ms": {},
+        "wall_clock_ms": 755927.6523001026
+      },
+      {
+        "condition": "A_baseline",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 1,
+        "state": "FAILED",
+        "task_id": "task_20260104_202644_765_00364ece_a86667c0",
+        "timings_ms": {},
+        "wall_clock_ms": 755928.5784000531
+      },
+      {
+        "condition": "A_baseline",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 2,
+        "state": "FAILED",
+        "task_id": "task_20260104_202644_765_00364ece_a86667c0",
+        "timings_ms": {},
+        "wall_clock_ms": 755929.5372001361
+      },
+      {
+        "condition": "A_baseline",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 3,
+        "state": "FAILED",
+        "task_id": "task_20260104_202644_765_00364ece_a86667c0",
+        "timings_ms": {},
+        "wall_clock_ms": 755930.1036999095
+      },
+      {
+        "condition": "B1_state_model_broad",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 1,
+        "state": "FAILED",
+        "task_id": "task_20260104_202644_765_00364ece_a86667c0",
+        "timings_ms": {},
+        "wall_clock_ms": 755930.6743999477
+      },
+      {
+        "condition": "B1_state_model_broad",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 2,
+        "state": "FAILED",
+        "task_id": "task_20260104_202644_765_00364ece_a86667c0",
+        "timings_ms": {},
+        "wall_clock_ms": 755931.7760998383
+      },
+      {
+        "condition": "B1_state_model_broad",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 3,
+        "state": "FAILED",
+        "task_id": "task_20260104_202644_765_00364ece_a86667c0",
+        "timings_ms": {},
+        "wall_clock_ms": 755932.6939999592
+      },
+      {
+        "condition": "B2_state_model_minimal",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 1,
+        "state": "FAILED",
+        "task_id": "task_20260104_202644_765_00364ece_a86667c0",
+        "timings_ms": {},
+        "wall_clock_ms": 755933.2286000717
+      },
+      {
+        "condition": "B2_state_model_minimal",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 2,
+        "state": "FAILED",
+        "task_id": "task_20260104_202644_765_00364ece_a86667c0",
+        "timings_ms": {},
+        "wall_clock_ms": 755933.7428999133
+      },
+      {
+        "condition": "B2_state_model_minimal",
+        "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+        "history": [
+          "PENDING",
+          "FAILED"
+        ],
+        "recorded": false,
+        "run_index": 3,
+        "state": "FAILED",
+        "task_id": "task_20260104_202644_765_00364ece_a86667c0",
+        "timings_ms": {},
+        "wall_clock_ms": 755934.4295999035
+      }
+    ],
+    "wall_clock_ms": 756338.8771999162
+  },
+  "pinned_revisions": {
+    "ablation_files_sha256": {
+      "ablation/__init__.py": "3bcfef34f30e55d968df74632d4dcd80ca2f53340ea7f27925696237455d384c",
+      "ablation/conditions.py": "829da3016db8b5ca867ce379927f648e03e306b5705bfec5e12b38969a039f9c",
+      "ablation/experiment_manifest.py": "ffe5ef9b39b845999f5ff92af246587ead89ccc13333df0d13d547d07c33913d",
+      "ablation/fingerprint.py": "9e826ff81e46d2b1a48a206cbc84ca438017e8754735ea1dd8e56988ed8393d7",
+      "ablation/goals.py": "a6aa9f01eead475b17720c0242bf0a84f09039d24b40a3c6beaa50560780b20f",
+      "ablation/gold_state.py": "3a0667ca4fb652500451a908e0f35aede9f5efa587b81460539098b80ad7f17b",
+      "ablation/horizon.py": "1085d00ba71c8043eb16ff369cf7a0cefc41e6e23f91e085db6c0183a1bd2db7",
+      "ablation/initial_relevance.py": "0bc87d36af0b8dc6928932e46031107d6b40949f5b70f378295a07f96636cd85",
+      "ablation/minimal_state.py": "d1895dbbca809acd3f6fe54931b5463ab72997c9b371880f5f29a0d770236a23",
+      "ablation/parity.py": "208208cbdbe84261726f8c2fb912db40ad5cb43cb3a6db9d53160cffec352c62",
+      "ablation/preflight.py": "21d87d8d8e66e00f55d8bd80d0bdb10f17f58de626d778d7c1c0f3ca41a4356d",
+      "ablation/relevance.py": "0c6151406dcd302e1a921f5c2f343d1d144d934cb2f813b4c9f8be8bfa43fc36",
+      "ablation/report.py": "436b4b2708aba39fa782dcd543f923b245de1c42477f4a570357a3ffe911fa99",
+      "ablation/results.py": "73d3df3a978818e1f9f24c4a3816cd7843948c0258c30729f27be04a0efab4af",
+      "ablation/route_policy.py": "6c36ab16664dbf53ff495423ab61c7e162923822c6551253b420f48eb49b53b6",
+      "ablation/runner.py": "d568db5ff74a1d687cf0af853a4dc824add44ea27becbdc7425ad2f6b5fe67c3",
+      "ablation/score_bridge.py": "23fa1f25c221f2d0996965b9e2636aad8cc755c2cc6a517ae3a0be5960f27e64",
+      "ablation/seeds.py": "21723c0883c0db9e61aad90ce2939a68bc6609004f9dcb18c290eab26764626d",
+      "ablation/state_model.py": "58a5ede865698b1cd771dc7fc5c7e521dbf126a5d796d876aa8e65ff9995a2e0",
+      "ablation/state_model_orchestrator.py": "cdbc8fcd6fed5e78dfc97f6856ffab088b379b1b04b80c0da50b0ca5d314fd41",
+      "ablation/state_validation.py": "cc003a1ff377814ca9f32ceaecb24e1e41848dc225aae954a346da2fd1e3c369",
+      "ablation/stats.py": "d385e9fed222d8c8a9b433c2e93912da258602631d43803156e2559507e1e5c8",
+      "ablation/task_registry.py": "c88dd831e0b6c1e8c4fe0728698e138a164d3654ac826478978a4db7b5312f16",
+      "ablation/verifier_bridge.py": "dea7cb90b00100e5c7fe53327452431bbef90dc8b17d2406c3715350e837a480",
+      "ablation/verifier_validation.py": "c808d71010dcbff54fb8713682fa361e9d277265bd991ccad4cc2ff19cdcf04b",
+      "ablation/verify_pinning.py": "e046e83ac5515cf22cd95f05a5fee301855e55c41e7e3903837ef624c41d3f90"
+    },
+    "benchmark_files_sha256": {
+      "benchmark/executor.py": "28bb41a9d732d1e8d16c7bc33ba2b5800abd5b42d984717a814218f977156ebb",
+      "benchmark/llm_client.py": "77422b16946923fd120a52ff0e3e9683e8aa14a8281539c096a4f235cb81aa47",
+      "benchmark/mcp_client.py": "8c7226cf2c0bdad42c742668640c4606a38277a1ec09eb4823cd840c94477b4d",
+      "benchmark/models.py": "bf6807dfdc152e44a6c29c69f41d699521a7fbada156015b1a79da1ee7677546",
+      "benchmark/verifier.py": "dff0920a6d89bbcb51e4083867ce6b385b60d8cce1b3553fc6f091eed7a072f4",
+      "benchmark_utils.py": "17e38fe90e62f19e98416748251f68015eb5cca61d3f36b0158102f29d63f708",
+      "compute_score.py": "1e5f77ce3d0ba733e69e5a591dc72014a0020667b6d804ae2e27a4574a363b7e",
+      "csm_integration.py": "cbc94742c496a44bff60d8e6a6123e6595a2bb9cd3df4251c8875d84e7b8acf3",
+      "evaluate.py": "8be7f75313b42f3a1c6933e19486c07fa92d42357cc8b67422fb676a08e08d56",
+      "orchestrators/base.py": "6c2f744aff9d8054a7a743389d1d83fcc140c5274af8f0898c4a9dcd04a29cc7",
+      "orchestrators/react.py": "d0ea381403658eeebabc74b7992426fc946b72d71854ad5a7571dbf75574ca19",
+      "utils/task_queue_worker.py": "806688f6d093ea6ab48efbf70d330f450aa564e7c1a201c1a244051cddcf8adb"
+    },
+    "csm_env": {
+      "parity": {
+        "changed": [],
+        "gym_package": "csm_env",
+        "identical_count": 62,
+        "is_identical": true,
+        "only_in_gym": [],
+        "only_in_root": [],
+        "root_package": "../csm_env"
+      },
+      "schema_version": "1.0.0",
+      "table_count": 17
+    },
+    "dataset": {
+      "categories": {
+        "TYPE_1_SINGLE_ENTITY": 1,
+        "TYPE_2_ONE_HOP": 0,
+        "TYPE_3_MULTI_HOP": 1,
+        "TYPE_4_CROSS_ENTITY": 4,
+        "TYPE_5_MULTI_STEP": 5
+      },
+      "local_csm_task_count": 11,
+      "published_csm_task_count": 186,
+      "shortfall": 175
+    },
+    "generated_at_epoch": 1790699335,
+    "interpreter": {
+      "executable": "C:\\Users\\gowda\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "implementation": "CPython",
+      "platform": "Windows-10-10.0.26200-SP0",
+      "python": "3.11.8"
+    },
+    "seed_archive": {
+      "path": "gym_dbs.zip",
+      "sha256": "d947543d4fba1aabc4aade73d3df955114187b7a94da7ac825c4c31169ddab47"
+    },
+    "task_files_sha256": {
+      "task_20251205_153330_906_a8eea1c0_8c7a6205": "a6cdaa09c27d7d302efe464f1a4899ab74fa0b09be1592a02a2e51f06f823179",
+      "task_20251205_154853_044_d4a463c3_fce76046": "3cc8440866e8b75d7473ce8154c90b77b9aa1a9df990801b0142f5fdef5636bc",
+      "task_20251210_002938_761_897c3e0b_f075229a": "efbb6e5b19fc8441edc02c0b90a31a7c1a23d1c15fb09e6680550234494d641b",
+      "task_20251210_113549_827_d4a463c3_47b48a98": "4cf478e32f1bdc3c5063e26b543bf5b05559c357f16915201d30e697146f7fc6",
+      "task_20251231_162628_797_a8eea1c0_0a53db6c": "f28ebcfe77d617cbabbecfbe9d6235680c0c5422470df577e939d17c2668156e",
+      "task_20260101_043715_660_a8eea1c0_7304e48e": "bf395bd6484b892a8ac9f47fc61f4648f07bd17c2798e0acfaa8c4fdda57078f",
+      "task_20260101_122222_300_ad5a67e3_3757206c": "ea3619b9d64e2f90458555723bd0e7f8472f485bbaadc7f568902e53c78ab33b",
+      "task_20260102_155148_014_accab84d_910b176a": "31c174a9127f8890adaca0775a84c17f9f72c6e2d581407721a5c86ab9aebe8b",
+      "task_20260102_161510_799_ad5a67e3_7221f3c8": "547e9164b7f69781619de678fc571453eeacd07cf3c13b68b62decfefffafb9b",
+      "task_20260102_172945_725_ad5a67e3_5480e26f": "d3276edbf76e29097e8397c20b117b37bc5aa3e644a44a032b12f60aa304eb22",
+      "task_20260104_202644_765_00364ece_a86667c0": "8c3acec9473ae3fff14c184a455df894ae5dab6f9585e862c923d7416ac0a846"
+    }
+  },
+  "record_counts": {
+    "by_condition": {
+      "A_baseline": 3,
+      "B1_state_model_broad": 3,
+      "B2_state_model_minimal": 1
+    },
+    "total": 7
+  },
+  "retrieval_quality": {
+    "B1_state_model_broad": {
+      "granularity": "row",
+      "mean_precision": 0.03125,
+      "mean_recall": 0.05000000000000001,
+      "per_run": [
+        {
+          "condition": "B1_state_model_broad",
+          "granularity": "row",
+          "overlap": 1,
+          "precision": 0.03125,
+          "recall": 0.05,
+          "relevant": 20,
+          "retrieved": 32,
+          "task_id": "task_20251205_153330_906_a8eea1c0_8c7a6205"
+        },
+        {
+          "condition": "B1_state_model_broad",
+          "granularity": "row",
+          "overlap": 1,
+          "precision": 0.03125,
+          "recall": 0.05,
+          "relevant": 20,
+          "retrieved": 32,
+          "task_id": "task_20251205_153330_906_a8eea1c0_8c7a6205"
+        },
+        {
+          "condition": "B1_state_model_broad",
+          "granularity": "row",
+          "overlap": 1,
+          "precision": 0.03125,
+          "recall": 0.05,
+          "relevant": 20,
+          "retrieved": 32,
+          "task_id": "task_20251205_153330_906_a8eea1c0_8c7a6205"
+        }
+      ],
+      "runs_excluded": 0,
+      "runs_measured": 3
+    },
+    "B2_state_model_minimal": {
+      "granularity": "row",
+      "mean_precision": 0.25,
+      "mean_recall": 0.05,
+      "per_run": [
+        {
+          "condition": "B2_state_model_minimal",
+          "granularity": "row",
+          "overlap": 1,
+          "precision": 0.25,
+          "recall": 0.05,
+          "relevant": 20,
+          "retrieved": 4,
+          "task_id": "task_20251205_153330_906_a8eea1c0_8c7a6205"
+        }
+      ],
+      "runs_excluded": 0,
+      "runs_measured": 1
+    }
+  },
+  "state_injection": {
+    "causal_estimate_ready": true,
+    "condition": "B1_state_model_broad",
+    "delivery_failures": 0,
+    "empty_context": 0,
+    "failed_route": 0,
+    "injected": 3,
+    "injection_rate": 1.0,
+    "mean_retrieved_records": 32.0,
+    "mean_retrieved_tokens": 1000.0,
+    "no_telemetry": 0,
+    "runs": 3,
+    "unresolved_anchor": 0
+  },
+  "state_injection_by_condition": {
+    "B1_state_model_broad": {
+      "causal_estimate_ready": true,
+      "condition": "B1_state_model_broad",
+      "delivery_failures": 0,
+      "empty_context": 0,
+      "failed_route": 0,
+      "injected": 3,
+      "injection_rate": 1.0,
+      "mean_retrieved_records": 32.0,
+      "mean_retrieved_tokens": 1000.0,
+      "no_telemetry": 0,
+      "runs": 3,
+      "unresolved_anchor": 0
+    },
+    "B2_state_model_minimal": {
+      "causal_estimate_ready": true,
+      "condition": "B2_state_model_minimal",
+      "delivery_failures": 0,
+      "empty_context": 0,
+      "failed_route": 0,
+      "injected": 1,
+      "injection_rate": 1.0,
+      "mean_retrieved_records": 4.0,
+      "mean_retrieved_tokens": 388.0,
+      "no_telemetry": 0,
+      "runs": 1,
+      "unresolved_anchor": 0
+    }
+  },
+  "verifier_reconciliation": {
+    "collapsed_verifiers": 21,
+    "indexed_verifiers": 77,
+    "lost_to_collision": 56,
+    "runs_where_collision_changed_outcome": 7
+  }
+}

@@ -67,6 +67,56 @@ MAX_STEPS_DEFAULT = 15
 MAX_STEPS_CEILING = 100
 
 
+def assert_fresh_output_folder(output_dir: PathLike) -> None:
+    """Refuse to write B1/B2 records into a folder that already contains them.
+
+    ``condition_from_name("B_state_model")`` maps to ``CONDITION_B1``, so any
+    archived run whose filename contains ``B_state_model`` is silently re-read
+    as the broad baseline.  Writing new B2 records into the same folder would
+    pollute the B1 baseline with minimal-arm data and make the B1-vs-B2
+    contrast uninterpretable.  The caller must use a fresh output directory
+    (e.g. ``out/experiment_2/``) for the State Model 2.0 sweep.
+
+    The guard only fires on cross-experiment contamination: records from a
+    previous experiment version, or a mix of B1/B2 arms that could not have
+    been produced by the current sweep.  Re-running the same sweep into the
+    same folder is allowed so that interrupted runs can be resumed.
+    """
+    import os
+
+    directory = Path(output_dir)
+    if not directory.is_dir():
+        return
+    try:
+        from .results import load_run_records
+
+        existing = load_run_records(directory)
+    except Exception:
+        existing = []
+    if not existing:
+        return
+    current_version = getattr(
+        __import__("ablation.experiment_manifest", fromlist=["VERSION_STATE_MODEL_REFINED"]),
+        "VERSION_STATE_MODEL_REFINED",
+        None,
+    )
+    # Only block if there are records from a different experiment version, or
+    # if there is a mix of B1/B2 arms that could not have been produced by the
+    # current sweep.  Re-running the same sweep into the same folder is allowed.
+    foreign = [
+        record
+        for record in existing
+        if current_version is not None
+        and getattr(record, "experiment_version", None) not in (current_version, None)
+    ]
+    if foreign:
+        raise ValueError(
+            f"output directory {directory} already contains {len(foreign)} "
+            f"run record(s) from a different experiment version; use a fresh "
+            f"directory to avoid baseline contamination"
+        )
+
+
 def is_read_tool(tool_name: str) -> bool:
     """Whether a tool name looks read-only by convention."""
     lowered = (tool_name or "").lower()
@@ -432,6 +482,7 @@ async def run_condition(
         ValueError: If the task's tool mode is unsupported.
         FileNotFoundError: If the task's seed SQL cannot be materialized.
     """
+    assert_fresh_output_folder(output_dir)
     config: BenchmarkConfig = apply_tool_mode(load_task_config(task.task_config_path), tool_mode)
     config.number_of_runs = 1
     (seed_cache or SeedCache(archive)).bind_config(config)

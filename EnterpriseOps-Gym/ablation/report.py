@@ -57,6 +57,31 @@ def _num(value: Optional[float], digits: int = 1) -> str:
     return NA if value is None else f"{value:.{digits}f}"
 
 
+def _load_tau_config() -> Dict[str, Any]:
+    """Load the pre-registered τ mapping from the experiment config."""
+    try:
+        import json
+        from pathlib import Path
+
+        config_path = Path(__file__).resolve().parent / "manifests" / "experiment_config.json"
+        if not config_path.is_file():
+            return {"default": 1.0, "note": "config not found"}
+        with open(config_path, encoding="utf-8") as fh:
+            config = json.load(fh)
+        tau = config.get("tau", {})
+        return {
+            "per_task_type": dict(tau),
+            "default": config.get("default_tau", 1.0),
+            "note": (
+                "τ bounds required-fact loss; measured recall uses prompt-entity "
+                "relevance as its denominator. The two denominators differ, so "
+                "flat measured recall does not imply zero required-fact loss."
+            ),
+        }
+    except Exception:
+        return {"default": 1.0, "note": "config load failed"}
+
+
 def _md_table(headers: Sequence[str], rows: Sequence[Sequence[str]]) -> str:
     lines = ["| " + " | ".join(headers) + " |", "|" + "|".join(["---"] * len(headers)) + "|"]
     for row in rows:
@@ -85,6 +110,61 @@ def _select_baseline(conditions: Sequence[Condition]) -> Optional[Condition]:
         if not is_state_model_condition(condition):
             return condition
     return None
+
+
+def _b2_distinctness_assertion(records: Sequence[TaskRunRecord]) -> Dict[str, Any]:
+    """B2≠B1 distinctness gate.
+
+    Pre-registered in ``ablation/manifests/experiment_config.json``.  B2 must
+    deliver strictly fewer retrieved records than B1 for at least one task;
+    otherwise a null result ('minimality does not help') is indistinguishable
+    from 'minimality was not activated'.  Gate-failed B2 runs (coverage/token
+    gate refused the minimal selection and the broad state was delivered) are
+    excluded from the contrast.
+    """
+    by_task: Dict[str, Dict[str, List[int]]] = {}
+    for record in records:
+        if record.agent_error:
+            continue
+        telemetry = record.state_retrieval or {}
+        if not telemetry.get("available"):
+            continue
+        if record.condition not in {"B1_state_model_broad", "B2_state_model_minimal"}:
+            continue
+        key = record.task_id
+        by_task.setdefault(key, {"B1": [], "B2": []})
+        bucket = "B1" if record.condition == "B1_state_model_broad" else "B2"
+        by_task[key][bucket].append(
+            int(telemetry.get("retrieved_records", 0) or 0)
+        )
+
+    task_passes = 0
+    task_details: List[Dict[str, Any]] = []
+    for task_id, buckets in sorted(by_task.items()):
+        b1_vals = buckets.get("B1", [])
+        b2_vals = buckets.get("B2", [])
+        b1_median = sorted(b1_vals)[len(b1_vals) // 2] if b1_vals else None
+        b2_median = sorted(b2_vals)[len(b2_vals) // 2] if b2_vals else None
+        passes = bool(b2_median is not None and b1_median is not None and b2_median < b1_median)
+        if passes:
+            task_passes += 1
+        task_details.append(
+            {
+                "task_id": task_id,
+                "b1_retrieved_records_median": b1_median,
+                "b2_retrieved_records_median": b2_median,
+                "passes": passes,
+            }
+        )
+
+    overall_pass = task_passes >= 1
+    return {
+        "assertion": "b2_retrieved_records_lt_b1_for_some_task",
+        "overall_pass": overall_pass,
+        "tasks_with_both_arms": len(by_task),
+        "tasks_passing": task_passes,
+        "task_details": task_details,
+    }
 
 
 def summarize_state_injection(
@@ -322,6 +402,8 @@ def build_report(
             bootstrap_seed=bootstrap_seed,
         )
 
+    distinctness = _b2_distinctness_assertion(records)
+
     collapsed_total = sum(
         int((record.verifier_summary_collapsed or {}).get("total", 0) or 0) for record in records
     )
@@ -366,6 +448,7 @@ def build_report(
             ),
             "temperatures": sorted({record.temperature for record in records}),
             "run_indices": sorted({record.run_index for record in records}),
+            "tau": _load_tau_config(),
         },
         "headline": {
             **{condition.name: by_condition.get(condition.name, {}) for condition in conditions},
@@ -409,6 +492,7 @@ def build_report(
         },
         "verifier_reconciliation": reconciliation,
         "retrieval_quality": retrieval_quality,
+        "b2_distinctness": distinctness,
         "record_counts": {
             "total": len(records),
             "by_condition": {
@@ -435,6 +519,7 @@ def build_report(
         "Pooled verifier pass rate is a companion metric, not the official VPR.",
         "State-model arms are fail-closed: runs without a usable state intervention are execution errors, not baseline fallbacks.",
         "The causal effect is reported only when the state intervention is delivered on every analyzed state-model run.",
+        "τ is pre-registered per task type in the design block. Measured recall (prompt-entity relevance) and required-fact coverage (τ) use different denominators: flat measured recall does not imply zero required-fact loss.",
     ]
     return report
 

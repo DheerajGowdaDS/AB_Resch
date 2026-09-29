@@ -21,7 +21,8 @@ def check_state(state: GroundedState, registry: SchemaRegistry) -> ConsistencyRe
 
     Contradictions are reported; they are never silently resolved.
     Checks: returned-row binding agreement, relation endpoint agreement,
-    duplicate PK conflicts, and anchor consistency.
+    duplicate PK conflicts, anchor consistency, and §12 schema-graph
+    re-validation of every relation edge_id against the registry's FK set.
     """
     problems: List[str] = []
 
@@ -35,8 +36,16 @@ def check_state(state: GroundedState, registry: SchemaRegistry) -> ConsistencyRe
     if len(records) != len(state.records):
         problems.append("duplicate primary keys present in records")
 
-    # Relation endpoints must exist in the record set.
+    # §12 schema-graph re-validation: every relation edge_id must correspond
+    # to a declared foreign key in the schema registry.  A relation built
+    # from bindings that do not match a declared edge is structurally invalid
+    # and must be flagged rather than silently accepted.
+    valid_edge_ids = {fk.edge_id for fk in registry.foreign_keys()}
     for relation in state.relations:
+        if relation.edge_id not in valid_edge_ids:
+            problems.append(
+                f"relation {relation.edge_id} is not declared in the schema graph"
+            )
         source_key = (relation.source_table, relation.source_id)
         target_key = (relation.target_table, relation.target_id)
         if source_key not in records:

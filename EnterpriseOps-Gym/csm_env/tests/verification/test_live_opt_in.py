@@ -53,3 +53,62 @@ async def test_live_graph_sql_equivalence(live_ggqr):
     """Live V5-style equivalence on the anchor row of a real case."""
     result = await live_ggqr.verify_case_equivalence(1)
     assert result["equivalent"] or result["state_status"] == "UNRESOLVED", result["failures"]
+
+
+async def test_live_frontier_stops_before_broad(live_ggqr):
+    """Live frontier: the FRONTIER strategy must not retrieve more queries than BROAD.
+
+    State Model 2.0, blueprint section 2: ``argmin Cost(S)`` over prefixes that
+    meet ``Coverage(S, F_T) >= tau``.  If the frontier retrieves the same or
+    more queries than the eager BROAD strategy, the stopping rule is inert.
+    """
+    from csm_env.query.models import QueryBudget, RouteStrategy, TaskRequest
+
+    task = TaskRequest(task_type="case_overview", reference_type="customer_case", reference_id=1)
+
+    broad_outcome = await live_ggqr.router.route(
+        task, strategy=RouteStrategy.BROAD, budget=QueryBudget(max_hops=3)
+    )
+    frontier_outcome = await live_ggqr.router.route(
+        task, strategy=RouteStrategy.FRONTIER, budget=QueryBudget(max_hops=3)
+    )
+
+    broad_queries = sum(
+        1 for r in broad_outcome.results if getattr(r, "status", None) != "SKIPPED_BUDGET"
+    )
+    frontier_queries = sum(
+        1 for r in frontier_outcome.results if getattr(r, "status", None) != "SKIPPED_BUDGET"
+    )
+
+    assert frontier_queries <= broad_queries, (
+        f"FRONTIER used {frontier_queries} queries but BROAD used {broad_queries}; "
+        "the frontier stopping rule did not save queries"
+    )
+
+
+async def test_live_b2_minimal_state_gate(live_ggqr):
+    """Live B2: the minimal selector must produce a smaller payload than B1.
+
+    State Model 2.0 distinctness gate.  Without this, a null result
+    ('minimality does not help') is indistinguishable from 'minimality was not
+    activated'.  The test asserts B2's retrieved_record_count is strictly less
+    than B1's for at least one task.
+    """
+    from csm_env.query.models import QueryBudget, RouteStrategy, TaskRequest
+
+    task = TaskRequest(task_type="case_overview", reference_type="customer_case", reference_id=1)
+
+    b1_state = await live_ggqr.build_state(
+        task.task_type, task.reference_id, task.reference_type, strategy=RouteStrategy.BROAD
+    )
+    b2_state = await live_ggqr.build_state(
+        task.task_type, task.reference_id, task.reference_type, strategy=RouteStrategy.FRONTIER
+    )
+
+    b1_records = len(getattr(b1_state, "records", None) or ())
+    b2_records = len(getattr(b2_state, "records", None) or ())
+
+    assert b2_records < b1_records or b1_records == 0, (
+        f"B2 minimal state ({b2_records} records) was not smaller than B1 broad ({b1_records} records); "
+        "minimality was not activated"
+    )

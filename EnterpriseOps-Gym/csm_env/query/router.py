@@ -491,6 +491,13 @@ class GraphQueryRouter:
         Bounded by the plan, the query/row budget (``run_step`` refuses with
         ``SKIPPED_BUDGET``), and ``budget.max_expansion_rounds`` consecutive
         steps that add no coverage.
+
+        §10 nuance: the frontier can only execute steps that the planner already
+        placed in the plan, so it cannot exceed ``plan.budget.max_hops`` on its
+        own.  Greater depth comes from re-planning at a higher rung of the hop
+        ladder (``route_policy.build_ladder``), not from unbounded frontier
+        expansion.  The frontier's job is to stop *within* the planned depth,
+        not to exceed it.
         """
         step_table = {step.step_id: step.table for step in plan.steps}
         remaining: List[QueryStep] = list(plan.steps[1:])

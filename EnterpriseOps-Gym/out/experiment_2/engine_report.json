@@ -1,0 +1,1418 @@
+{
+  "completed": 7,
+  "concurrency": 1,
+  "failed": 92,
+  "goals_per_minute": 0.5553066392076857,
+  "skipped": 0,
+  "stage_summary": {
+    "agent": {
+      "count": 7,
+      "mean_ms": 108043.58431434126,
+      "total_ms": 756305.0902003888
+    }
+  },
+  "total_goals": 99,
+  "traces": [
+    {
+      "condition": "A_baseline",
+      "error": null,
+      "history": [
+        "PENDING",
+        "RECORDED"
+      ],
+      "recorded": true,
+      "run_index": 1,
+      "state": "RECORDED",
+      "task_id": "task_20251205_153330_906_a8eea1c0_8c7a6205",
+      "timings_ms": {
+        "agent": 37198.089899960905
+      },
+      "wall_clock_ms": 37198.36779986508
+    },
+    {
+      "condition": "A_baseline",
+      "error": null,
+      "history": [
+        "PENDING",
+        "RECORDED"
+      ],
+      "recorded": true,
+      "run_index": 2,
+      "state": "RECORDED",
+      "task_id": "task_20251205_153330_906_a8eea1c0_8c7a6205",
+      "timings_ms": {
+        "agent": 120016.3290000055
+      },
+      "wall_clock_ms": 156815.0416999124
+    },
+    {
+      "condition": "A_baseline",
+      "error": null,
+      "history": [
+        "PENDING",
+        "RECORDED"
+      ],
+      "recorded": true,
+      "run_index": 3,
+      "state": "RECORDED",
+      "task_id": "task_20251205_153330_906_a8eea1c0_8c7a6205",
+      "timings_ms": {
+        "agent": 119071.88190007582
+      },
+      "wall_clock_ms": 275886.88959996216
+    },
+    {
+      "condition": "B1_state_model_broad",
+      "error": null,
+      "history": [
+        "PENDING",
+        "RECORDED"
+      ],
+      "recorded": true,
+      "run_index": 1,
+      "state": "RECORDED",
+      "task_id": "task_20251205_153330_906_a8eea1c0_8c7a6205",
+      "timings_ms": {
+        "agent": 103550.58110016398
+      },
+      "wall_clock_ms": 379437.5360000413
+    },
+    {
+      "condition": "B1_state_model_broad",
+      "error": null,
+      "history": [
+        "PENDING",
+        "RECORDED"
+      ],
+      "recorded": true,
+      "run_index": 2,
+      "state": "RECORDED",
+      "task_id": "task_20251205_153330_906_a8eea1c0_8c7a6205",
+      "timings_ms": {
+        "agent": 68323.39150016196
+      },
+      "wall_clock_ms": 447761.0679999925
+    },
+    {
+      "condition": "B1_state_model_broad",
+      "error": null,
+      "history": [
+        "PENDING",
+        "RECORDED"
+      ],
+      "recorded": true,
+      "run_index": 3,
+      "state": "RECORDED",
+      "task_id": "task_20251205_153330_906_a8eea1c0_8c7a6205",
+      "timings_ms": {
+        "agent": 173367.16950009577
+      },
+      "wall_clock_ms": 621128.3203000203
+    },
+    {
+      "condition": "B2_state_model_minimal",
+      "error": null,
+      "history": [
+        "PENDING",
+        "RECORDED"
+      ],
+      "recorded": true,
+      "run_index": 1,
+      "state": "RECORDED",
+      "task_id": "task_20251205_153330_906_a8eea1c0_8c7a6205",
+      "timings_ms": {
+        "agent": 134777.64729992487
+      },
+      "wall_clock_ms": 755906.0364000034
+    },
+    {
+      "condition": "B2_state_model_minimal",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 2,
+      "state": "FAILED",
+      "task_id": "task_20251205_153330_906_a8eea1c0_8c7a6205",
+      "timings_ms": {},
+      "wall_clock_ms": 755906.366399955
+    },
+    {
+      "condition": "B2_state_model_minimal",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 3,
+      "state": "FAILED",
+      "task_id": "task_20251205_153330_906_a8eea1c0_8c7a6205",
+      "timings_ms": {},
+      "wall_clock_ms": 755906.5787000582
+    },
+    {
+      "condition": "A_baseline",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 1,
+      "state": "FAILED",
+      "task_id": "task_20251205_154853_044_d4a463c3_fce76046",
+      "timings_ms": {},
+      "wall_clock_ms": 755906.7466000561
+    },
+    {
+      "condition": "A_baseline",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 2,
+      "state": "FAILED",
+      "task_id": "task_20251205_154853_044_d4a463c3_fce76046",
+      "timings_ms": {},
+      "wall_clock_ms": 755906.8992000539
+    },
+    {
+      "condition": "A_baseline",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 3,
+      "state": "FAILED",
+      "task_id": "task_20251205_154853_044_d4a463c3_fce76046",
+      "timings_ms": {},
+      "wall_clock_ms": 755907.4360998347
+    },
+    {
+      "condition": "B1_state_model_broad",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 1,
+      "state": "FAILED",
+      "task_id": "task_20251205_154853_044_d4a463c3_fce76046",
+      "timings_ms": {},
+      "wall_clock_ms": 755907.8339999542
+    },
+    {
+      "condition": "B1_state_model_broad",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 2,
+      "state": "FAILED",
+      "task_id": "task_20251205_154853_044_d4a463c3_fce76046",
+      "timings_ms": {},
+      "wall_clock_ms": 755908.1343999133
+    },
+    {
+      "condition": "B1_state_model_broad",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 3,
+      "state": "FAILED",
+      "task_id": "task_20251205_154853_044_d4a463c3_fce76046",
+      "timings_ms": {},
+      "wall_clock_ms": 755908.4324000869
+    },
+    {
+      "condition": "B2_state_model_minimal",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 1,
+      "state": "FAILED",
+      "task_id": "task_20251205_154853_044_d4a463c3_fce76046",
+      "timings_ms": {},
+      "wall_clock_ms": 755908.7843000889
+    },
+    {
+      "condition": "B2_state_model_minimal",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 2,
+      "state": "FAILED",
+      "task_id": "task_20251205_154853_044_d4a463c3_fce76046",
+      "timings_ms": {},
+      "wall_clock_ms": 755909.13429996
+    },
+    {
+      "condition": "B2_state_model_minimal",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 3,
+      "state": "FAILED",
+      "task_id": "task_20251205_154853_044_d4a463c3_fce76046",
+      "timings_ms": {},
+      "wall_clock_ms": 755909.2808999121
+    },
+    {
+      "condition": "A_baseline",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 1,
+      "state": "FAILED",
+      "task_id": "task_20251210_002938_761_897c3e0b_f075229a",
+      "timings_ms": {},
+      "wall_clock_ms": 755909.3760000542
+    },
+    {
+      "condition": "A_baseline",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 2,
+      "state": "FAILED",
+      "task_id": "task_20251210_002938_761_897c3e0b_f075229a",
+      "timings_ms": {},
+      "wall_clock_ms": 755909.4668999314
+    },
+    {
+      "condition": "A_baseline",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 3,
+      "state": "FAILED",
+      "task_id": "task_20251210_002938_761_897c3e0b_f075229a",
+      "timings_ms": {},
+      "wall_clock_ms": 755909.5517999958
+    },
+    {
+      "condition": "B1_state_model_broad",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 1,
+      "state": "FAILED",
+      "task_id": "task_20251210_002938_761_897c3e0b_f075229a",
+      "timings_ms": {},
+      "wall_clock_ms": 755909.6260000952
+    },
+    {
+      "condition": "B1_state_model_broad",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 2,
+      "state": "FAILED",
+      "task_id": "task_20251210_002938_761_897c3e0b_f075229a",
+      "timings_ms": {},
+      "wall_clock_ms": 755909.6948001534
+    },
+    {
+      "condition": "B1_state_model_broad",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 3,
+      "state": "FAILED",
+      "task_id": "task_20251210_002938_761_897c3e0b_f075229a",
+      "timings_ms": {},
+      "wall_clock_ms": 755909.7672000062
+    },
+    {
+      "condition": "B2_state_model_minimal",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 1,
+      "state": "FAILED",
+      "task_id": "task_20251210_002938_761_897c3e0b_f075229a",
+      "timings_ms": {},
+      "wall_clock_ms": 755909.8400999792
+    },
+    {
+      "condition": "B2_state_model_minimal",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 2,
+      "state": "FAILED",
+      "task_id": "task_20251210_002938_761_897c3e0b_f075229a",
+      "timings_ms": {},
+      "wall_clock_ms": 755909.8372000735
+    },
+    {
+      "condition": "B2_state_model_minimal",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 3,
+      "state": "FAILED",
+      "task_id": "task_20251210_002938_761_897c3e0b_f075229a",
+      "timings_ms": {},
+      "wall_clock_ms": 755909.916699864
+    },
+    {
+      "condition": "A_baseline",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 1,
+      "state": "FAILED",
+      "task_id": "task_20251210_113549_827_d4a463c3_47b48a98",
+      "timings_ms": {},
+      "wall_clock_ms": 755909.9775999784
+    },
+    {
+      "condition": "A_baseline",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 2,
+      "state": "FAILED",
+      "task_id": "task_20251210_113549_827_d4a463c3_47b48a98",
+      "timings_ms": {},
+      "wall_clock_ms": 755910.0452999119
+    },
+    {
+      "condition": "A_baseline",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 3,
+      "state": "FAILED",
+      "task_id": "task_20251210_113549_827_d4a463c3_47b48a98",
+      "timings_ms": {},
+      "wall_clock_ms": 755910.1471998729
+    },
+    {
+      "condition": "B1_state_model_broad",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 1,
+      "state": "FAILED",
+      "task_id": "task_20251210_113549_827_d4a463c3_47b48a98",
+      "timings_ms": {},
+      "wall_clock_ms": 755910.3526999243
+    },
+    {
+      "condition": "B1_state_model_broad",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 2,
+      "state": "FAILED",
+      "task_id": "task_20251210_113549_827_d4a463c3_47b48a98",
+      "timings_ms": {},
+      "wall_clock_ms": 755910.7919998933
+    },
+    {
+      "condition": "B1_state_model_broad",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 3,
+      "state": "FAILED",
+      "task_id": "task_20251210_113549_827_d4a463c3_47b48a98",
+      "timings_ms": {},
+      "wall_clock_ms": 755911.1364001874
+    },
+    {
+      "condition": "B2_state_model_minimal",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 1,
+      "state": "FAILED",
+      "task_id": "task_20251210_113549_827_d4a463c3_47b48a98",
+      "timings_ms": {},
+      "wall_clock_ms": 755911.4087000489
+    },
+    {
+      "condition": "B2_state_model_minimal",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 2,
+      "state": "FAILED",
+      "task_id": "task_20251210_113549_827_d4a463c3_47b48a98",
+      "timings_ms": {},
+      "wall_clock_ms": 755911.7111000232
+    },
+    {
+      "condition": "B2_state_model_minimal",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 3,
+      "state": "FAILED",
+      "task_id": "task_20251210_113549_827_d4a463c3_47b48a98",
+      "timings_ms": {},
+      "wall_clock_ms": 755912.0643001515
+    },
+    {
+      "condition": "A_baseline",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 1,
+      "state": "FAILED",
+      "task_id": "task_20251231_162628_797_a8eea1c0_0a53db6c",
+      "timings_ms": {},
+      "wall_clock_ms": 755912.4008999206
+    },
+    {
+      "condition": "A_baseline",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 2,
+      "state": "FAILED",
+      "task_id": "task_20251231_162628_797_a8eea1c0_0a53db6c",
+      "timings_ms": {},
+      "wall_clock_ms": 755912.8199000843
+    },
+    {
+      "condition": "A_baseline",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 3,
+      "state": "FAILED",
+      "task_id": "task_20251231_162628_797_a8eea1c0_0a53db6c",
+      "timings_ms": {},
+      "wall_clock_ms": 755913.1744999904
+    },
+    {
+      "condition": "B1_state_model_broad",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 1,
+      "state": "FAILED",
+      "task_id": "task_20251231_162628_797_a8eea1c0_0a53db6c",
+      "timings_ms": {},
+      "wall_clock_ms": 755913.5580000002
+    },
+    {
+      "condition": "B1_state_model_broad",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 2,
+      "state": "FAILED",
+      "task_id": "task_20251231_162628_797_a8eea1c0_0a53db6c",
+      "timings_ms": {},
+      "wall_clock_ms": 755913.8406000566
+    },
+    {
+      "condition": "B1_state_model_broad",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 3,
+      "state": "FAILED",
+      "task_id": "task_20251231_162628_797_a8eea1c0_0a53db6c",
+      "timings_ms": {},
+      "wall_clock_ms": 755914.2349001486
+    },
+    {
+      "condition": "B2_state_model_minimal",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 1,
+      "state": "FAILED",
+      "task_id": "task_20251231_162628_797_a8eea1c0_0a53db6c",
+      "timings_ms": {},
+      "wall_clock_ms": 755914.4729999825
+    },
+    {
+      "condition": "B2_state_model_minimal",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 2,
+      "state": "FAILED",
+      "task_id": "task_20251231_162628_797_a8eea1c0_0a53db6c",
+      "timings_ms": {},
+      "wall_clock_ms": 755914.7006999701
+    },
+    {
+      "condition": "B2_state_model_minimal",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 3,
+      "state": "FAILED",
+      "task_id": "task_20251231_162628_797_a8eea1c0_0a53db6c",
+      "timings_ms": {},
+      "wall_clock_ms": 755914.9292998482
+    },
+    {
+      "condition": "A_baseline",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 1,
+      "state": "FAILED",
+      "task_id": "task_20260101_043715_660_a8eea1c0_7304e48e",
+      "timings_ms": {},
+      "wall_clock_ms": 755915.1837001555
+    },
+    {
+      "condition": "A_baseline",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 2,
+      "state": "FAILED",
+      "task_id": "task_20260101_043715_660_a8eea1c0_7304e48e",
+      "timings_ms": {},
+      "wall_clock_ms": 755915.40479986
+    },
+    {
+      "condition": "A_baseline",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 3,
+      "state": "FAILED",
+      "task_id": "task_20260101_043715_660_a8eea1c0_7304e48e",
+      "timings_ms": {},
+      "wall_clock_ms": 755915.589600103
+    },
+    {
+      "condition": "B1_state_model_broad",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 1,
+      "state": "FAILED",
+      "task_id": "task_20260101_043715_660_a8eea1c0_7304e48e",
+      "timings_ms": {},
+      "wall_clock_ms": 755915.8003998455
+    },
+    {
+      "condition": "B1_state_model_broad",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 2,
+      "state": "FAILED",
+      "task_id": "task_20260101_043715_660_a8eea1c0_7304e48e",
+      "timings_ms": {},
+      "wall_clock_ms": 755915.9828999545
+    },
+    {
+      "condition": "B1_state_model_broad",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 3,
+      "state": "FAILED",
+      "task_id": "task_20260101_043715_660_a8eea1c0_7304e48e",
+      "timings_ms": {},
+      "wall_clock_ms": 755916.4676999208
+    },
+    {
+      "condition": "B2_state_model_minimal",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 1,
+      "state": "FAILED",
+      "task_id": "task_20260101_043715_660_a8eea1c0_7304e48e",
+      "timings_ms": {},
+      "wall_clock_ms": 755916.5908000432
+    },
+    {
+      "condition": "B2_state_model_minimal",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 2,
+      "state": "FAILED",
+      "task_id": "task_20260101_043715_660_a8eea1c0_7304e48e",
+      "timings_ms": {},
+      "wall_clock_ms": 755916.7732000351
+    },
+    {
+      "condition": "B2_state_model_minimal",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 3,
+      "state": "FAILED",
+      "task_id": "task_20260101_043715_660_a8eea1c0_7304e48e",
+      "timings_ms": {},
+      "wall_clock_ms": 755916.9648999814
+    },
+    {
+      "condition": "A_baseline",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 1,
+      "state": "FAILED",
+      "task_id": "task_20260101_122222_300_ad5a67e3_3757206c",
+      "timings_ms": {},
+      "wall_clock_ms": 755917.1659001149
+    },
+    {
+      "condition": "A_baseline",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 2,
+      "state": "FAILED",
+      "task_id": "task_20260101_122222_300_ad5a67e3_3757206c",
+      "timings_ms": {},
+      "wall_clock_ms": 755917.3461999744
+    },
+    {
+      "condition": "A_baseline",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 3,
+      "state": "FAILED",
+      "task_id": "task_20260101_122222_300_ad5a67e3_3757206c",
+      "timings_ms": {},
+      "wall_clock_ms": 755917.8666998632
+    },
+    {
+      "condition": "B1_state_model_broad",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 1,
+      "state": "FAILED",
+      "task_id": "task_20260101_122222_300_ad5a67e3_3757206c",
+      "timings_ms": {},
+      "wall_clock_ms": 755918.4215001296
+    },
+    {
+      "condition": "B1_state_model_broad",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 2,
+      "state": "FAILED",
+      "task_id": "task_20260101_122222_300_ad5a67e3_3757206c",
+      "timings_ms": {},
+      "wall_clock_ms": 755918.8624999952
+    },
+    {
+      "condition": "B1_state_model_broad",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 3,
+      "state": "FAILED",
+      "task_id": "task_20260101_122222_300_ad5a67e3_3757206c",
+      "timings_ms": {},
+      "wall_clock_ms": 755919.5126998238
+    },
+    {
+      "condition": "B2_state_model_minimal",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 1,
+      "state": "FAILED",
+      "task_id": "task_20260101_122222_300_ad5a67e3_3757206c",
+      "timings_ms": {},
+      "wall_clock_ms": 755919.7974000126
+    },
+    {
+      "condition": "B2_state_model_minimal",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 2,
+      "state": "FAILED",
+      "task_id": "task_20260101_122222_300_ad5a67e3_3757206c",
+      "timings_ms": {},
+      "wall_clock_ms": 755920.0044998433
+    },
+    {
+      "condition": "B2_state_model_minimal",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 3,
+      "state": "FAILED",
+      "task_id": "task_20260101_122222_300_ad5a67e3_3757206c",
+      "timings_ms": {},
+      "wall_clock_ms": 755920.1879000757
+    },
+    {
+      "condition": "A_baseline",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 1,
+      "state": "FAILED",
+      "task_id": "task_20260102_155148_014_accab84d_910b176a",
+      "timings_ms": {},
+      "wall_clock_ms": 755920.3681999352
+    },
+    {
+      "condition": "A_baseline",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 2,
+      "state": "FAILED",
+      "task_id": "task_20260102_155148_014_accab84d_910b176a",
+      "timings_ms": {},
+      "wall_clock_ms": 755920.5418999773
+    },
+    {
+      "condition": "A_baseline",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 3,
+      "state": "FAILED",
+      "task_id": "task_20260102_155148_014_accab84d_910b176a",
+      "timings_ms": {},
+      "wall_clock_ms": 755920.7000001334
+    },
+    {
+      "condition": "B1_state_model_broad",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 1,
+      "state": "FAILED",
+      "task_id": "task_20260102_155148_014_accab84d_910b176a",
+      "timings_ms": {},
+      "wall_clock_ms": 755920.8612998482
+    },
+    {
+      "condition": "B1_state_model_broad",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 2,
+      "state": "FAILED",
+      "task_id": "task_20260102_155148_014_accab84d_910b176a",
+      "timings_ms": {},
+      "wall_clock_ms": 755921.0301998537
+    },
+    {
+      "condition": "B1_state_model_broad",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 3,
+      "state": "FAILED",
+      "task_id": "task_20260102_155148_014_accab84d_910b176a",
+      "timings_ms": {},
+      "wall_clock_ms": 755921.1985999718
+    },
+    {
+      "condition": "B2_state_model_minimal",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 1,
+      "state": "FAILED",
+      "task_id": "task_20260102_155148_014_accab84d_910b176a",
+      "timings_ms": {},
+      "wall_clock_ms": 755921.3749000337
+    },
+    {
+      "condition": "B2_state_model_minimal",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 2,
+      "state": "FAILED",
+      "task_id": "task_20260102_155148_014_accab84d_910b176a",
+      "timings_ms": {},
+      "wall_clock_ms": 755921.5396998916
+    },
+    {
+      "condition": "B2_state_model_minimal",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 3,
+      "state": "FAILED",
+      "task_id": "task_20260102_155148_014_accab84d_910b176a",
+      "timings_ms": {},
+      "wall_clock_ms": 755921.695600031
+    },
+    {
+      "condition": "A_baseline",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 1,
+      "state": "FAILED",
+      "task_id": "task_20260102_161510_799_ad5a67e3_7221f3c8",
+      "timings_ms": {},
+      "wall_clock_ms": 755921.8866999727
+    },
+    {
+      "condition": "A_baseline",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 2,
+      "state": "FAILED",
+      "task_id": "task_20260102_161510_799_ad5a67e3_7221f3c8",
+      "timings_ms": {},
+      "wall_clock_ms": 755922.0824998338
+    },
+    {
+      "condition": "A_baseline",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 3,
+      "state": "FAILED",
+      "task_id": "task_20260102_161510_799_ad5a67e3_7221f3c8",
+      "timings_ms": {},
+      "wall_clock_ms": 755922.2549998667
+    },
+    {
+      "condition": "B1_state_model_broad",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 1,
+      "state": "FAILED",
+      "task_id": "task_20260102_161510_799_ad5a67e3_7221f3c8",
+      "timings_ms": {},
+      "wall_clock_ms": 755922.4851999898
+    },
+    {
+      "condition": "B1_state_model_broad",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 2,
+      "state": "FAILED",
+      "task_id": "task_20260102_161510_799_ad5a67e3_7221f3c8",
+      "timings_ms": {},
+      "wall_clock_ms": 755922.7434999775
+    },
+    {
+      "condition": "B1_state_model_broad",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 3,
+      "state": "FAILED",
+      "task_id": "task_20260102_161510_799_ad5a67e3_7221f3c8",
+      "timings_ms": {},
+      "wall_clock_ms": 755922.9680001736
+    },
+    {
+      "condition": "B2_state_model_minimal",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 1,
+      "state": "FAILED",
+      "task_id": "task_20260102_161510_799_ad5a67e3_7221f3c8",
+      "timings_ms": {},
+      "wall_clock_ms": 755923.2252000365
+    },
+    {
+      "condition": "B2_state_model_minimal",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 2,
+      "state": "FAILED",
+      "task_id": "task_20260102_161510_799_ad5a67e3_7221f3c8",
+      "timings_ms": {},
+      "wall_clock_ms": 755923.4696000349
+    },
+    {
+      "condition": "B2_state_model_minimal",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 3,
+      "state": "FAILED",
+      "task_id": "task_20260102_161510_799_ad5a67e3_7221f3c8",
+      "timings_ms": {},
+      "wall_clock_ms": 755923.7031000666
+    },
+    {
+      "condition": "A_baseline",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 1,
+      "state": "FAILED",
+      "task_id": "task_20260102_172945_725_ad5a67e3_5480e26f",
+      "timings_ms": {},
+      "wall_clock_ms": 755923.9231999964
+    },
+    {
+      "condition": "A_baseline",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 2,
+      "state": "FAILED",
+      "task_id": "task_20260102_172945_725_ad5a67e3_5480e26f",
+      "timings_ms": {},
+      "wall_clock_ms": 755924.190199934
+    },
+    {
+      "condition": "A_baseline",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 3,
+      "state": "FAILED",
+      "task_id": "task_20260102_172945_725_ad5a67e3_5480e26f",
+      "timings_ms": {},
+      "wall_clock_ms": 755924.4770999067
+    },
+    {
+      "condition": "B1_state_model_broad",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 1,
+      "state": "FAILED",
+      "task_id": "task_20260102_172945_725_ad5a67e3_5480e26f",
+      "timings_ms": {},
+      "wall_clock_ms": 755924.7773999814
+    },
+    {
+      "condition": "B1_state_model_broad",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 2,
+      "state": "FAILED",
+      "task_id": "task_20260102_172945_725_ad5a67e3_5480e26f",
+      "timings_ms": {},
+      "wall_clock_ms": 755925.1125999726
+    },
+    {
+      "condition": "B1_state_model_broad",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 3,
+      "state": "FAILED",
+      "task_id": "task_20260102_172945_725_ad5a67e3_5480e26f",
+      "timings_ms": {},
+      "wall_clock_ms": 755925.5585998762
+    },
+    {
+      "condition": "B2_state_model_minimal",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 1,
+      "state": "FAILED",
+      "task_id": "task_20260102_172945_725_ad5a67e3_5480e26f",
+      "timings_ms": {},
+      "wall_clock_ms": 755926.0114999488
+    },
+    {
+      "condition": "B2_state_model_minimal",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 2,
+      "state": "FAILED",
+      "task_id": "task_20260102_172945_725_ad5a67e3_5480e26f",
+      "timings_ms": {},
+      "wall_clock_ms": 755926.4576998539
+    },
+    {
+      "condition": "B2_state_model_minimal",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 3,
+      "state": "FAILED",
+      "task_id": "task_20260102_172945_725_ad5a67e3_5480e26f",
+      "timings_ms": {},
+      "wall_clock_ms": 755927.6523001026
+    },
+    {
+      "condition": "A_baseline",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 1,
+      "state": "FAILED",
+      "task_id": "task_20260104_202644_765_00364ece_a86667c0",
+      "timings_ms": {},
+      "wall_clock_ms": 755928.5784000531
+    },
+    {
+      "condition": "A_baseline",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 2,
+      "state": "FAILED",
+      "task_id": "task_20260104_202644_765_00364ece_a86667c0",
+      "timings_ms": {},
+      "wall_clock_ms": 755929.5372001361
+    },
+    {
+      "condition": "A_baseline",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 3,
+      "state": "FAILED",
+      "task_id": "task_20260104_202644_765_00364ece_a86667c0",
+      "timings_ms": {},
+      "wall_clock_ms": 755930.1036999095
+    },
+    {
+      "condition": "B1_state_model_broad",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 1,
+      "state": "FAILED",
+      "task_id": "task_20260104_202644_765_00364ece_a86667c0",
+      "timings_ms": {},
+      "wall_clock_ms": 755930.6743999477
+    },
+    {
+      "condition": "B1_state_model_broad",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 2,
+      "state": "FAILED",
+      "task_id": "task_20260104_202644_765_00364ece_a86667c0",
+      "timings_ms": {},
+      "wall_clock_ms": 755931.7760998383
+    },
+    {
+      "condition": "B1_state_model_broad",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 3,
+      "state": "FAILED",
+      "task_id": "task_20260104_202644_765_00364ece_a86667c0",
+      "timings_ms": {},
+      "wall_clock_ms": 755932.6939999592
+    },
+    {
+      "condition": "B2_state_model_minimal",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 1,
+      "state": "FAILED",
+      "task_id": "task_20260104_202644_765_00364ece_a86667c0",
+      "timings_ms": {},
+      "wall_clock_ms": 755933.2286000717
+    },
+    {
+      "condition": "B2_state_model_minimal",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 2,
+      "state": "FAILED",
+      "task_id": "task_20260104_202644_765_00364ece_a86667c0",
+      "timings_ms": {},
+      "wall_clock_ms": 755933.7428999133
+    },
+    {
+      "condition": "B2_state_model_minimal",
+      "error": "ValueError: output directory out\\experiment_2 already contains State Model 2.0 run records (1 files); use a fresh directory to avoid B1 baseline contamination",
+      "history": [
+        "PENDING",
+        "FAILED"
+      ],
+      "recorded": false,
+      "run_index": 3,
+      "state": "FAILED",
+      "task_id": "task_20260104_202644_765_00364ece_a86667c0",
+      "timings_ms": {},
+      "wall_clock_ms": 755934.4295999035
+    }
+  ],
+  "wall_clock_ms": 756338.8771999162
+}
